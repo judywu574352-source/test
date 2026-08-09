@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="RC">
+<meta name="theme-color" content="#efe9dc">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>鋼筋混凝土 RC 公式題庫</title>
+<style>
+:root{
+  --bg:#efe9dc; --grid:rgba(178,164,140,.16);
+  --panel:#fffdf8; --panel2:#f6f1e7; --line:#e3dbca;
+  --ink:#2f2b24; --dim:#8c8473;
+  --acc:#bd5530; --acc2:#2f7d8a; --teal:#1f8574; --dark:#2c2a26;
+  --star:#d99a1c; --ok:#2f8f5b; --bad:#c0473f;
+  --mao:#a8512f; --oy:#247064;
+  --mono:"Consolas","Roboto Mono","Noto Sans Mono CJK TC",monospace;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    var(--bg);
+  background-size:22px 22px,22px 22px,auto;
+  color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top)) 16px 60px}
+header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+h1{font-size:1.32rem;letter-spacing:.5px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--ink)}
+h1 .tag{font-size:.6rem;background:var(--acc);color:#fff;padding:2px 7px;border-radius:4px;letter-spacing:1px;font-weight:700}
+.sub{color:var(--dim);font-size:.82rem;margin-top:5px}
+.srcline{font-size:.74rem;color:var(--dim);margin-top:6px}
+.srcline b{color:var(--oy)} .srcline i{color:var(--mao);font-style:normal}
+.stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 13px;text-align:center;min-width:60px;box-shadow:0 1px 2px rgba(90,75,50,.05)}
+.stat b{display:block;font-size:1.12rem;color:var(--teal)}
+.stat span{font-size:.64rem;color:var(--dim);letter-spacing:1px}
+.tabs{display:flex;gap:6px;margin:18px 0 14px}
+.tab{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:10px;border-radius:9px;cursor:pointer;font-size:.9rem;font-family:inherit;transition:.15s;box-shadow:0 1px 2px rgba(90,75,50,.04)}
+.tab.on{background:var(--dark);color:#fff;border-color:var(--dark);font-weight:700}
+.tab:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.view{display:none}.view.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+.filterbar{margin-bottom:12px}
+.flbl{font-size:.7rem;color:var(--dim);letter-spacing:1px;margin:8px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:5px 11px;border-radius:20px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:.12s}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:600}
+.chip.s.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.searchbox{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:10px 13px;border-radius:9px;font-size:.9rem;font-family:inherit;margin-top:10px}
+.searchbox::placeholder{color:#b3ab99}
+.searchbox:focus{outline:none;border-color:var(--acc2)}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 15px;margin-bottom:10px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.ftop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.pill{font-size:.62rem;padding:2px 8px;border-radius:5px;letter-spacing:.5px;font-weight:700;white-space:nowrap}
+.pill{color:var(--acc);background:rgba(189,85,48,.09);border:1px solid var(--line)}
+.fname{font-weight:600;font-size:1rem;color:var(--ink)}
+.fname .star{color:var(--star);margin-right:3px}
+.formula{font-family:var(--mono);background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:7px;padding:10px 13px;margin-top:10px;font-size:1.02rem;color:#3c352b;overflow-x:auto;line-height:1.7}
+.dnote{color:var(--dim);font-size:.82rem;margin-top:8px}
+.expander{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:rgba(47,125,138,.09);border:1px solid rgba(47,125,138,.3);color:var(--acc2);padding:5px 11px;border-radius:7px;cursor:pointer;font-size:.78rem;font-family:inherit;user-select:none}
+.expander .ic{font-size:.68rem;background:var(--acc2);color:#fff;padding:1px 5px;border-radius:3px;font-weight:700}
+.expander:hover{background:rgba(47,125,138,.16)}
+.detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
+.detail.on{display:block}
+.vtab{width:100%;border-collapse:collapse;font-size:.82rem}
+.vtab td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.vtab tr:last-child td{border-bottom:none}
+.vtab td:first-child{font-family:var(--mono);color:var(--acc2);white-space:nowrap;width:1%;font-weight:600}
+.vtab td:nth-child(3){color:var(--dim);white-space:nowrap;text-align:right}
+.tip{background:rgba(217,154,28,.1);border:1px solid rgba(217,154,28,.32);border-radius:7px;padding:8px 11px;margin-top:11px;font-size:.82rem;color:#7c5a18}
+.tip b{color:var(--acc)}
+.count{color:var(--dim);font-size:.76rem;margin:4px 2px 10px}
+.qsetup{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.row{margin-bottom:14px}
+.row>label{display:block;font-size:.78rem;color:var(--dim);letter-spacing:1px;margin-bottom:7px}
+.numsel{display:flex;gap:6px;flex-wrap:wrap}
+.numsel button{background:var(--panel2);border:1px solid var(--line);color:var(--dim);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit}
+.numsel button.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:700}
+.btn{background:var(--acc);color:#fff;border:none;padding:12px;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer;width:100%;font-family:inherit}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);font-weight:500}
+.btn:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.qhead{font-size:.7rem;color:var(--dim);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.qtext{font-size:.95rem;margin-bottom:12px;line-height:1.5;color:var(--ink)}
+.opt{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 13px;margin-bottom:8px;cursor:pointer;font-size:.88rem;transition:.12s;color:var(--ink)}
+.opt:hover{border-color:var(--acc2)}
+.opt.sel{border-color:var(--acc2);background:rgba(47,125,138,.1)}
+.opt.right{border-color:var(--ok);background:rgba(47,143,91,.13)}
+.opt.wrong{border-color:var(--bad);background:rgba(192,71,63,.12)}
+.opt .k{font-family:var(--mono);color:var(--acc2);margin-right:9px}
+.exp{display:none;margin-top:10px;font-size:.82rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:9px}
+.exp.on{display:block}.exp b{color:var(--ok)}
+.scorebar{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px;text-align:center;margin-bottom:14px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.scorebar .big{font-size:2.2rem;color:var(--acc);font-weight:800}
+.scorebar .lbl{color:var(--dim);font-size:.8rem}
+.hide{display:none!important}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;cursor:pointer;margin-bottom:14px;box-shadow:0 1px 4px rgba(90,75,50,.07)}
+.fc .side{font-size:.66rem;color:var(--dim);letter-spacing:2px;margin-bottom:14px}
+.fc .q{font-size:1.18rem;font-weight:600;color:var(--ink)}
+.fc .a{font-family:var(--mono);font-size:1.08rem;color:#3c352b;margin-bottom:12px;line-height:1.7}
+.fc .hint{font-size:.78rem;color:var(--acc2)}
+.fcbtns{display:flex;gap:8px}
+.fcbtns button{flex:1}
+.fcprog{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:10px}
+footer{color:var(--dim);font-size:.7rem;text-align:center;margin-top:34px;border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
+@media(max-width:560px){.stat{min-width:52px;padding:6px 9px}.tabs{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>鋼筋混凝土 RC 公式題庫 <span class="tag">技師備考</span></h1>
+  <div class="sub">口訣・觀念・俗成公式｜每條公式可展開代數意義｜★為高頻考點</div>
+  <div class="srcline">依 <b>許弘框架</b> 整理（★為許弘強調重點）</div>
+  <div class="stats">
+    <div class="stat"><b id="sCh">0</b><span>章節</span></div>
+    <div class="stat"><b id="sF">0</b><span>公式</span></div>
+    <div class="stat"><b id="sQ">0</b><span>題目</span></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab on" data-m="read">閱讀模式</button>
+  <button class="tab" data-m="quiz">測驗模式</button>
+  <button class="tab" data-m="flash">單題卡</button>
+</div>
+
+<section class="view on" id="v-read">
+  <div class="filterbar">
+    <div class="flbl">篩選章節</div>
+    <div class="chips" id="readChips"></div>
+    <input class="searchbox" id="search" placeholder="搜尋：β1、平衡鋼筋比、TCL、Mcr…">
+  </div>
+  <div class="count" id="readCount"></div>
+  <div id="readList"></div>
+</section>
+
+<section class="view" id="v-quiz">
+  <div class="qsetup" id="quizSetup">
+    <div class="row"><label>選擇章節（可多選）</label><div class="chips" id="quizChips"></div></div>
+    <div class="row"><label>題數</label>
+      <div class="numsel" id="numSel">
+        <button data-n="10" class="on">10</button>
+        <button data-n="20">20</button>
+        <button data-n="40">40</button>
+        <button data-n="0">全部</button>
+      </div>
+    </div>
+    <button class="btn" id="startQuiz">開始測驗</button>
+  </div>
+  <div id="quizRun" class="hide"></div>
+</section>
+
+<section class="view" id="v-flash">
+  <div class="filterbar"><div class="flbl">選擇章節</div><div class="chips" id="flashChips"></div></div>
+  <div class="fcprog" id="fcProg"></div>
+  <div class="fc" id="fcCard"><div class="side">點卡片翻面</div><div class="q">準備中…</div></div>
+  <div class="fcbtns">
+    <button class="btn ghost" id="fcPrev">上一張</button>
+    <button class="btn ghost" id="fcShuf">洗牌</button>
+    <button class="btn" id="fcNext">下一張</button>
+  </div>
+</section>
+
+<footer>
+  現行混凝土設計規範(kgf-cm)；本工具為記憶輔助。<br>
+  襄澤專案顧問工作室 ©
+</footer>
+</div>
+
+<script>
+const DATA = {"CH": [{"ch": "mat", "sub": "RC", "name": "材料與基本參數", "src": "許弘框架"}, {"ch": "flex", "sub": "RC", "name": "單筋梁撓曲", "src": "許弘框架"}, {"ch": "shear", "sub": "RC", "name": "剪力", "src": "許弘框架"}, {"ch": "col", "sub": "RC", "name": "柱", "src": "許弘框架"}, {"ch": "dt", "sub": "RC", "name": "雙筋梁／T型梁", "src": "許弘框架"}, {"ch": "serv", "sub": "RC", "name": "使用性與斷面", "src": "許弘框架"}, {"ch": "tcl", "sub": "RC", "name": "拉力控制界限 TCL", "src": "許弘框架"}, {"ch": "crack", "sub": "RC", "name": "開裂彎矩 Mcr", "src": "許弘框架"}, {"ch": "detail", "sub": "RC", "name": "構造細則", "src": "許弘框架"}], "F": [{"ch": "mat", "n": "混凝土規定抗壓強度", "f": "f′c", "d": "標準試體養護 28 天之規定抗壓強度。", "v": [["f′c", "混凝土規定抗壓強度", "kgf/cm²"]], "tip": "設計強度的基準；kgf-cm 制。", "s": 1, "sub": "RC"}, {"ch": "mat", "n": "鋼筋規定降伏強度", "f": "fy", "d": "常用 SD280→2800、SD420→4200 kgf/cm²。", "v": [["fy", "鋼筋規定降伏強度", "kgf/cm²"]], "tip": "SD420（fy=4200）為梁柱主筋常用等級。", "s": 1, "sub": "RC"}, {"ch": "mat", "n": "混凝土彈性模數", "f": "Ec = 15000·√f′c", "d": "常重混凝土，單位 kgf/cm²。", "v": [["Ec", "混凝土彈性模數", "kgf/cm²"], ["f′c", "抗壓強度", "kgf/cm²"]], "tip": "kgf-cm 制係數 15000；輕質混凝土另計。", "s": 1, "sub": "RC"}, {"ch": "mat", "n": "鋼筋彈性模數", "f": "Es = 2.04 × 10⁶", "d": "鋼筋彈性模數視為定值。", "v": [["Es", "鋼筋彈性模數", "kgf/cm²"]], "tip": "εy=fy/Es；SD420 εy≈0.00206。", "s": 0, "sub": "RC"}, {"ch": "mat", "n": "彈性模數比", "f": "n = Es / Ec", "d": "工作應力法換算鋼筋為等值混凝土。", "v": [["n", "彈性模數比", "—"], ["Es", "鋼筋彈模", "kgf/cm²"], ["Ec", "混凝土彈模", "kgf/cm²"]], "tip": "工作應力法(WSD)用。", "s": 0, "sub": "RC"}, {"ch": "mat", "n": "混凝土極限壓應變", "f": "εcu = 0.003", "d": "規範採用之混凝土壓碎最外緣應變。", "v": [["εcu", "混凝土極限壓應變", "—"]], "tip": "強度設計法固定取 0.003。", "s": 1, "sub": "RC"}, {"ch": "mat", "n": "等值應力塊係數 β₁", "f": "f′c≤280→β₁=0.85 ； f′c>280→β₁=0.85−0.05(f′c−280)/70 ≥0.65", "d": "拋物線壓應力簡化為矩形之深度係數。", "v": [["β₁", "應力塊深度係數", "—"], ["f′c", "抗壓強度", "kgf/cm²"]], "tip": "高強度遞減，下限 0.65。", "s": 1, "sub": "RC"}, {"ch": "mat", "n": "混凝土破裂模數", "f": "fr = 2·√f′c", "d": "抗彎拉強度，用於開裂彎矩 Mcr。", "v": [["fr", "破裂模數", "kgf/cm²"], ["f′c", "抗壓強度", "kgf/cm²"]], "tip": "kgf-cm 制係數 2（約 0.62√ in MPa）。", "s": 0, "sub": "RC"}, {"ch": "flex", "n": "拉力鋼筋比", "f": "ρ = As / (b·d)", "d": "控制梁韌性的關鍵指標。", "v": [["ρ", "拉力鋼筋比", "—"], ["As", "拉力鋼筋斷面積", "cm²"], ["b", "梁寬", "cm"], ["d", "有效深度", "cm"]], "tip": "ρ 越大越接近脆性；介於 ρmin~ρmax。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "等值應力塊深度 a", "f": "a = As·fy / (0.85·f′c·b)", "d": "由拉力＝壓力（T＝C）水平平衡推得。", "v": [["a", "應力塊深度", "cm"], ["As", "拉力鋼筋", "cm²"], ["fy", "降伏強度", "kgf/cm²"], ["0.85f′c", "應力塊均布壓應力", "kgf/cm²"], ["b", "梁寬", "cm"]], "tip": "先求 a，再求 Mn。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "中性軸深度 c", "f": "c = a / β₁", "d": "壓緣至中性軸距離；c/d 反映破壞型態。", "v": [["c", "中性軸深度", "cm"], ["a", "應力塊深度", "cm"], ["β₁", "應力塊係數", "—"]], "tip": "由 c 算淨拉應變 εt。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "水平力平衡", "f": "Cc = 0.85·f′c·a·b ＝ T = As·fy", "d": "壓力合力等於拉力合力。", "v": [["Cc", "混凝土壓力合力", "kgf"], ["T", "鋼筋拉力合力", "kgf"], ["a", "應力塊深度", "cm"]], "tip": "由 Cc=T 解 a，再 Mn=Cc·(d−a/2)。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "標稱彎矩（力臂式）", "f": "Mn = As·fy·(d − a/2)", "d": "(d−a/2) 為拉壓合力的內力臂。", "v": [["Mn", "標稱彎矩", "kgf·cm"], ["d−a/2", "內力臂 jd", "cm"], ["As", "拉力鋼筋", "cm²"], ["fy", "降伏強度", "kgf/cm²"]], "tip": "最常用的撓曲強度式。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "標稱彎矩（鋼筋比式）", "f": "Mn = ρ·fy·b·d²·(1 − 0.59·ρ·fy/f′c)", "d": "以鋼筋比表示，便於設計。", "v": [["Mn", "標稱彎矩", "kgf·cm"], ["ρ", "鋼筋比", "—"], ["b", "梁寬", "cm"], ["d", "有效深度", "cm"]], "tip": "括號項為內力臂折減；查表設計用。", "s": 0, "sub": "RC"}, {"ch": "flex", "n": "平衡鋼筋比 ρb", "f": "ρb = 0.85·β₁·(f′c/fy)·(6120/(6120+fy))", "d": "拉筋降伏與混凝土壓碎同時發生。", "v": [["ρb", "平衡鋼筋比", "—"], ["6120", "= εcu·Es = 0.003×2.04×10⁶", "kgf/cm²"]], "tip": "ρ>ρb 為脆性破壞（規範不允許）。6120 由 0.003×Es 來。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "淨拉應變", "f": "εt = 0.003·(dt − c)/c", "d": "由應變相似三角形求最外層拉筋應變。", "v": [["εt", "最外層鋼筋淨拉應變", "—"], ["dt", "最外層拉筋至壓緣距離", "cm"], ["c", "中性軸深度", "cm"]], "tip": "εt 決定斷面分區與 φ。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "設計彎矩", "f": "Mu = φ·Mn", "d": "需求彎矩不得超過設計彎矩。", "v": [["Mu", "設計（需求）彎矩", "kgf·cm"], ["φ", "強度折減係數", "—"], ["Mn", "標稱彎矩", "kgf·cm"]], "tip": "拉力控制 φ=0.90。", "s": 1, "sub": "RC"}, {"ch": "flex", "n": "最小鋼筋比", "f": "ρmin = max( 0.8√f′c/fy , 14/fy )", "d": "避免開裂後鋼筋瞬間降伏的脆性破壞。", "v": [["ρmin", "最小拉力鋼筋比", "—"], ["f′c", "抗壓強度", "kgf/cm²"], ["fy", "降伏強度", "kgf/cm²"]], "tip": "兩式取大者；f′c=306.25 為兩式交界。", "s": 1, "sub": "RC"}, {"ch": "shear", "n": "設計剪力條件", "f": "Vu ≤ φ·Vn ， Vn = Vc + Vs", "d": "剪力需求不超過設計剪力強度。", "v": [["Vu", "設計剪力", "kgf"], ["Vn", "標稱剪力強度", "kgf"], ["Vc", "混凝土剪力", "kgf"], ["Vs", "剪力鋼筋剪力", "kgf"], ["φ", "=0.75", "—"]], "tip": "剪力 φ=0.75。", "s": 1, "sub": "RC"}, {"ch": "shear", "n": "混凝土剪力強度", "f": "Vc = 0.53·√f′c·b·d", "d": "一般梁的混凝土剪力貢獻。", "v": [["Vc", "混凝土剪力強度", "kgf"], ["f′c", "抗壓強度", "kgf/cm²"], ["b", "腹板寬", "cm"], ["d", "有效深度", "cm"]], "tip": "kgf-cm 制係數 0.53（≈0.17√ in MPa）。", "s": 1, "sub": "RC"}, {"ch": "shear", "n": "剪力鋼筋強度", "f": "Vs = Av·fy·d / s", "d": "垂直肋筋（箍筋）的剪力貢獻。", "v": [["Vs", "剪力鋼筋強度", "kgf"], ["Av", "一組箍筋斷面積", "cm²"], ["fy", "箍筋降伏強度", "kgf/cm²"], ["s", "箍筋間距", "cm"]], "tip": "Vs 不得 >2.12√f′c·b·d，否則加大斷面。", "s": 1, "sub": "RC"}, {"ch": "shear", "n": "箍筋最大間距", "f": "s ≤ d/2 ≤ 60 cm（Vs 小時）", "d": "確保斜裂縫被箍筋攔截。", "v": [["s", "箍筋間距", "cm"], ["d", "有效深度", "cm"]], "tip": "Vs>1.06√f′c·b·d 時間距減半（d/4）。", "s": 0, "sub": "RC"}, {"ch": "shear", "n": "最小剪力鋼筋", "f": "Av,min = 0.2√f′c·b·s/fy ≥ 3.5·b·s/fy", "d": "Vu>½φVc 時需配置最小箍筋。", "v": [["Av,min", "最小箍筋面積", "cm²"], ["b", "腹板寬", "cm"], ["s", "間距", "cm"]], "tip": "兩式取大者。", "s": 0, "sub": "RC"}, {"ch": "col", "n": "標稱軸壓強度", "f": "Po = 0.85·f′c·(Ag − Ast) + fy·Ast", "d": "純軸心受壓（無偏心）的標稱強度。", "v": [["Po", "純軸壓標稱強度", "kgf"], ["Ag", "柱全斷面積", "cm²"], ["Ast", "主筋總斷面積", "cm²"], ["f′c", "抗壓強度", "kgf/cm²"], ["fy", "主筋降伏強度", "kgf/cm²"]], "tip": "混凝土淨面積承壓 + 鋼筋承壓。", "s": 1, "sub": "RC"}, {"ch": "col", "n": "最大軸壓設計強度", "f": "φPn,max = 0.80·φ·Po（繫筋） ； 0.85·φ·Po（螺旋）", "d": "考慮意外偏心的折減上限。", "v": [["φPn,max", "最大設計軸壓", "kgf"], ["0.80/0.85", "繫筋／螺旋折減", "—"]], "tip": "繫筋(tied) 0.80、螺旋(spiral) 0.85。", "s": 1, "sub": "RC"}, {"ch": "col", "n": "主筋比", "f": "ρg = Ast / Ag （0.01 ~ 0.08）", "d": "柱主筋量的限制。", "v": [["ρg", "主筋比", "—"], ["Ast", "主筋總面積", "cm²"], ["Ag", "全斷面積", "cm²"]], "tip": "規範 1%~8%，常用 1~4%。", "s": 1, "sub": "RC"}, {"ch": "col", "n": "強度折減係數 φ", "f": "繫筋柱 φ=0.65 ； 螺旋柱 φ=0.75", "d": "壓力控制斷面的 φ。", "v": [["φ", "強度折減係數", "—"]], "tip": "螺旋柱韌性較佳故 φ 較高。", "s": 1, "sub": "RC"}, {"ch": "col", "n": "螺箍比", "f": "ρs = 0.45·(Ag/Ach − 1)·(f′c/fyt)", "d": "螺旋箍筋體積比下限，提供圍束。", "v": [["ρs", "螺箍體積比", "—"], ["Ach", "核心面積（至螺箍外緣）", "cm²"], ["fyt", "螺箍降伏強度", "kgf/cm²"]], "tip": "確保保護層剝落後仍有圍束強度。", "s": 0, "sub": "RC"}, {"ch": "dt", "n": "雙筋梁平衡", "f": "As·fy = 0.85·f′c·a·b + A′s·f′s", "d": "拉筋拉力 = 混凝土壓力 + 壓筋壓力。", "v": [["A′s", "壓力鋼筋斷面積", "cm²"], ["f′s", "壓筋應力（降伏則=fy）", "kgf/cm²"], ["a", "應力塊深度", "cm"]], "tip": "需先檢核壓筋是否降伏。", "s": 1, "sub": "RC"}, {"ch": "dt", "n": "壓筋降伏檢核", "f": "ε′s = 0.003·(c − d′)/c ≥ εy ？", "d": "判斷壓筋是否達到降伏。", "v": [["ε′s", "壓筋應變", "—"], ["d′", "壓緣至壓筋距離", "cm"], ["c", "中性軸深度", "cm"]], "tip": "未降伏則 f′s=Es·ε′s。", "s": 1, "sub": "RC"}, {"ch": "dt", "n": "T 梁有效翼緣寬", "f": "be ≤ 跨度/4、bw+16hf、中心間距", "d": "參與抗壓的翼緣有效寬度。", "v": [["be", "有效翼緣寬", "cm"], ["bw", "腹板寬", "cm"], ["hf", "翼緣厚", "cm"]], "tip": "取三者最小。", "s": 0, "sub": "RC"}, {"ch": "dt", "n": "T 梁中性軸判別", "f": "a ≤ hf → 視同寬 be 之矩形梁", "d": "應力塊是否落在翼緣內。", "v": [["a", "應力塊深度", "cm"], ["hf", "翼緣厚", "cm"], ["be", "有效翼緣寬", "cm"]], "tip": "a>hf 才需分翼緣+腹板計算。", "s": 1, "sub": "RC"}, {"ch": "serv", "n": "免算撓度最小厚度", "f": "h ≥ L/16（簡支梁，兩端連續 L/21 等）", "d": "以跨深比控制撓度，免詳算。", "v": [["h", "梁全深", "cm"], ["L", "跨度", "cm"]], "tip": "簡支 L/16、一端連續 L/18.5、兩端連續 L/21、懸臂 L/8。", "s": 1, "sub": "RC"}, {"ch": "serv", "n": "有效慣性矩（Branson）", "f": "Ie = (Mcr/Ma)³·Ig + [1−(Mcr/Ma)³]·Icr", "d": "開裂後撓度計算用。", "v": [["Ie", "有效慣性矩", "cm⁴"], ["Ig", "毛斷面慣性矩", "cm⁴"], ["Icr", "開裂斷面慣性矩", "cm⁴"], ["Ma", "使用彎矩", "kgf·cm"]], "tip": "Ma≤Mcr 時 Ie=Ig（未開裂）。", "s": 0, "sub": "RC"}, {"ch": "serv", "n": "鋼筋斷面積換算", "f": "As = 根數 × 單根斷面積", "d": "由鋼筋號數查表累加。", "v": [["As", "鋼筋總斷面積", "cm²"]], "tip": "例：D25 單根 5.07 cm²。", "s": 0, "sub": "RC"}, {"ch": "tcl", "n": "拉力控制界限應變", "f": "εt,TCL = εy + 0.003", "d": "許弘框架定義之拉力控制邊界應變。", "v": [["εt,TCL", "拉力控制界限淨拉應變", "—"], ["εy", "鋼筋降伏應變 = fy/Es", "—"]], "tip": "許弘★：以 εy+0.003 為界（SD420 約 0.005）。", "s": 1, "sub": "RC"}, {"ch": "tcl", "n": "TCL 中性軸近似", "f": "cTCL ≈ (3/8)·dt （fy=4200）", "d": "拉力控制界限對應的中性軸深度。", "v": [["cTCL", "界限中性軸深度", "cm"], ["dt", "最外拉筋至壓緣距離", "cm"]], "tip": "許弘★：fy=4200 時 c/dt≈3/8 的便捷近似。", "s": 1, "sub": "RC"}, {"ch": "tcl", "n": "三區分類與 φ", "f": "壓控 εt≤εy→φ=0.65/0.75 ； 拉控 εt≥εt,TCL→φ=0.90 ； 過渡內插", "d": "依淨拉應變決定強度折減係數。", "v": [["εt", "淨拉應變", "—"], ["φ", "強度折減係數", "—"]], "tip": "許弘★：過渡區 φ 用應變內插。", "s": 1, "sub": "RC"}, {"ch": "tcl", "n": "最大鋼筋準則", "f": "As,max = As,TCL", "d": "以拉力控制界限為最大鋼筋量。", "v": [["As,max", "最大拉力鋼筋", "cm²"], ["As,TCL", "界限對應鋼筋", "cm²"]], "tip": "許弘★：取 TCL 對應鋼筋為上限，確保延性。", "s": 1, "sub": "RC"}, {"ch": "crack", "n": "開裂彎矩（簡化）", "f": "Mcr = √f′c · b·h² / 3", "d": "矩形斷面開裂彎矩的便捷式。", "v": [["Mcr", "開裂彎矩", "kgf·cm"], ["b", "斷面寬", "cm"], ["h", "斷面全深", "cm"], ["f′c", "抗壓強度", "kgf/cm²"]], "tip": "許弘★：由 Mcr=fr·Ig/yt（fr=2√f′c、Ig=bh³/12、yt=h/2）化簡而得。", "s": 1, "sub": "RC"}, {"ch": "crack", "n": "最小鋼筋比界限", "f": "f′c = 306.25 kgf/cm²", "d": "ρmin 兩式 0.8√f′c/fy 與 14/fy 的交界。", "v": [["f′c", "抗壓強度界限", "kgf/cm²"]], "tip": "許弘★：f′c<306.25 用 14/fy 控制、以上用 0.8√f′c/fy。", "s": 1, "sub": "RC"}, {"ch": "detail", "n": "主筋淨間距", "f": "≥ db、≥ 2.5 cm、≥ 4/3 粗骨材", "d": "確保混凝土充分握裹與澆置。", "v": [["db", "鋼筋直徑", "cm"]], "tip": "三者取大值。", "s": 0, "sub": "RC"}, {"ch": "detail", "n": "拉力伸展長度", "f": "ld = (簡化) f(fy, f′c, 鋼筋條件)/√f′c · db", "d": "確保鋼筋不致拔出。", "v": [["ld", "拉力伸展長度", "cm"], ["db", "鋼筋直徑", "cm"]], "tip": "與 √f′c 成反比、與 fy 成正比；實際依規範表。", "s": 0, "sub": "RC"}, {"ch": "detail", "n": "保護層", "f": "梁柱主筋淨保護層常取 4 cm（室內）", "d": "保護鋼筋防鏽與耐火。", "v": [["保護層", "至鋼筋外緣淨距", "cm"]], "tip": "暴露環境加大；依規範。", "s": 0, "sub": "RC"}], "Q": [{"ch": "mat", "q": "Ec = 15000√f′c 中 f′c 的單位為？", "o": ["kgf/cm²", "tf/m²", "MPa", "kgf"], "a": 0, "e": "kgf-cm 制，Ec、f′c 皆 kgf/cm²。"}, {"ch": "mat", "q": "f′c=350 時 β₁ 為？", "o": ["0.85", "0.80", "0.75", "0.65"], "a": 1, "e": "0.85−0.05×(350−280)/70=0.80。"}, {"ch": "mat", "q": "規範混凝土極限壓應變 εcu 為？", "o": ["0.002", "0.003", "0.004", "0.005"], "a": 1, "e": "設計取 0.003。"}, {"ch": "mat", "q": "β₁ 的下限值為？", "o": ["0.85", "0.75", "0.70", "0.65"], "a": 3, "e": "高強度遞減但≥0.65。"}, {"ch": "mat", "q": "fr = 2√f′c 代表混凝土的？", "o": ["抗壓強度", "破裂模數", "彈性模數", "剪力強度"], "a": 1, "e": "破裂模數，用於 Mcr。"}, {"ch": "mat", "q": "f′c 的定義是？", "o": ["澆置時強度", "規定 28 天抗壓強度", "降伏強度", "極限拉力"], "a": 1, "e": "標準試體養護 28 天。"}, {"ch": "flex", "q": "a = As·fy/(0.85f′c·b) 中 a 代表？", "o": ["中性軸深度", "等值應力塊深度", "有效深度", "保護層"], "a": 1, "e": "由 T=C 平衡求得。"}, {"ch": "flex", "q": "a 公式中的 0.85f′c 代表？", "o": ["混凝土平均壓應力", "鋼筋應力", "折減強度", "剪應力"], "a": 0, "e": "應力塊均布壓應力。"}, {"ch": "flex", "q": "c = a/β₁ 中 c 代表？", "o": ["保護層", "應力塊深度", "中性軸深度", "力臂"], "a": 2, "e": "壓緣到中性軸。"}, {"ch": "flex", "q": "Mn=As·fy(d−a/2) 中 (d−a/2) 為？", "o": ["有效深度", "內力臂", "應力塊深度", "中性軸深度"], "a": 1, "e": "拉壓合力間的力臂 jd。"}, {"ch": "flex", "q": "平衡鋼筋比公式中的 6120 來自？", "o": ["fy 平均", "εcu·Es", "0.85f′c", "β₁·Ec"], "a": 1, "e": "6120=0.003×2.04×10⁶。"}, {"ch": "flex", "q": "當 ρ>ρb 時破壞型態為？", "o": ["拉筋先降伏(韌性)", "混凝土先壓碎(脆性)", "不破壞", "純剪"], "a": 1, "e": "脆性，規範不允許。"}, {"ch": "flex", "q": "拉力控制斷面撓曲 φ 為？", "o": ["0.65", "0.75", "0.85", "0.90"], "a": 3, "e": "拉力控制 φ=0.90。"}, {"ch": "flex", "q": "設置 ρmin 的目的是？", "o": ["節省鋼筋", "防開裂後立即脆性破壞", "美觀", "降成本"], "a": 1, "e": "確保最小韌性。"}, {"ch": "flex", "q": "已知 As=20、fy=2800、f′c=210、b=30，a≈？", "o": ["8.4 cm", "10.5 cm", "6.3 cm", "12.0 cm"], "a": 0, "e": "a=20×2800/(0.85×210×30)=56000/5355≈10.46... ≈10.5"}, {"ch": "shear", "q": "混凝土剪力強度 Vc =？", "o": ["0.53√f′c·b·d", "√f′c·b·d", "0.85f′c·b·d", "Av·fy·d/s"], "a": 0, "e": "kgf-cm 制 0.53√f′c·b·d。"}, {"ch": "shear", "q": "剪力鋼筋強度 Vs =？", "o": ["Av·fy·d/s", "0.53√f′c·b·d", "φVn", "Vc+Vu"], "a": 0, "e": "垂直箍筋貢獻。"}, {"ch": "shear", "q": "剪力設計的強度折減係數 φ 為？", "o": ["0.75", "0.90", "0.65", "0.85"], "a": 0, "e": "剪力 φ=0.75。"}, {"ch": "shear", "q": "Vn 由哪兩者組成？", "o": ["Vc+Vs", "Vc+Vu", "Vs+Vu", "Vc×Vs"], "a": 0, "e": "標稱剪力=混凝土+鋼筋。"}, {"ch": "col", "q": "純軸壓標稱強度 Po =？", "o": ["0.85f′c(Ag−Ast)+fy·Ast", "f′c·Ag", "fy·Ast", "0.85f′c·Ag"], "a": 0, "e": "混凝土淨面積+鋼筋。"}, {"ch": "col", "q": "繫筋柱最大設計軸壓為 φPo 的？", "o": ["0.80 倍", "0.85 倍", "1.0 倍", "0.65 倍"], "a": 0, "e": "繫筋 0.80、螺旋 0.85。"}, {"ch": "col", "q": "繫筋柱的 φ 為？", "o": ["0.65", "0.75", "0.90", "0.85"], "a": 0, "e": "螺旋柱則 0.75。"}, {"ch": "col", "q": "柱主筋比 ρg 規範範圍為？", "o": ["1%~8%", "0.5%~4%", "2%~10%", "1%~12%"], "a": 0, "e": "0.01~0.08。"}, {"ch": "dt", "q": "雙筋梁須先檢核？", "o": ["壓筋是否降伏", "拉筋根數", "保護層", "箍筋間距"], "a": 0, "e": "ε′s≥εy 才用 f′s=fy。"}, {"ch": "dt", "q": "T 梁當 a≤hf 時可視為？", "o": ["寬 be 的矩形梁", "純翼緣", "純腹板", "雙筋梁"], "a": 0, "e": "應力塊落在翼緣內。"}, {"ch": "dt", "q": "T 梁有效翼緣寬取下列何者？", "o": ["三限制取最小", "三限制取最大", "跨度/2", "腹板寬"], "a": 0, "e": "L/4、bw+16hf、中心距取小。"}, {"ch": "serv", "q": "跨深比控制（簡支梁免算撓度）h≥？", "o": ["L/16", "L/8", "L/24", "L/10"], "a": 0, "e": "簡支 L/16。"}, {"ch": "serv", "q": "有效慣性矩 Ie 介於？", "o": ["Icr 與 Ig 之間", "0 與 Ig", "Ig 與 ∞", "固定值"], "a": 0, "e": "Branson 內插。"}, {"ch": "tcl", "q": "許弘框架的拉力控制界限應變 εt,TCL =？", "o": ["εy+0.003", "0.005", "0.003", "εy"], "a": 0, "e": "許弘定義 εy+0.003。"}, {"ch": "tcl", "q": "fy=4200 時 cTCL 約為 dt 的？", "o": ["3/8", "1/2", "5/8", "1/4"], "a": 0, "e": "許弘便捷近似 c/dt≈3/8。"}, {"ch": "tcl", "q": "壓力控制斷面（εt≤εy）繫筋 φ 為？", "o": ["0.65", "0.90", "0.75", "0.85"], "a": 0, "e": "壓控 φ=0.65（繫筋）。"}, {"ch": "tcl", "q": "許弘的最大鋼筋準則為？", "o": ["As,max=As,TCL", "As,max=As,bal", "無上限", "As,max=2As,min"], "a": 0, "e": "取 TCL 對應鋼筋為上限。"}, {"ch": "crack", "q": "矩形斷面開裂彎矩簡化式 Mcr =？", "o": ["√f′c·bh²/3", "fy·bh²/6", "2√f′c·bh", "0.85f′c·bh²"], "a": 0, "e": "許弘由 fr·Ig/yt 化簡。"}, {"ch": "crack", "q": "ρmin 兩式的交界 f′c 約為？", "o": ["306.25", "210", "280", "420"], "a": 0, "e": "0.8√f′c/fy 與 14/fy 交點。"}, {"ch": "detail", "q": "主筋淨間距取下列何者？", "o": ["db、2.5cm、4/3骨材 取大", "取最小", "固定 2cm", "固定 db"], "a": 0, "e": "三者取大值。"}, {"ch": "detail", "q": "拉力伸展長度 ld 與 √f′c 的關係為？", "o": ["成反比", "成正比", "無關", "平方正比"], "a": 0, "e": "混凝土越強 ld 越短。"}]};
+const CH = DATA.CH, F = DATA.F, Q = DATA.Q;
+const chName = c => { const x = CH.find(o=>o.ch===c); return x?x.name:c; };
+const chSub  = c => { const x = CH.find(o=>o.ch===c); return x?x.sub:""; };
+
+document.getElementById('sCh').textContent = CH.length;
+document.getElementById('sF').textContent = F.length;
+document.getElementById('sQ').textContent = Q.length;
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('v-'+t.dataset.m).classList.add('on');
+  });
+});
+
+function buildChips(container,state,onChange){
+  container.innerHTML='';
+  const all=mkChip('全部','__all',state.size===0,false);
+  all.addEventListener('click',()=>{state.clear();buildChips(container,state,onChange);onChange();});
+  container.appendChild(all);
+  const _subs=[...new Set(CH.map(c=>c.sub))];
+  const _multi=_subs.length>1;
+  const _hdr={'核心':'── ★ 核心章 ──','次要':'── 次要章 ──','概覽':'── 概覽章 ──'};
+  let lastSub='';
+  CH.forEach(c=>{
+    if(_multi&&c.sub!==lastSub){lastSub=c.sub;
+      const lab=document.createElement('span');
+      lab.className='flbl';lab.style.width='100%';lab.style.margin='8px 0 2px';
+      lab.textContent=_hdr[c.sub]||('── '+c.sub+' ──');
+      container.appendChild(lab);
+    }
+    const chip=mkChip(c.name,c.ch,state.has(c.ch),false);
+    chip.addEventListener('click',()=>{
+      if(state.has(c.ch))state.delete(c.ch);else state.add(c.ch);
+      buildChips(container,state,onChange);onChange();
+    });
+    container.appendChild(chip);
+  });
+}
+function mkChip(text,key,on,isMat){
+  const b=document.createElement('button');
+  b.className='chip'+(isMat?' s':'')+(on?' on':'');
+  b.textContent=text;b.dataset.k=key;return b;
+}
+
+/* READ */
+const readState=new Set();
+const readChips=document.getElementById('readChips');
+const readList=document.getElementById('readList');
+const searchEl=document.getElementById('search');
+buildChips(readChips,readState,renderRead);
+searchEl.addEventListener('input',renderRead);
+function renderRead(){
+  const kw=searchEl.value.trim().toLowerCase();
+  let list=F.filter(f=>readState.size===0||readState.has(f.ch));
+  if(kw)list=list.filter(f=>(f.n+f.f+f.d+f.tip+chName(f.ch)).toLowerCase().includes(kw));
+  document.getElementById('readCount').textContent='顯示 '+list.length+' / '+F.length+' 條公式';
+  readList.innerHTML='';
+  list.forEach((f,i)=>readList.appendChild(buildFCard(f,'r'+i)));
+}
+function buildFCard(f,id){
+  const card=document.createElement('div');card.className='fcard';
+  const top=document.createElement('div');top.className='ftop';
+  const pill=document.createElement('span');
+  pill.className='pill';
+  pill.textContent=chName(f.ch);
+  const nm=document.createElement('span');nm.className='fname';
+  if(f.s){const s=document.createElement('span');s.className='star';s.textContent='★';nm.appendChild(s);}
+  nm.appendChild(document.createTextNode(f.n));
+  top.appendChild(pill);top.appendChild(nm);
+  const fo=document.createElement('div');fo.className='formula';fo.textContent=f.f;
+  card.appendChild(top);card.appendChild(fo);
+  if(f.d){const dn=document.createElement('div');dn.className='dnote';dn.textContent=f.d;card.appendChild(dn);}
+  const exp=document.createElement('div');exp.className='expander';
+  const ic=document.createElement('span');ic.className='ic';ic.textContent='代';
+  exp.appendChild(ic);
+  const lab=document.createElement('span');lab.textContent='展開代數意義';exp.appendChild(lab);
+  const det=document.createElement('div');det.className='detail';
+  if(f.v&&f.v.length){
+    const tb=document.createElement('table');tb.className='vtab';
+    f.v.forEach(r=>{const tr=document.createElement('tr');
+      r.forEach(cell=>{const td=document.createElement('td');td.textContent=cell;tr.appendChild(td);});
+      tb.appendChild(tr);});
+    det.appendChild(tb);
+  }
+  if(f.tip){const tp=document.createElement('div');tp.className='tip';
+    const b=document.createElement('b');b.textContent='口訣／觀念：';tp.appendChild(b);
+    tp.appendChild(document.createTextNode(f.tip));det.appendChild(tp);}
+  exp.addEventListener('click',()=>{
+    det.classList.toggle('on');
+    lab.textContent=det.classList.contains('on')?'收合代數意義':'展開代數意義';
+  });
+  card.appendChild(exp);card.appendChild(det);
+  return card;
+}
+renderRead();
+
+/* QUIZ */
+const quizState=new Set();
+let qNum=10;
+buildChips(document.getElementById('quizChips'),quizState,()=>{});
+document.querySelectorAll('#numSel button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#numSel button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');qNum=parseInt(b.dataset.n);
+  });
+});
+document.getElementById('startQuiz').addEventListener('click',startQuiz);
+let curQuiz=[];
+function startQuiz(){
+  let pool=Q.filter(q=>quizState.size===0||quizState.has(q.ch));
+  pool=shuffle(pool.slice());
+  if(qNum>0)pool=pool.slice(0,qNum);
+  if(pool.length===0){alert('此章節暫無題目，請改選其他章節。');return;}
+  curQuiz=pool.map(q=>({...q,pick:null}));
+  document.getElementById('quizSetup').classList.add('hide');
+  const run=document.getElementById('quizRun');run.classList.remove('hide');run.innerHTML='';
+  curQuiz.forEach((q,i)=>{
+    const card=document.createElement('div');card.className='qcard';card.dataset.i=i;
+    const head=document.createElement('div');head.className='qhead';
+    const s1=document.createElement('span');s1.textContent='第 '+(i+1)+' / '+curQuiz.length+' 題';
+    const s2=document.createElement('span');s2.textContent=chSub(q.ch)+'｜'+chName(q.ch);
+    head.appendChild(s1);head.appendChild(s2);
+    const qt=document.createElement('div');qt.className='qtext';qt.textContent=q.q;
+    card.appendChild(head);card.appendChild(qt);
+    q.o.forEach((opt,oi)=>{
+      const el=document.createElement('div');el.className='opt';
+      const k=document.createElement('span');k.className='k';k.textContent='ABCD'[oi];
+      el.appendChild(k);el.appendChild(document.createTextNode(opt));
+      el.addEventListener('click',()=>{
+        if(card.dataset.done)return;
+        card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+        el.classList.add('sel');q.pick=oi;
+      });
+      card.appendChild(el);
+    });
+    const exp=document.createElement('div');exp.className='exp';card.appendChild(exp);
+    run.appendChild(card);
+  });
+  const sub=document.createElement('button');sub.className='btn';sub.textContent='交卷看分數';
+  sub.addEventListener('click',gradeQuiz);run.appendChild(sub);
+  const back=document.createElement('button');back.className='btn ghost';back.style.marginTop='8px';
+  back.textContent='重設章節 / 題數';back.addEventListener('click',resetQuiz);run.appendChild(back);
+  window.scrollTo(0,0);
+}
+function gradeQuiz(){
+  let correct=0;
+  curQuiz.forEach((q,i)=>{
+    const card=document.querySelector('.qcard[data-i="'+i+'"]');
+    card.dataset.done='1';
+    card.querySelectorAll('.opt').forEach((o,oi)=>{
+      o.style.cursor='default';
+      if(oi===q.a)o.classList.add('right');
+      if(q.pick===oi&&oi!==q.a)o.classList.add('wrong');
+    });
+    if(q.pick===q.a)correct++;
+    const exp=card.querySelector('.exp');exp.classList.add('on');
+    exp.innerHTML='<b>正解：'+'ABCD'[q.a]+'</b>　'+escapeHtml(q.e);
+  });
+  const run=document.getElementById('quizRun');
+  const bar=document.createElement('div');bar.className='scorebar';
+  const pct=Math.round(correct/curQuiz.length*100);
+  bar.innerHTML='<div class="big">'+correct+' / '+curQuiz.length+'</div>'+
+    '<div class="lbl">答對率 '+pct+'%　'+(pct>=80?'穩了 👍':pct>=60?'再衝一點':'錯題回頭看公式')+'</div>';
+  run.insertBefore(bar,run.firstChild);
+  document.querySelector('#quizRun .btn').classList.add('hide');
+  window.scrollTo(0,0);
+}
+function resetQuiz(){
+  document.getElementById('quizRun').classList.add('hide');
+  document.getElementById('quizSetup').classList.remove('hide');
+  window.scrollTo(0,0);
+}
+
+/* FLASH */
+const flashState=new Set();
+let cards=[],ci=0,flipped=false;
+buildChips(document.getElementById('flashChips'),flashState,rebuildCards);
+function rebuildCards(){
+  cards=F.filter(f=>flashState.size===0||flashState.has(f.ch));
+  cards=shuffle(cards.slice());ci=0;flipped=false;renderCard();
+}
+function renderCard(){
+  const c=cards[ci];const el=document.getElementById('fcCard');
+  document.getElementById('fcProg').textContent=cards.length?('第 '+(ci+1)+' / '+cards.length+' 張'):'';
+  el.innerHTML='';
+  if(!c){el.innerHTML='<div class="q">此範圍無公式</div>';return;}
+  const side=document.createElement('div');side.className='side';
+  side.textContent=flipped?'公式 ＋ 口訣':'默寫這條公式';el.appendChild(side);
+  if(!flipped){
+    const q=document.createElement('div');q.className='q';
+    q.textContent=(c.s?'★ ':'')+c.n;el.appendChild(q);
+    const sub=document.createElement('div');sub.className='hint';sub.style.marginTop='8px';
+    sub.textContent=chSub(c.ch)+'｜'+chName(c.ch);el.appendChild(sub);
+    const h=document.createElement('div');h.className='hint';h.style.marginTop='12px';h.style.color='var(--dim)';
+    h.textContent='點一下看答案';el.appendChild(h);
+  }else{
+    const a=document.createElement('div');a.className='a';a.textContent=c.f;el.appendChild(a);
+    if(c.tip){const t=document.createElement('div');t.className='hint';t.textContent=c.tip;el.appendChild(t);}
+  }
+}
+document.getElementById('fcCard').addEventListener('click',()=>{flipped=!flipped;renderCard();});
+document.getElementById('fcNext').addEventListener('click',()=>{if(!cards.length)return;ci=(ci+1)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcPrev').addEventListener('click',()=>{if(!cards.length)return;ci=(ci-1+cards.length)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcShuf').addEventListener('click',()=>{cards=shuffle(cards);ci=0;flipped=false;renderCard();});
+rebuildCards();
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="測量">
+<meta name="theme-color" content="#efe9dc">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>測量學 公式題庫</title>
+<style>
+:root{
+  --bg:#efe9dc; --grid:rgba(178,164,140,.16);
+  --panel:#fffdf8; --panel2:#f6f1e7; --line:#e3dbca;
+  --ink:#2f2b24; --dim:#8c8473;
+  --acc:#1f7a6a; --acc2:#b5482e; --teal:#1f8574; --dark:#2c2a26;
+  --star:#d99a1c; --ok:#2f8f5b; --bad:#c0473f;
+  --mao:#a8512f; --oy:#247064;
+  --mono:"Consolas","Roboto Mono","Noto Sans Mono CJK TC",monospace;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    var(--bg);
+  background-size:22px 22px,22px 22px,auto;
+  color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top)) 16px 60px}
+header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+h1{font-size:1.32rem;letter-spacing:.5px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--ink)}
+h1 .tag{font-size:.6rem;background:var(--acc);color:#fff;padding:2px 7px;border-radius:4px;letter-spacing:1px;font-weight:700}
+.sub{color:var(--dim);font-size:.82rem;margin-top:5px}
+.srcline{font-size:.74rem;color:var(--dim);margin-top:6px}
+.srcline b{color:var(--oy)} .srcline i{color:var(--mao);font-style:normal}
+.stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 13px;text-align:center;min-width:60px;box-shadow:0 1px 2px rgba(90,75,50,.05)}
+.stat b{display:block;font-size:1.12rem;color:var(--teal)}
+.stat span{font-size:.64rem;color:var(--dim);letter-spacing:1px}
+.tabs{display:flex;gap:6px;margin:18px 0 14px}
+.tab{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:10px;border-radius:9px;cursor:pointer;font-size:.9rem;font-family:inherit;transition:.15s;box-shadow:0 1px 2px rgba(90,75,50,.04)}
+.tab.on{background:var(--dark);color:#fff;border-color:var(--dark);font-weight:700}
+.tab:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.view{display:none}.view.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+.filterbar{margin-bottom:12px}
+.flbl{font-size:.7rem;color:var(--dim);letter-spacing:1px;margin:8px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:5px 11px;border-radius:20px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:.12s}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:600}
+.chip.s.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.searchbox{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:10px 13px;border-radius:9px;font-size:.9rem;font-family:inherit;margin-top:10px}
+.searchbox::placeholder{color:#b3ab99}
+.searchbox:focus{outline:none;border-color:var(--acc2)}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 15px;margin-bottom:10px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.ftop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.pill{font-size:.62rem;padding:2px 8px;border-radius:5px;letter-spacing:.5px;font-weight:700;white-space:nowrap}
+.pill{color:var(--acc);background:rgba(189,85,48,.09);border:1px solid var(--line)}
+.fname{font-weight:600;font-size:1rem;color:var(--ink)}
+.fname .star{color:var(--star);margin-right:3px}
+.formula{font-family:var(--mono);background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:7px;padding:10px 13px;margin-top:10px;font-size:1.02rem;color:#3c352b;overflow-x:auto;line-height:1.7}
+.dnote{color:var(--dim);font-size:.82rem;margin-top:8px}
+.expander{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:rgba(47,125,138,.09);border:1px solid rgba(47,125,138,.3);color:var(--acc2);padding:5px 11px;border-radius:7px;cursor:pointer;font-size:.78rem;font-family:inherit;user-select:none}
+.expander .ic{font-size:.68rem;background:var(--acc2);color:#fff;padding:1px 5px;border-radius:3px;font-weight:700}
+.expander:hover{background:rgba(47,125,138,.16)}
+.detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
+.detail.on{display:block}
+.vtab{width:100%;border-collapse:collapse;font-size:.82rem}
+.vtab td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.vtab tr:last-child td{border-bottom:none}
+.vtab td:first-child{font-family:var(--mono);color:var(--acc2);white-space:nowrap;width:1%;font-weight:600}
+.vtab td:nth-child(3){color:var(--dim);white-space:nowrap;text-align:right}
+.tip{background:rgba(217,154,28,.1);border:1px solid rgba(217,154,28,.32);border-radius:7px;padding:8px 11px;margin-top:11px;font-size:.82rem;color:#7c5a18}
+.tip b{color:var(--acc)}
+.count{color:var(--dim);font-size:.76rem;margin:4px 2px 10px}
+.qsetup{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.row{margin-bottom:14px}
+.row>label{display:block;font-size:.78rem;color:var(--dim);letter-spacing:1px;margin-bottom:7px}
+.numsel{display:flex;gap:6px;flex-wrap:wrap}
+.numsel button{background:var(--panel2);border:1px solid var(--line);color:var(--dim);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit}
+.numsel button.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:700}
+.btn{background:var(--acc);color:#fff;border:none;padding:12px;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer;width:100%;font-family:inherit}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);font-weight:500}
+.btn:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.qhead{font-size:.7rem;color:var(--dim);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.qtext{font-size:.95rem;margin-bottom:12px;line-height:1.5;color:var(--ink)}
+.opt{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 13px;margin-bottom:8px;cursor:pointer;font-size:.88rem;transition:.12s;color:var(--ink)}
+.opt:hover{border-color:var(--acc2)}
+.opt.sel{border-color:var(--acc2);background:rgba(47,125,138,.1)}
+.opt.right{border-color:var(--ok);background:rgba(47,143,91,.13)}
+.opt.wrong{border-color:var(--bad);background:rgba(192,71,63,.12)}
+.opt .k{font-family:var(--mono);color:var(--acc2);margin-right:9px}
+.exp{display:none;margin-top:10px;font-size:.82rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:9px}
+.exp.on{display:block}.exp b{color:var(--ok)}
+.scorebar{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px;text-align:center;margin-bottom:14px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.scorebar .big{font-size:2.2rem;color:var(--acc);font-weight:800}
+.scorebar .lbl{color:var(--dim);font-size:.8rem}
+.hide{display:none!important}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;cursor:pointer;margin-bottom:14px;box-shadow:0 1px 4px rgba(90,75,50,.07)}
+.fc .side{font-size:.66rem;color:var(--dim);letter-spacing:2px;margin-bottom:14px}
+.fc .q{font-size:1.18rem;font-weight:600;color:var(--ink)}
+.fc .a{font-family:var(--mono);font-size:1.08rem;color:#3c352b;margin-bottom:12px;line-height:1.7}
+.fc .hint{font-size:.78rem;color:var(--acc2)}
+.fcbtns{display:flex;gap:8px}
+.fcbtns button{flex:1}
+.fcprog{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:10px}
+footer{color:var(--dim);font-size:.7rem;text-align:center;margin-top:34px;border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
+@media(max-width:560px){.stat{min-width:52px;padding:6px 9px}.tabs{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>測量學 公式題庫 <span class="tag">技師備考</span></h1>
+  <div class="sub">口訣・觀念・俗成公式｜每條公式可展開代數意義｜★為高頻考點</div>
+  <div class="srcline">內容參考 <b>廖《測量學・系統剖析》</b>｜依重點權重編排</div>
+  <div class="stats">
+    <div class="stat"><b id="sCh">0</b><span>章節</span></div>
+    <div class="stat"><b id="sF">0</b><span>公式</span></div>
+    <div class="stat"><b id="sQ">0</b><span>題目</span></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab on" data-m="read">閱讀模式</button>
+  <button class="tab" data-m="quiz">測驗模式</button>
+  <button class="tab" data-m="flash">單題卡</button>
+</div>
+
+<section class="view on" id="v-read">
+  <div class="filterbar">
+    <div class="flbl">篩選章節</div>
+    <div class="chips" id="readChips"></div>
+    <input class="searchbox" id="search" placeholder="搜尋：中誤差、206265、誤差傳播、後方交會…">
+  </div>
+  <div class="count" id="readCount"></div>
+  <div id="readList"></div>
+</section>
+
+<section class="view" id="v-quiz">
+  <div class="qsetup" id="quizSetup">
+    <div class="row"><label>選擇章節（可多選）</label><div class="chips" id="quizChips"></div></div>
+    <div class="row"><label>題數</label>
+      <div class="numsel" id="numSel">
+        <button data-n="10" class="on">10</button>
+        <button data-n="20">20</button>
+        <button data-n="40">40</button>
+        <button data-n="0">全部</button>
+      </div>
+    </div>
+    <button class="btn" id="startQuiz">開始測驗</button>
+  </div>
+  <div id="quizRun" class="hide"></div>
+</section>
+
+<section class="view" id="v-flash">
+  <div class="filterbar"><div class="flbl">選擇章節</div><div class="chips" id="flashChips"></div></div>
+  <div class="fcprog" id="fcProg"></div>
+  <div class="fc" id="fcCard"><div class="side">點卡片翻面</div><div class="q">準備中…</div></div>
+  <div class="fcbtns">
+    <button class="btn ghost" id="fcPrev">上一張</button>
+    <button class="btn ghost" id="fcShuf">洗牌</button>
+    <button class="btn" id="fcNext">下一張</button>
+  </div>
+</section>
+
+<footer>
+  容許閉合差、投影參數依現行測量法規與題目給定為準。<br>
+  襄澤專案顧問工作室 ©
+</footer>
+</div>
+
+<script>
+const DATA = {"CH": [{"ch": "s01", "sub": "核心", "name": "1·緒論（誤差精度・坐標）", "src": "廖"}, {"ch": "s03", "sub": "核心", "name": "3·水準測量", "src": "廖"}, {"ch": "s05", "sub": "核心", "name": "5·平面坐標測量", "src": "廖"}, {"ch": "s10", "sub": "核心", "name": "10·誤差傳播・最小二乘", "src": "廖"}, {"ch": "s12", "sub": "核心", "name": "12·衛星測量 GNSS", "src": "廖"}, {"ch": "s04", "sub": "次要", "name": "4·角度測量", "src": "廖"}, {"ch": "s07", "sub": "次要", "name": "7·導線測量", "src": "廖"}, {"ch": "s11", "sub": "次要", "name": "11·地形・空間資訊", "src": "廖"}, {"ch": "s02", "sub": "概覽", "name": "2·距離測量", "src": "廖"}, {"ch": "s06", "sub": "概覽", "name": "6·間接距離與高程", "src": "廖"}, {"ch": "s08", "sub": "概覽", "name": "8·路工定線", "src": "廖"}, {"ch": "s09", "sub": "概覽", "name": "9·地籍與土方", "src": "廖"}], "F": [{"ch": "s01", "n": "算術平均（最或是值）", "f": "x̄ = [l]/n ； 加權 x̄ = [Pl]/[P]", "d": "重複觀測同一目標的最或是值（MPV）。", "v": [["x̄", "最或是值 MPV", "與觀測量同"], ["[l]", "觀測值總和（高斯括號）", "—"], ["n", "觀測次數", "—"], ["P", "權", "—"], ["[Pl]", "加權觀測值總和", "—"]], "tip": "書稱「平均值＝最或是值」。高斯括號 [·] 代表累加。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "改正數", "f": "v = x̄ − lᵢ", "d": "最或是值減去各觀測值。", "v": [["v", "改正數（殘差）", "與觀測量同"], ["x̄", "最或是值", "—"], ["lᵢ", "第 i 個觀測值", "—"]], "tip": "[v]=0（改正數總和為零）可作檢核。", "s": 0, "sub": "核心"}, {"ch": "s01", "n": "單位權（觀測）中誤差", "f": "m = ±√( [Pvv] / (n−1) )", "d": "式1.21。每次觀測的精度（標準差）。", "v": [["m", "單位權中誤差（=標準差 σ）", "與觀測量同"], ["[Pvv]", "加權改正數平方和", "—"], ["n", "觀測次數", "—"]], "tip": "書：σ＝標準差＝中誤差。等權時 m=±√([vv]/(n−1))；有真值時分母改 n（式1.24）。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "最或是值中誤差", "f": "M = ±m/√[P] ；等權 M = ±m/√n", "d": "式1.25。重複觀測「總成果」的精度。", "v": [["M", "最或是值中誤差", "與觀測量同"], ["m", "單位權中誤差", "—"], ["[P]", "權總和", "—"], ["n", "觀測次數", "—"]], "tip": "觀測次數越多，M 越小（總成果精度越高）。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "平均誤差與或然誤差", "f": "t = [|v|]/n ； r = |v|之中位數 ≈ 0.6745 m", "d": "式1.22、1.23。", "v": [["t", "平均誤差", "與觀測量同"], ["r", "或然（機率）誤差", "與觀測量同"], ["|v|", "改正數絕對值", "—"]], "tip": "或然誤差理論上 ≈ 0.6745σ；書定義 r 取 |v| 的中位數。", "s": 0, "sub": "核心"}, {"ch": "s01", "n": "容許誤差", "f": "容許誤差 = 2m（95% 信賴）", "d": "以兩倍單位權中誤差為界線。", "v": [["2m", "兩倍單位權中誤差", "與觀測量同"]], "tip": "改正數 |v| ≥ 2m 的數據判為錯誤應剔除、重算。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "相對精度", "f": "相對精度 = M / 觀測量 → 化為 1/x", "d": "以分數表示量測的相對品質。", "v": [["M", "成果中誤差", "與觀測量同"], ["觀測量", "距離 D 等", "—"]], "tip": "化成 1/x 形式（如 1/10000）。距離與導線測量常用。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "弧度化秒常數", "f": "ρ″ = 206265″ （= 1 弧度）", "d": "1 rad =(180/π)×3600″≈206265″。", "v": [["ρ″", "弧度換算秒的常數", "秒/弧度"]], "tip": "角度↔長度互換的萬用常數，全書反覆出現（靈敏度、精度相當、歸心皆用）。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "坐標反算（方位角・距離）", "f": "φ_AB = tan⁻¹(ΔE/ΔN) ； D = √(ΔE² + ΔN²)", "d": "由兩點坐標反求方位角與邊長。", "v": [["φ", "方位角（自 N 順時針）", "°"], ["ΔE", "東距差 E_B−E_A", "m"], ["ΔN", "北距差 N_B−N_A", "m"], ["D", "平距", "m"]], "tip": "依 ΔE、ΔN 正負判象限（加 0/180/360°）。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "坐標正算", "f": "E_B = E_A + D·sinφ ； N_B = N_A + D·cosφ", "d": "由起點、方位角、邊長推算終點坐標。", "v": [["E", "東坐標", "m"], ["N", "北坐標", "m"], ["D", "平距", "m"], ["φ", "方位角", "°"]], "tip": "測量方位角自 N 起算順時針，故 E 用 sin、N 用 cos。", "s": 1, "sub": "核心"}, {"ch": "s01", "n": "TWD97（TM2）投影", "f": "中央子午線 121°E、尺度比 0.9999、橫坐標 +250000 m", "d": "台灣現行二度分帶橫麥卡托投影。", "v": [["中央經線", "121°E（澎金馬 119°E）", "—"], ["k₀", "尺度比 0.9999", "—"], ["假東", "橫坐標西移 250000 m", "m"]], "tip": "TWD97 大地基準＋TM2 投影；坐標不為負故加假東 250000。", "s": 0, "sub": "核心"}, {"ch": "s03", "n": "高程差", "f": "Δh = B.S.（後視） − F.S.（前視）", "d": "後視讀數減前視讀數。", "v": [["Δh", "高程差", "m"], ["B.S.", "後視（已知點）讀數", "m"], ["F.S.", "前視（待測點）讀數", "m"]], "tip": "後視－前視，正為升高。", "s": 1, "sub": "核心"}, {"ch": "s03", "n": "視線高程法", "f": "H.I. = H_A + B.S. ； H_B = H.I. − F.S.", "d": "以儀器視準軸高程轉算各點。", "v": [["H.I.", "視線（儀器）高程", "m"], ["H_A", "已知點高程", "m"], ["B.S./F.S.", "後視／前視讀數", "m"]], "tip": "一站觀測多個前視點（中間點）時方便。", "s": 0, "sub": "核心"}, {"ch": "s03", "n": "水準器靈敏度", "f": "a″/206265″ = (2 mm)/R", "d": "式3.9。一格(2mm)弧長所對的圓心角。", "v": [["a″", "每格靈敏度", "秒"], ["R", "弧狀玻璃曲率半徑", "mm"], ["2mm", "一格弧長", "mm"]], "tip": "a″ 越小、R 越大 → 靈敏度越高。", "s": 1, "sub": "核心"}, {"ch": "s03", "n": "對向（互向）水準測量", "f": "Δh = [ (a₁−b₁) + (a₂−b₂) ] / 2", "d": "兩端互相觀測取平均。", "v": [["a", "後視讀數", "m"], ["b", "前視讀數", "m"], ["下標 1,2", "兩測站", "—"]], "tip": "可同時消除地球曲率、大氣折光、視準軸誤差。", "s": 1, "sub": "核心"}, {"ch": "s03", "n": "球氣兩差改正", "f": "兩差 ≈ (1−K)·D²/(2R)", "d": "球差使讀數偏高、氣差偏低，合稱兩差。", "v": [["D", "視距", "m"], ["R", "地球半徑 ≈6371 km", "m"], ["K", "折光係數 ≈0.13", "—"]], "tip": "球差 +D²/2R、氣差 −K·D²/2R；對向觀測可消去。", "s": 1, "sub": "核心"}, {"ch": "s03", "n": "水準閉合差與分配", "f": "W = Σ觀測高差（應為 0 或已知）；改正 ∝ 邊長", "d": "閉合差按距離比例反號分配。", "v": [["W", "高程閉合差", "m"], ["改正量", "∝ Lᵢ/ΣL", "—"]], "tip": "改正數與閉合差反號，依各段距離（或測站數）比例分配。", "s": 1, "sub": "核心"}, {"ch": "s03", "n": "水準路線中誤差", "f": "M = ±m₀·√K", "d": "誤差隨路線長平方根累積。", "v": [["M", "路線中誤差", "mm"], ["m₀", "每公里中誤差", "mm/√km"], ["K", "路線長", "km"]], "tip": "亦可用測站數 N 取代 K：M=±m₀√N。", "s": 0, "sub": "核心"}, {"ch": "s03", "n": "容許閉合差", "f": "容許閉合差 ≈ ±c·√K mm", "d": "依測量等級係數 c 不同。", "v": [["c", "等級係數", "—"], ["K", "路線長", "km"]], "tip": "三等、四等水準係數不同，以現行規範為準。", "s": 0, "sub": "核心"}, {"ch": "s05", "n": "前方交會", "f": "由兩已知點 A、B 及觀測角解未知點 P", "d": "已知 A、B，觀測 ∠A、∠B 交會求 P。", "v": [["A,B", "已知點", "—"], ["∠A,∠B", "兩觀測內角", "°"], ["P", "待測點", "—"]], "tip": "適用未知點處無法架儀但可通視。", "s": 1, "sub": "核心"}, {"ch": "s05", "n": "後方交會（三點問題）", "f": "由三已知點及測站觀測兩夾角 α、β 解測站坐標", "d": "測站觀測 A、B、C 三點間兩夾角。", "v": [["A,B,C", "三已知點", "—"], ["α,β", "兩水平夾角", "°"], ["測站", "待定坐標", "—"]], "tip": "三已知點與測站不可共圓（危險圓 Danger Circle）。", "s": 1, "sub": "核心"}, {"ch": "s05", "n": "測角測距精度相當", "f": "ω_θ/206265″ = ω_d/d", "d": "測角造成的橫向偏移＝測距誤差時。", "v": [["ω_θ", "測角誤差", "秒"], ["ω_d", "測距誤差", "m"], ["d", "邊長", "m"]], "tip": "此時未知點誤差範圍趨近正方形、精度均勻最佳。例：d=50m、ω_d=5mm→ω_θ≈20.6″。", "s": 1, "sub": "核心"}, {"ch": "s05", "n": "圖形強度（交會角）", "f": "交會角宜近 90°（約 90°~120°）", "d": "交會角太小或太大誤差放大。", "v": [["γ", "交會角", "°"]], "tip": "交會角趨近 0° 或 180° 時，誤差橢圓拉長、精度差。", "s": 1, "sub": "核心"}, {"ch": "s05", "n": "歸心（偏心）改正", "f": "歸心改正 ≈ (e/D)·ρ″·sinθ", "d": "測站或測點偏心時化算至真正點位。", "v": [["e", "偏心距", "m"], ["D", "邊長", "m"], ["ρ″", "206265″", "秒/弧度"], ["θ", "偏心方向夾角", "°"]], "tip": "測站偏心→歸心元素；測點偏心→歸心元素，方向相反。", "s": 1, "sub": "核心"}, {"ch": "s05", "n": "平面三角形閉合", "f": "平面內角和 = 180°；閉合差平均分配", "d": "平面三角形角度條件。", "v": [["Σ角", "三內角和", "°"]], "tip": "球面三角另有球面角超 ε（Spherical Excess）。", "s": 0, "sub": "核心"}, {"ch": "s10", "n": "常態分布信賴區間", "f": "±1σ→68.3% ， ±2σ→95.4% ， ±3σ→99.7%", "d": "圖10.1。偶然誤差為常態分布。", "v": [["σ", "標準差（中誤差）", "與觀測量同"]], "tip": "2σ 常作 95% 容許界線。小誤差發生頻率高於大誤差。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "誤差傳播（通式）", "f": "σ_f = ±√[ (∂f/∂x₁·σ_x₁)² + (∂f/∂x₂·σ_x₂)² + … ]", "d": "式10.36。對各有中誤差的數據偏微分。", "v": [["σ_f", "函數成果中誤差", "—"], ["∂f/∂xᵢ", "f 對 xᵢ 偏微分", "—"], ["σ_xᵢ", "各數據中誤差", "—"]], "tip": "招牌口訣「對誰偏微乘上他的中誤差，平方和開根號」。有幾個數據有中誤差，就有幾個括號平方。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "加減法傳播", "f": "f = x ± y → σ_f = √(σ_x² + σ_y²)", "d": "偏微分皆為 ±1 之特例。", "v": [["σ_x,σ_y", "各量中誤差", "—"]], "tip": "和差的中誤差＝各中誤差平方和開根號。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "倍數與平均傳播", "f": "f = k·x → σ_f = |k|·σ_x", "d": "常數倍率的傳播。", "v": [["k", "常數", "—"], ["σ_x", "x 之中誤差", "—"]], "tip": "n 個等精度量之和 σ=√n·σ；其平均 σ_平均=σ/√n。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "乘除（相對）傳播", "f": "f = x·y → (σ_f/f)² = (σ_x/x)² + (σ_y/y)²", "d": "乘除以相對中誤差傳播。", "v": [["σ_f/f", "相對中誤差", "—"]], "tip": "乘除運算用相對中誤差平方相加。", "s": 0, "sub": "核心"}, {"ch": "s10", "n": "協變方誤差傳播（矩陣）", "f": "Σ_ff = G · Σ_xx · Gᵀ", "d": "式10.21。G 為方程式對數據的偏微分矩陣。", "v": [["Σ_ff", "函數協變方矩陣", "—"], ["G", "偏微分矩陣 ∂f/∂x（Jacobian）", "—"], ["Σ_xx", "數據協變方矩陣", "—"]], "tip": "數據相關時協變方 ≠0（書：兄弟身上有共同祖先的血液）；基本傳播時 Σ_xx 為對角矩陣。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "最小二乘觀測方程式", "f": "V = A·X − L", "d": "殘差＝係數矩陣×未知數 − 觀測值。", "v": [["V", "改正數向量", "—"], ["A", "係數矩陣", "—"], ["X", "未知數向量", "—"], ["L", "觀測值向量", "—"]], "tip": "目的 VᵀPV = min（加權殘差平方和最小）。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "法方程式", "f": "N·X = U → X = N⁻¹·U", "d": "式10.65。對 X 一次微分為零求極值。", "v": [["N", "法方程係數 = AᵀPA", "—"], ["U", "= AᵀPL", "—"], ["X", "未知數解", "—"], ["P", "權矩陣", "—"]], "tip": "N=AᵀPA、U=AᵀPL；解 X=(AᵀPA)⁻¹AᵀPL。", "s": 1, "sub": "核心"}, {"ch": "s10", "n": "平差後單位權中誤差", "f": "σ₀ = ±√( VᵀPV / r )", "d": "以多餘觀測數為自由度。", "v": [["σ₀", "單位權中誤差", "—"], ["VᵀPV", "加權殘差平方和", "—"], ["r", "多餘觀測數 = n − u", "—"]], "tip": "r＝觀測數 n − 必要未知數 u（自由度）。", "s": 1, "sub": "核心"}, {"ch": "s12", "n": "四大 GNSS 系統", "f": "GPS(美) ・ GLONASS(俄) ・ Galileo(歐) ・ BeiDou 北斗(中)", "d": "全球導航衛星系統概述。", "v": [["GPS", "約 24 顆、6 軌道面", "—"], ["軌道高度", "約 20200 km", "—"]], "tip": "GNSS 為各系統總稱。GPS 至少需 4 顆衛星定位。", "s": 0, "sub": "核心"}, {"ch": "s12", "n": "虛擬距離觀測方程式", "f": "ρ = √[(X−Xˢ)²+(Y−Yˢ)²+(Z−Zˢ)²] + c·δt", "d": "幾何距離加接收儀時錶差。", "v": [["ρ", "虛擬距離（pseudorange）", "m"], ["(X,Y,Z)", "接收儀坐標", "m"], ["(Xˢ,Yˢ,Zˢ)", "衛星坐標", "m"], ["c", "光速", "m/s"], ["δt", "時錶差", "s"]], "tip": "4 個未知數(X,Y,Z,δt)→至少 4 顆衛星。", "s": 1, "sub": "核心"}, {"ch": "s12", "n": "差分定位", "f": "一次差（單差）→二次差（雙差）→三次差（三差）", "d": "逐次相減消去各類誤差。", "v": [["單差", "站間或星間相減", "—"], ["雙差", "消接收儀＋衛星時錶誤差", "—"], ["三差", "消整數週波未定值", "—"]], "tip": "書：空中差消接收儀時錶、地面差消衛星時錶。相對(差分)定位達公分級。", "s": 1, "sub": "核心"}, {"ch": "s12", "n": "精度因子 DOP", "f": "GDOP = √(PDOP² + TDOP²) ； PDOP = √(HDOP² + VDOP²)", "d": "衛星幾何分布對定位精度的稀釋。", "v": [["GDOP", "幾何精度因子", "—"], ["PDOP", "位置", "—"], ["HDOP", "水平", "—"], ["VDOP", "垂直", "—"], ["TDOP", "時間", "—"]], "tip": "DOP 越小精度越好；GDOP > PDOP（含時間項）。衛星分布越分散 DOP 越小。", "s": 1, "sub": "核心"}, {"ch": "s12", "n": "GPS 主要誤差與對策", "f": "電離層・對流層・多路徑・星曆・時錶・週波脫落", "d": "各誤差來源之改善方法。", "v": [["電離層", "差分／晚上觀測", "—"], ["對流層", "不採仰角 <15° 衛星", "—"], ["多路徑", "避開反射地物", "—"], ["星曆", "精密星曆校正", "—"]], "tip": "週波脫落(cycle slip)需偵測補正；廣播星曆(低精度) vs 精密星曆(高精度)。", "s": 1, "sub": "核心"}, {"ch": "s12", "n": "定位方式", "f": "單點定位 vs 相對(差分)定位；靜態 vs 動態(RTK)", "d": "依需求選擇精度與作業模式。", "v": [["單點", "公尺級", "—"], ["相對/差分", "公分級", "—"], ["RTK", "即時動態", "—"]], "tip": "測量控制用相對定位（公分級）；導航用單點定位。", "s": 0, "sub": "核心"}, {"ch": "s04", "n": "角度單位換算", "f": "360° = 400ᵍ = 2π rad ； 1° = 60′ = 3600″", "d": "度、新度、弧度三制互換。", "v": [["°", "度（60 進位）", "—"], ["ᵍ", "新度 grad/gon", "—"], ["rad", "弧度", "—"]], "tip": "全圓 360° 或 400 新度（grad）。", "s": 0, "sub": "次要"}, {"ch": "s04", "n": "水平角（方向觀測法）", "f": "水平角 = 右方向讀數 − 左方向讀數", "d": "以兩方向度盤讀數差求夾角。", "v": [["水平角", "兩方向夾角", "°"]], "tip": "正倒鏡(盤左盤右)取平均消視準軸／水平軸誤差。", "s": 0, "sub": "次要"}, {"ch": "s04", "n": "正倒鏡消除誤差", "f": "正倒鏡讀數取平均", "d": "盤左盤右平均消去系統誤差。", "v": [["視準軸誤差", "可消", "—"], ["水平軸誤差", "可消", "—"], ["豎軸誤差", "不可消", "—"]], "tip": "正倒鏡平均可消視準軸、水平軸、度盤偏心；豎軸傾斜誤差無法消除。", "s": 1, "sub": "次要"}, {"ch": "s04", "n": "天頂距與高度角", "f": "天頂距 Z + 高度角 α = 90°", "d": "垂直角的兩種表示。", "v": [["Z", "天頂距（自鉛垂向下起算）", "°"], ["α", "高度角（仰角）", "°"]], "tip": "天頂距自天頂(鉛垂)起算。", "s": 0, "sub": "次要"}, {"ch": "s04", "n": "角度閉合差", "f": "多邊形內角和 = (n−2)×180°", "d": "平面多邊形角度條件。", "v": [["n", "邊（角）數", "—"]], "tip": "閉合差 = 觀測內角和 − (n−2)180°，平均分配至各角。", "s": 1, "sub": "次要"}, {"ch": "s07", "n": "方位角推算", "f": "前方位角 = 後方位角 ± 180° + 轉折角", "d": "沿導線逐邊推算方位角。", "v": [["φ", "方位角", "°"], ["轉折角", "左偏／右偏夾角", "°"]], "tip": "結果 >360° 減 360°、<0° 加 360°。左偏取＋、右偏取－（依定義）。", "s": 1, "sub": "次要"}, {"ch": "s07", "n": "角度閉合差", "f": "W_角 = Σ觀測內角 − (n−2)·180°", "d": "導線角度條件檢核。", "v": [["W_角", "角度閉合差", "°/′/″"], ["n", "邊數", "—"]], "tip": "改正平均分配；容許值依等級 ∝√n。", "s": 1, "sub": "次要"}, {"ch": "s07", "n": "緯距與經距", "f": "ΔN = D·cosφ ； ΔE = D·sinφ", "d": "由邊長與方位角分解坐標增量。", "v": [["ΔN", "緯距（北向增量）", "m"], ["ΔE", "經距（東向增量）", "m"], ["D", "邊長", "m"], ["φ", "方位角", "°"]], "tip": "閉合導線 ΣΔN=0、ΣΔE=0。", "s": 1, "sub": "次要"}, {"ch": "s07", "n": "坐標閉合差與精度", "f": "f = √(f_N² + f_E²) ； 相對精度 = f / ΣD", "d": "導線整體精度評估。", "v": [["f", "坐標閉合差", "m"], ["f_N", "緯距閉合差", "m"], ["f_E", "經距閉合差", "m"], ["ΣD", "導線總長", "m"]], "tip": "化為 1/x（如 1/5000）。", "s": 1, "sub": "次要"}, {"ch": "s07", "n": "羅盤儀法則改正", "f": "緯距／經距改正 ∝ 邊長 (Dᵢ/ΣD)", "d": "Compass(Bowditch) 法則。", "v": [["改正", "∝ 各邊長比例", "—"]], "tip": "最常用；經緯儀(Transit)法則則 ∝ 緯距(經距)絕對值。", "s": 0, "sub": "次要"}, {"ch": "s11", "n": "等高線性質", "f": "同線等高・不相交・密陡疏緩・自行閉合", "d": "等高線判讀基本性質。", "v": [["等高距", "相鄰等高線高程差 CI", "m"]], "tip": "山脊線(分水線)凸向低處；山谷線(集水線)凸向高處。", "s": 1, "sub": "次要"}, {"ch": "s11", "n": "內插求高程", "f": "H_P = H_低 + (d₁/d)·CI", "d": "兩等高線間線性內插。", "v": [["d₁", "至低側等高線水平距", "m"], ["d", "兩等高線間水平距", "m"], ["CI", "等高距", "m"]], "tip": "假設坡面均勻（線性）。", "s": 0, "sub": "次要"}, {"ch": "s11", "n": "數值地形模型", "f": "DEM／DTM（地表）・DSM（含地物）・TIN（不規則三角網）", "d": "空間資訊的高程表達。", "v": [["DEM/DTM", "數值高程／地形模型", "—"], ["DSM", "數值表面模型(含建物樹木)", "—"], ["TIN", "不規則三角網", "—"]], "tip": "DSM 含地物高度；DTM/DEM 為裸地表。", "s": 0, "sub": "次要"}, {"ch": "s11", "n": "像片比例尺", "f": "像片比例尺 = f / H", "d": "航測像片的比例關係。", "v": [["f", "攝影機焦距", "mm"], ["H", "航高（相對地面）", "m"]], "tip": "比例尺 = f/(航高−地面高)；地形起伏使比例尺變動。", "s": 1, "sub": "次要"}, {"ch": "s02", "n": "捲尺系統改正", "f": "總改正 = 尺長＋溫度＋拉力＋垂曲＋傾斜＋歸化", "d": "量距各項系統誤差改正。", "v": [["溫度改正", "α(T−T₀)L", "m"], ["垂曲改正", "負值", "m"]], "tip": "溫度改正 = α·(T−T₀)·L；垂曲、傾斜改正使距離變短。", "s": 1, "sub": "概覽"}, {"ch": "s02", "n": "傾斜化平距", "f": "水平距 = √(L² − h²) ；改正 ≈ −h²/2L", "d": "斜距化為平距。", "v": [["L", "斜距", "m"], ["h", "兩端高差", "m"]], "tip": "近似改正 −h²/2L。", "s": 0, "sub": "概覽"}, {"ch": "s02", "n": "電子測距 EDM 精度", "f": "誤差 = ±(a + b·D ppm)", "d": "固定誤差 + 比例誤差。", "v": [["a", "固定誤差", "mm"], ["b", "比例誤差", "ppm"], ["D", "距離", "km"]], "tip": "短距離固定誤差主導、長距離比例誤差主導。", "s": 1, "sub": "概覽"}, {"ch": "s02", "n": "歸化平均海平面", "f": "改正 = −D·H/R", "d": "高程面量距化算至海平面。", "v": [["H", "測線平均高程", "m"], ["R", "地球半徑", "m"], ["D", "距離", "m"]], "tip": "高山量距須化算至海平面（改正為負）。", "s": 0, "sub": "概覽"}, {"ch": "s06", "n": "視距測量", "f": "平距 D = K·s·cos²α + C ； 高差 h = ½K·s·sin2α", "d": "由視距絲讀數間隔求距離與高差。", "v": [["K", "視距乘常數 ≈100", "—"], ["s", "上下絲讀數差", "m"], ["α", "視線傾角", "°"], ["C", "加常數 ≈0", "m"]], "tip": "水平視線(α=0)時 D = Ks + C。", "s": 1, "sub": "概覽"}, {"ch": "s06", "n": "三角高程", "f": "Δh = D·tanα + i − t (＋兩差)", "d": "由水平距與垂直角求高差。", "v": [["D", "平距", "m"], ["α", "垂直角", "°"], ["i", "儀器高", "m"], ["t", "覘標高", "m"]], "tip": "長距離加球氣兩差改正 (1−K)D²/2R；對向觀測可消。", "s": 1, "sub": "概覽"}, {"ch": "s06", "n": "間接距離", "f": "D = (b/2)·cot(α/2)（橫距桿尺法）", "d": "以已知基線與夾角求距離。", "v": [["b", "橫距桿長（基線）", "m"], ["α", "桿尺兩端夾角", "°"]], "tip": "適用無法直接量距之地形。", "s": 0, "sub": "概覽"}, {"ch": "s08", "n": "單曲線元素", "f": "T = R·tan(I/2) ； L = R·I(rad) ； E = R(sec(I/2)−1)", "d": "圓曲線的切線長、弧長、外距。", "v": [["R", "曲線半徑", "m"], ["I", "偏角（交角）", "°"], ["T", "切線長", "m"], ["L", "弧長", "m"], ["E", "外距", "m"]], "tip": "中央縱距 M = R(1−cos(I/2))。弧長 L=πRI/180。", "s": 1, "sub": "概覽"}, {"ch": "s08", "n": "偏角測設", "f": "偏角 δ = (弧長 ℓ)/(2R) ·(180/π)", "d": "弦線偏角法測設曲線。", "v": [["δ", "偏角", "°"], ["ℓ", "弧長", "m"], ["R", "半徑", "m"]], "tip": "每段弧對應偏角為其圓心角的一半。", "s": 0, "sub": "概覽"}, {"ch": "s08", "n": "豎曲線（二次拋物線）", "f": "y = (g₂−g₁)/(2L)·x²", "d": "縱坡轉折以拋物線銜接。", "v": [["g₁,g₂", "進、出坡度", "—"], ["L", "豎曲線長", "m"], ["x", "自起點水平距", "m"]], "tip": "豎曲線用拋物線，坡度均勻變化。", "s": 1, "sub": "概覽"}, {"ch": "s09", "n": "坐標面積法", "f": "A = ½ |Σ xᵢ(yᵢ₊₁ − yᵢ₋₁)|", "d": "由界址點坐標計算多邊形面積。", "v": [["A", "面積", "m²"], ["(xᵢ,yᵢ)", "各界址點坐標", "m"]], "tip": "又稱座標法／鞋帶公式；地籍面積計算標準法。", "s": 1, "sub": "概覽"}, {"ch": "s09", "n": "三邊（海龍）面積", "f": "A = √( s(s−a)(s−b)(s−c) ) ， s=(a+b+c)/2", "d": "已知三邊求三角形面積。", "v": [["a,b,c", "三邊長", "m"], ["s", "半周長", "m"]], "tip": "三斜求積。", "s": 0, "sub": "概覽"}, {"ch": "s09", "n": "土方—端面平均法", "f": "V = ½(A₁ + A₂)·L", "d": "相鄰兩斷面平均乘間距。", "v": [["A₁,A₂", "兩端斷面積", "m²"], ["L", "兩斷面間距", "m"]], "tip": "簡便，結果常略偏大。", "s": 1, "sub": "概覽"}, {"ch": "s09", "n": "土方—稜柱法", "f": "V = (L/6)(A₁ + 4·Am + A₂)", "d": "辛普森（Prismoidal）法。", "v": [["Am", "中間斷面積", "m²"], ["L", "區段長度", "m"]], "tip": "較端面平均法精確。", "s": 0, "sub": "概覽"}], "Q": [{"ch": "s01", "q": "本書中「中誤差」等同於下列何者？", "o": ["標準差 σ", "平均誤差", "或然誤差", "容許誤差"], "a": 0, "e": "書統一：中誤差＝標準差 σ。"}, {"ch": "s01", "q": "等權觀測之單位權中誤差 m 為？", "o": ["±√([vv]/(n−1))", "±√([vv]/n)", "±[v]/n", "±√([vv]/(n+1))"], "a": 0, "e": "式1.21，分母 n−1。"}, {"ch": "s01", "q": "算術平均（最或是值）中誤差 M 與 m 的關係（等權）？", "o": ["M=m/√n", "M=m·√n", "M=m/n", "M=m"], "a": 0, "e": "M=±m/√n，次數越多越小。"}, {"ch": "s01", "q": "測量常用容許誤差約為單位權中誤差的幾倍？", "o": ["2 倍", "1 倍", "3 倍", "0.5 倍"], "a": 0, "e": "2m 對應約 95% 信賴。"}, {"ch": "s01", "q": "ρ″（1 弧度的秒值）約為？", "o": ["206265″", "57.3″", "3600″", "180″"], "a": 0, "e": "1 rad≈206265″。"}, {"ch": "s01", "q": "已知 ΔE、ΔN，方位角 φ_AB 為？", "o": ["tan⁻¹(ΔE/ΔN)", "tan⁻¹(ΔN/ΔE)", "sin⁻¹(ΔE/D)", "ΔE/ΔN"], "a": 0, "e": "方位角自 N 起算，tanφ=ΔE/ΔN。"}, {"ch": "s03", "q": "水準測量高程差 = ？", "o": ["後視 − 前視", "前視 − 後視", "後視 + 前視", "視線高 − 後視"], "a": 0, "e": "Δh=B.S.−F.S.。"}, {"ch": "s03", "q": "水準器靈敏度 a″ 與曲率半徑 R 的關係（每格2mm）？", "o": ["a″/206265″=2mm/R", "a″=2mm·R", "a″=R/2mm", "a″/206265″=R/2mm"], "a": 0, "e": "式3.9。"}, {"ch": "s03", "q": "水準器靈敏度越高，代表？", "o": ["a″ 越小、R 越大", "a″ 越大", "R 越小", "氣泡越短"], "a": 0, "e": "a″ 小、R 大 → 靈敏。"}, {"ch": "s03", "q": "對向（互向）水準測量主要可消除？", "o": ["地球曲率、折光、視準軸誤差", "觀測者讀數錯誤", "標尺刻劃誤差", "溫度誤差"], "a": 0, "e": "兩端互測取平均消系統誤差。"}, {"ch": "s03", "q": "水準閉合差的改正量如何分配？", "o": ["與各段距離成正比", "與距離成反比", "平均分配", "只改最後一段"], "a": 0, "e": "∝ 邊長，反號分配。"}, {"ch": "s05", "q": "後方交會（三點問題）須避免三已知點與測站？", "o": ["共圓（危險圓）", "共線", "等距", "等高"], "a": 0, "e": "危險圓 Danger Circle。"}, {"ch": "s05", "q": "測角與測距精度相當的條件為？", "o": ["ω_θ/206265″=ω_d/d", "ω_θ=ω_d", "ω_θ·d=ω_d", "ω_θ/d=ω_d/206265″"], "a": 0, "e": "測角橫向偏移=測距誤差。"}, {"ch": "s05", "q": "交會定位時，交會角宜接近？", "o": ["90°", "0°", "180°", "45°"], "a": 0, "e": "近90°誤差橢圓最接近圓、精度均勻。"}, {"ch": "s05", "q": "前方交會適用於未知點？", "o": ["無法架儀但可通視", "可架儀", "完全不可見", "已知坐標"], "a": 0, "e": "於兩已知點觀測角度交會。"}, {"ch": "s10", "q": "常態分布中，±2σ 範圍內的發生機率約為？", "o": ["95.4%", "68.3%", "99.7%", "50%"], "a": 0, "e": "±1σ=68.3、±2σ=95.4、±3σ=99.7。"}, {"ch": "s10", "q": "誤差傳播通式的口訣為？", "o": ["對誰偏微乘上他的中誤差，平方和開根號", "加總後平均", "乘上權重相加", "取最大值"], "a": 0, "e": "式10.36。"}, {"ch": "s10", "q": "f=x+y，若 σ_x=σ_y=σ，則 σ_f=？", "o": ["√2·σ", "2σ", "σ", "σ/√2"], "a": 0, "e": "√(σ²+σ²)=√2σ。"}, {"ch": "s10", "q": "n 個等精度觀測平均值的中誤差為單一觀測的？", "o": ["1/√n", "√n 倍", "1/n", "不變"], "a": 0, "e": "σ_平均=σ/√n。"}, {"ch": "s10", "q": "最小二乘法方程式中 N = ？", "o": ["AᵀPA", "APA", "AᵀA", "AᵀP"], "a": 0, "e": "N=AᵀPA、U=AᵀPL。"}, {"ch": "s10", "q": "最小二乘的目的為？", "o": ["VᵀPV 最小", "V 最大", "X 最小", "L 最小"], "a": 0, "e": "加權殘差平方和最小。"}, {"ch": "s10", "q": "平差自由度（多餘觀測數）r = ？", "o": ["觀測數 − 必要未知數", "觀測數 + 未知數", "未知數", "觀測數"], "a": 0, "e": "r=n−u。"}, {"ch": "s12", "q": "GPS 單點定位至少需幾顆衛星？", "o": ["4", "3", "2", "5"], "a": 0, "e": "未知 X,Y,Z,δt 共 4 個。"}, {"ch": "s12", "q": "下列何者通常較大？", "o": ["GDOP", "PDOP", "HDOP", "VDOP"], "a": 0, "e": "GDOP=√(PDOP²+TDOP²)，含時間項最大。"}, {"ch": "s12", "q": "為避免對流層誤差，一般不採用仰角低於幾度的衛星？", "o": ["15°", "5°", "30°", "45°"], "a": 0, "e": "對流層誤差於低仰角顯著。"}, {"ch": "s12", "q": "雙差（二次差）主要可消除？", "o": ["接收儀與衛星時錶誤差", "多路徑", "天線高", "週波脫落"], "a": 0, "e": "差分消時錶誤差。"}, {"ch": "s12", "q": "DOP 值越小代表？", "o": ["定位精度越好", "衛星越少", "誤差越大", "距離越遠"], "a": 0, "e": "幾何分布越好、DOP 越小。"}, {"ch": "s04", "q": "正倒鏡觀測取平均無法消除下列哪種誤差？", "o": ["豎軸傾斜誤差", "視準軸誤差", "水平軸誤差", "度盤偏心"], "a": 0, "e": "豎軸誤差不能以正倒鏡消除。"}, {"ch": "s04", "q": "平面 n 邊形內角和為？", "o": ["(n−2)×180°", "n×180°", "(n−1)×180°", "360°"], "a": 0, "e": "多邊形內角和。"}, {"ch": "s04", "q": "全圓等於多少新度（grad）？", "o": ["400ᵍ", "360ᵍ", "100ᵍ", "200ᵍ"], "a": 0, "e": "360°=400 grad。"}, {"ch": "s07", "q": "閉合導線的緯距總和 ΣΔN 理論上應為？", "o": ["0", "總長", "180", "隨機"], "a": 0, "e": "閉合條件 ΣΔN=ΣΔE=0。"}, {"ch": "s07", "q": "羅盤儀（Compass）法則改正量與何者成正比？", "o": ["邊長", "緯距絕對值", "角度", "高程"], "a": 0, "e": "∝ 邊長 Dᵢ/ΣD。"}, {"ch": "s07", "q": "導線坐標閉合差 f = ？", "o": ["√(f_N²+f_E²)", "f_N+f_E", "f_N−f_E", "f_N·f_E"], "a": 0, "e": "向量合成。"}, {"ch": "s07", "q": "導線相對精度通常如何表示？", "o": ["1/x 分數", "百分比", "小數", "角秒"], "a": 0, "e": "如 1/5000。"}, {"ch": "s11", "q": "等高線「密集」代表地形？", "o": ["陡峭", "平緩", "凹陷", "隆起"], "a": 0, "e": "密陡疏緩。"}, {"ch": "s11", "q": "DSM 與 DTM 的差異在於 DSM？", "o": ["包含地物（建物樹木）", "僅裸地表", "只有等高線", "為向量"], "a": 0, "e": "DSM 含地物表面。"}, {"ch": "s11", "q": "像片比例尺等於？", "o": ["f/H", "H/f", "f·H", "f+H"], "a": 0, "e": "焦距除以航高。"}, {"ch": "s02", "q": "捲尺量距的溫度改正為？", "o": ["α(T−T₀)L", "(T−T₀)/L", "αL/T", "α(T−T₀)/L"], "a": 0, "e": "線膨脹改正。"}, {"ch": "s02", "q": "電子測距 EDM 的誤差通常表示為？", "o": ["±(a+b·D ppm)", "±a", "±b·D", "±a·D"], "a": 0, "e": "固定+比例誤差。"}, {"ch": "s02", "q": "高山量距歸化至平均海平面，改正符號為？", "o": ["負", "正", "零", "視情況"], "a": 0, "e": "−D·H/R。"}, {"ch": "s06", "q": "水平視線視距測量平距 D = ？", "o": ["Ks+C", "Ks·sin α", "½Ks", "K/s"], "a": 0, "e": "α=0 時 D=Ks+C。"}, {"ch": "s06", "q": "三角高程須加哪項改正（長距離）？", "o": ["球氣兩差", "溫度", "拉力", "垂曲"], "a": 0, "e": "(1−K)D²/2R。"}, {"ch": "s08", "q": "單曲線切線長 T = ？", "o": ["R·tan(I/2)", "R·I", "R·sin I", "R/tan(I/2)"], "a": 0, "e": "T=R tan(I/2)。"}, {"ch": "s08", "q": "單曲線弧長 L = ？", "o": ["R·I(弧度)", "R·tan I", "R·sec I", "2R·I"], "a": 0, "e": "L=R·I=πRI/180。"}, {"ch": "s08", "q": "道路豎曲線一般採用？", "o": ["二次拋物線", "圓曲線", "螺旋線", "直線"], "a": 0, "e": "坡度均勻變化用拋物線。"}, {"ch": "s09", "q": "由界址點坐標計算面積的方法稱為？", "o": ["坐標面積法（鞋帶公式）", "海龍公式", "端面平均法", "稜柱法"], "a": 0, "e": "座標法。"}, {"ch": "s09", "q": "土方端面平均法 V = ？", "o": ["½(A₁+A₂)L", "(A₁+A₂)L", "⅓(A₁+A₂)L", "(L/6)(A₁+4Am+A₂)"], "a": 0, "e": "端面平均。"}, {"ch": "s09", "q": "土方稜柱（辛普森）法 V = ？", "o": ["(L/6)(A₁+4Am+A₂)", "½(A₁+A₂)L", "A·L", "√(A₁A₂)L"], "a": 0, "e": "Prismoidal 較精確。"}]};
+const CH = DATA.CH, F = DATA.F, Q = DATA.Q;
+const chName = c => { const x = CH.find(o=>o.ch===c); return x?x.name:c; };
+const chSub  = c => { const x = CH.find(o=>o.ch===c); return x?x.sub:""; };
+
+document.getElementById('sCh').textContent = CH.length;
+document.getElementById('sF').textContent = F.length;
+document.getElementById('sQ').textContent = Q.length;
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('v-'+t.dataset.m).classList.add('on');
+  });
+});
+
+function buildChips(container,state,onChange){
+  container.innerHTML='';
+  const all=mkChip('全部','__all',state.size===0,false);
+  all.addEventListener('click',()=>{state.clear();buildChips(container,state,onChange);onChange();});
+  container.appendChild(all);
+  const _subs=[...new Set(CH.map(c=>c.sub))];
+  const _multi=_subs.length>1;
+  const _hdr={'核心':'── ★ 核心章 ──','次要':'── 次要章 ──','概覽':'── 概覽章 ──'};
+  let lastSub='';
+  CH.forEach(c=>{
+    if(_multi&&c.sub!==lastSub){lastSub=c.sub;
+      const lab=document.createElement('span');
+      lab.className='flbl';lab.style.width='100%';lab.style.margin='8px 0 2px';
+      lab.textContent=_hdr[c.sub]||('── '+c.sub+' ──');
+      container.appendChild(lab);
+    }
+    const chip=mkChip(c.name,c.ch,state.has(c.ch),false);
+    chip.addEventListener('click',()=>{
+      if(state.has(c.ch))state.delete(c.ch);else state.add(c.ch);
+      buildChips(container,state,onChange);onChange();
+    });
+    container.appendChild(chip);
+  });
+}
+function mkChip(text,key,on,isMat){
+  const b=document.createElement('button');
+  b.className='chip'+(isMat?' s':'')+(on?' on':'');
+  b.textContent=text;b.dataset.k=key;return b;
+}
+
+/* READ */
+const readState=new Set();
+const readChips=document.getElementById('readChips');
+const readList=document.getElementById('readList');
+const searchEl=document.getElementById('search');
+buildChips(readChips,readState,renderRead);
+searchEl.addEventListener('input',renderRead);
+function renderRead(){
+  const kw=searchEl.value.trim().toLowerCase();
+  let list=F.filter(f=>readState.size===0||readState.has(f.ch));
+  if(kw)list=list.filter(f=>(f.n+f.f+f.d+f.tip+chName(f.ch)).toLowerCase().includes(kw));
+  document.getElementById('readCount').textContent='顯示 '+list.length+' / '+F.length+' 條公式';
+  readList.innerHTML='';
+  list.forEach((f,i)=>readList.appendChild(buildFCard(f,'r'+i)));
+}
+function buildFCard(f,id){
+  const card=document.createElement('div');card.className='fcard';
+  const top=document.createElement('div');top.className='ftop';
+  const pill=document.createElement('span');
+  pill.className='pill';
+  pill.textContent=chName(f.ch);
+  const nm=document.createElement('span');nm.className='fname';
+  if(f.s){const s=document.createElement('span');s.className='star';s.textContent='★';nm.appendChild(s);}
+  nm.appendChild(document.createTextNode(f.n));
+  top.appendChild(pill);top.appendChild(nm);
+  const fo=document.createElement('div');fo.className='formula';fo.textContent=f.f;
+  card.appendChild(top);card.appendChild(fo);
+  if(f.d){const dn=document.createElement('div');dn.className='dnote';dn.textContent=f.d;card.appendChild(dn);}
+  const exp=document.createElement('div');exp.className='expander';
+  const ic=document.createElement('span');ic.className='ic';ic.textContent='代';
+  exp.appendChild(ic);
+  const lab=document.createElement('span');lab.textContent='展開代數意義';exp.appendChild(lab);
+  const det=document.createElement('div');det.className='detail';
+  if(f.v&&f.v.length){
+    const tb=document.createElement('table');tb.className='vtab';
+    f.v.forEach(r=>{const tr=document.createElement('tr');
+      r.forEach(cell=>{const td=document.createElement('td');td.textContent=cell;tr.appendChild(td);});
+      tb.appendChild(tr);});
+    det.appendChild(tb);
+  }
+  if(f.tip){const tp=document.createElement('div');tp.className='tip';
+    const b=document.createElement('b');b.textContent='口訣／觀念：';tp.appendChild(b);
+    tp.appendChild(document.createTextNode(f.tip));det.appendChild(tp);}
+  exp.addEventListener('click',()=>{
+    det.classList.toggle('on');
+    lab.textContent=det.classList.contains('on')?'收合代數意義':'展開代數意義';
+  });
+  card.appendChild(exp);card.appendChild(det);
+  return card;
+}
+renderRead();
+
+/* QUIZ */
+const quizState=new Set();
+let qNum=10;
+buildChips(document.getElementById('quizChips'),quizState,()=>{});
+document.querySelectorAll('#numSel button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#numSel button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');qNum=parseInt(b.dataset.n);
+  });
+});
+document.getElementById('startQuiz').addEventListener('click',startQuiz);
+let curQuiz=[];
+function startQuiz(){
+  let pool=Q.filter(q=>quizState.size===0||quizState.has(q.ch));
+  pool=shuffle(pool.slice());
+  if(qNum>0)pool=pool.slice(0,qNum);
+  if(pool.length===0){alert('此章節暫無題目，請改選其他章節。');return;}
+  curQuiz=pool.map(q=>({...q,pick:null}));
+  document.getElementById('quizSetup').classList.add('hide');
+  const run=document.getElementById('quizRun');run.classList.remove('hide');run.innerHTML='';
+  curQuiz.forEach((q,i)=>{
+    const card=document.createElement('div');card.className='qcard';card.dataset.i=i;
+    const head=document.createElement('div');head.className='qhead';
+    const s1=document.createElement('span');s1.textContent='第 '+(i+1)+' / '+curQuiz.length+' 題';
+    const s2=document.createElement('span');s2.textContent=chSub(q.ch)+'｜'+chName(q.ch);
+    head.appendChild(s1);head.appendChild(s2);
+    const qt=document.createElement('div');qt.className='qtext';qt.textContent=q.q;
+    card.appendChild(head);card.appendChild(qt);
+    q.o.forEach((opt,oi)=>{
+      const el=document.createElement('div');el.className='opt';
+      const k=document.createElement('span');k.className='k';k.textContent='ABCD'[oi];
+      el.appendChild(k);el.appendChild(document.createTextNode(opt));
+      el.addEventListener('click',()=>{
+        if(card.dataset.done)return;
+        card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+        el.classList.add('sel');q.pick=oi;
+      });
+      card.appendChild(el);
+    });
+    const exp=document.createElement('div');exp.className='exp';card.appendChild(exp);
+    run.appendChild(card);
+  });
+  const sub=document.createElement('button');sub.className='btn';sub.textContent='交卷看分數';
+  sub.addEventListener('click',gradeQuiz);run.appendChild(sub);
+  const back=document.createElement('button');back.className='btn ghost';back.style.marginTop='8px';
+  back.textContent='重設章節 / 題數';back.addEventListener('click',resetQuiz);run.appendChild(back);
+  window.scrollTo(0,0);
+}
+function gradeQuiz(){
+  let correct=0;
+  curQuiz.forEach((q,i)=>{
+    const card=document.querySelector('.qcard[data-i="'+i+'"]');
+    card.dataset.done='1';
+    card.querySelectorAll('.opt').forEach((o,oi)=>{
+      o.style.cursor='default';
+      if(oi===q.a)o.classList.add('right');
+      if(q.pick===oi&&oi!==q.a)o.classList.add('wrong');
+    });
+    if(q.pick===q.a)correct++;
+    const exp=card.querySelector('.exp');exp.classList.add('on');
+    exp.innerHTML='<b>正解：'+'ABCD'[q.a]+'</b>　'+escapeHtml(q.e);
+  });
+  const run=document.getElementById('quizRun');
+  const bar=document.createElement('div');bar.className='scorebar';
+  const pct=Math.round(correct/curQuiz.length*100);
+  bar.innerHTML='<div class="big">'+correct+' / '+curQuiz.length+'</div>'+
+    '<div class="lbl">答對率 '+pct+'%　'+(pct>=80?'穩了 👍':pct>=60?'再衝一點':'錯題回頭看公式')+'</div>';
+  run.insertBefore(bar,run.firstChild);
+  document.querySelector('#quizRun .btn').classList.add('hide');
+  window.scrollTo(0,0);
+}
+function resetQuiz(){
+  document.getElementById('quizRun').classList.add('hide');
+  document.getElementById('quizSetup').classList.remove('hide');
+  window.scrollTo(0,0);
+}
+
+/* FLASH */
+const flashState=new Set();
+let cards=[],ci=0,flipped=false;
+buildChips(document.getElementById('flashChips'),flashState,rebuildCards);
+function rebuildCards(){
+  cards=F.filter(f=>flashState.size===0||flashState.has(f.ch));
+  cards=shuffle(cards.slice());ci=0;flipped=false;renderCard();
+}
+function renderCard(){
+  const c=cards[ci];const el=document.getElementById('fcCard');
+  document.getElementById('fcProg').textContent=cards.length?('第 '+(ci+1)+' / '+cards.length+' 張'):'';
+  el.innerHTML='';
+  if(!c){el.innerHTML='<div class="q">此範圍無公式</div>';return;}
+  const side=document.createElement('div');side.className='side';
+  side.textContent=flipped?'公式 ＋ 口訣':'默寫這條公式';el.appendChild(side);
+  if(!flipped){
+    const q=document.createElement('div');q.className='q';
+    q.textContent=(c.s?'★ ':'')+c.n;el.appendChild(q);
+    const sub=document.createElement('div');sub.className='hint';sub.style.marginTop='8px';
+    sub.textContent=chSub(c.ch)+'｜'+chName(c.ch);el.appendChild(sub);
+    const h=document.createElement('div');h.className='hint';h.style.marginTop='12px';h.style.color='var(--dim)';
+    h.textContent='點一下看答案';el.appendChild(h);
+  }else{
+    const a=document.createElement('div');a.className='a';a.textContent=c.f;el.appendChild(a);
+    if(c.tip){const t=document.createElement('div');t.className='hint';t.textContent=c.tip;el.appendChild(t);}
+  }
+}
+document.getElementById('fcCard').addEventListener('click',()=>{flipped=!flipped;renderCard();});
+document.getElementById('fcNext').addEventListener('click',()=>{if(!cards.length)return;ci=(ci+1)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcPrev').addEventListener('click',()=>{if(!cards.length)return;ci=(ci-1+cards.length)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcShuf').addEventListener('click',()=>{cards=shuffle(cards);ci=0;flipped=false;renderCard();});
+rebuildCards();
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script>
+</body>
+</html>

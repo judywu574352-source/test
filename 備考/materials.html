@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="材力">
+<meta name="theme-color" content="#efe9dc">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAZX0lEQVR4nO2deWAT1fbHz0y2tumWtpSutAUKtNBSWqAgisJD9gcoIqIIT0QQxeeCwENkEZVdQR8u8EAF/CGLgCKVRQQVpFC2LrRA6b6ne5uk2Wd+fwRjbHNnJsmkTeV+/koz595zk3x7525zDkHTNGAw1hACwI/j+nd0MzAux/gTGWRHtwHjumBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkGBxYJBgcWCQYHFgkAgdLD9ozTbPbj1QV8vPpeTu3uagC44QQmHS21sYDHSKxswPVrRPY1C4+Qf2fXkZg4Gmtjr703Xt1h5mHBWHxD/QvWsI6qrYy9fB+rlDEGRg8nAGA02tvN0ag0Lg7tF16EgGA2VpYbs1hhV8W8EgweLAIMHiwCDB4sAgweLAIMHiwCDB4sAgweLAIMHiwCDB4sAgweLAIMHiwCDB4sAgweLAIMHiwCDB4sAgsX7Yxy2ga9JKplNVZqRhkQxXgx4c5dMrlsGg9NR3JSkHhVLP5HU7uLhjgmARusTXf9jH+6xeuv7eInV1pdVLXYeO9ItPcrRtfyD28mE2kMj8Y+Yv5ssdA7qmhvz9O5ltrIuDFIl9ovs63gKxj0zsI2MwqLn6OwCQAiEv7pghhEgvpFiCKuUXnxQ1ZabTGtUakad3+7hTFOWxigPfVu5TKL2W1QaL4z7FqMXiwCAwajWsNlgc9ylGjZrVBovjPsWgUrDaYHHcpxjULaw2WBz3KYYWJasNFsd9iqFFxWpjfRGspbL0x3H9mUv69x+cvP5/zDYlKYdubnuPtRG65kZWdyjCx06Ne3UlF0tNrfzss6Pt8/L3g0vPYf+zssEPdfwXLRBLome+6FQXt7ZvurV9E1+1DVi2KXg40/d2a/umwu++dtxRyIgJCUvWMhg4ccxBkGTQsH+wmvnGxIukXva54ELk5Gfc/AOdVz/veASFMhuoeXraW+jhwWzgxNmKX79Esa8fq5l3997JG3dxsbQDkad39yefc0bNzsOdTRx8hQIQukuZDfQqpw1IgzjfU7y79x6ycZfEL8A+Rwz0eHKOyNOb92qdh9BDKvb2ZbZpN3EYnCQOguB0TzHjGd59yMYv3fy72OELhTQsMvKx9tss5QWPoDBmA5qmtA21vPgSerCJw0lTWVm/RInMtp5AGtotecMuHvXRb+FyUijiq7b2gXXAoa2vpY1GXnyxikPvpDFH8IOj7CglDY1I3sDP/SV05AT//oMdr6ed8erRh9mAx9hDQuZ5AE0bW5wwWxGIJcGPjLO1lAlpaMSQDbts7XVaIZJ69Zm7yJEaOgpZn3hmAx5jPomkngxX9S1KmqZYK7FZHCEjJ7KOqhiQhkUmb9jpyPylz9zXJTJ/u4t3GATh2zuO2USRf4cvb8w9h0HJfk8BO8QROflpW4u0wjM8KnndDvsUFjj4ofCxUx1sQIfgGRYlZPxvBoCm/Nt8uWPpOZTNXCqxTRz+CclekT1tKmIVr8joQe9/zvpltULsI4t77R3HvXcIvjEs9xQAaC7gTRxCxkm+3hk9R9SUZ2yyZ8CnZ8ygdz8VuLMs5FkS9+qqTnlDAQAAGZs4WqrKuKw9cIR5BYjLVAVsEodHcHiXwQ9xt2dFFtN/4Or/Mpz8tiR87ONdh47g0Xu7QhBdBj7IbNKcx1+34SElSKZfVq9o4lKPDeKInDSDYHs2pBXN+bdpimlU7B8/MPGtzYRAwFyPV2R07PwlzDaq8hKb2tae+PaOcwvoymzTXMDbaFTE9nQMz+IQekjDRk/haGym8XZW7t5PmG0Ck4f3W/g2k2upZ9KKDwVu7gw2NEVlbV1la/PajeAHH2W1aci+zpc71sE+z+KImjKTddHNKgUHvqi9cYnZRlmGnt8TRMLidR4h3ZhryD+4q/HOTTua1z4EsS0bGlTK+uwbfLnj0HPwN1sReflETZ3NxbItNE1lbHpL21CHMmjIvlF0BHmCIXrGPOaI5gCgKLqb93/b7WteO+AT3ZchPLyJmmu/87VwDhx6Dh2PPUePac/Z122Y0DbUpW9cZnVJzqhRZ3ywArVa13XoiJ5sZ3loozHzgxWUQW9385xN0EPsuw3Vab/x6JH5EVQA0Dc3cKmHXRxu/oERDi981aVfzj+wq+37t3dtaakstVpEFtM/4T8bWIfAefv/15R3y8HmOQ+BWBL+6BRmG5qmaq5c4NEp6wK0tokncfR5YZEAMdvUK5tV5cVc3ADA3a8/a7qbY/lOXfrl4pSDVo2loRFJqz9G+TXTXHAnbz/LOdaOJWz0FNafqvFWpq65kUenEjaPOl7E4R8/MOThsairpaeOcnmqzgRtNGZsXk7p7j2iaWhRZW5ZBTTd1lIiCxj8/uesN07aYMj8YAVtMHBsQPtDkGTU1FmsZtVXzvPrV+zLuFRI0zzMVgiBoO9Lb6FdUCXHrf/fo1CWFOR+/Znpdc7nG6yGxBBJvQa9+wnrCA4Acv63mce1AWcQPHwM6wEfAJD/fpZfv25+TOdmdIomjoNfptPnPZ583jMCmaKrJu1CS1UZFx+WFB7ZE/LIOE2NvOyn79teFXn5DF673Zvt3AMAlJ9NKT72ja3e25nu09iPuDbkpCtLC/j1y3xoRoeeObYCKQ7vHn2in57PULL4+H6OPiyhjcasLas0dTVtL4m9fQev2+HdvTdrJc0Fd25+5Oo7cF0GDuPyWUpPHeXXL0GQzCdmtI2OiYMUiRMWryWESOmoyotrrl3k6KMVVicXYh9Z8rodXlG9WIvrFU3X333dqGMPL9GBECTZZ85rrGYGtaryt1P8upb4+TNvR2jruR5TtT7miJ2/mOGGAgD5B3ZZHUvah0dQ6JBNX3BRBk1TN9Yvbakq58u1k4iYOJ3Lxyk9cYRLKASbcAsIYjZgWJBshZW+IXzs1G4TnmQoo5ZXlJ89ztEBK7LYhKSVW1nXbUzk7t5Wez2VL9dOQuzrFz3rZVYz2mDg5eG2VrgHBjMbaOq4nlRtLQ5ZbAJz4lMAyNu/k6+13pBHxsW/sYYUibkYV108m3/wC178OpW4f6/g8pxf+S8/amqqePfOOj/S1FZzrKq1OCR+XZiP/GtqqsrPHONYOwMESUbPXNBzxjyO9k252Zmb3+bxXuYkwh6dzJw51gRNUQUHv3RGA9gfqqvjKo7WY46qCz/VXGVays0/+IXjGxnuXUOGbPqSuzKUxflpby8wqNmjBnQsHkGhsS8u5WJZdvoo7zNYE9LQCGYDVMTVtlgZkGZ/sg718ytLC0tOHuZYNYqQERMe+vRbWWwCR/uWqrLLb83juKjXgQgkbokrtnDZoTRqNbl7P3VSMzzDoxiu0kaj1u6eAwBaqsqKv7e+vpTz+QYHl6u9onrFv76a+x6vpq46bdk87rOvDiTu9Xe4LGwAQOHhPU76RCJPb+YVMHVNJfPZPEusT2XzvtnRditInnrO8ZmCojD3ysqFRg7BIQBA19yYtmy+609cAaDnUy8wbEJZ0lJZmn/QygY1L3h3Z5k/t1TasKhtXRx6laLg0F+GS5Red2vHZu71MlCXfjnt7QWsO3aGFtWV5S866cbML93GP9Fr9kKOxlkfv8t9t9JWWKOEq8qKuNeG3HgrPn7AsvPI37/Tjp0UFA056dffW8RwhzKoVVdWvuzKBzXMBA8f03fhco7GZae/q0u/7LzG+MWxxPDnfsQCGMRh1KgLD+82vW7IvsH7sYmaqxcyPrQey0vXWH95yfMN/J2pdB7Bw8ckLF7L8VC+urqSr97XKgRByvolMtvY9Dgu06cqOXGY0mn1yub0jcu4j2K4U3Eupe2illpekfrm7E7RZ3SbMC3hP+sZdqAsoQ2GG+uWcHyayD68e/ZhXXxTFOZyr5Dpg+kVTZUXzshTz3KfGdtK7lf/9YqMDvzjWammu9nX3nnV6p6tq9Hjqbm9Z7/C3f72F1sbb2c6rz0AEDJyArOBrqmB+8YKsJ4Ey/l8Q9WFM9yrsxWapjI2LzfFpSg/m5L65nOurwyBWJKwZK1NypCnni08utd5TQIAUigKHTmR2abxdpZNdbJ0ie2w9KRXNKVvfMunV2zh4T0OVUQQPLWICffA4KSVW7kcRzLTlJudvoFlu8pxekx/nvVgZeMdXsXRPtRnXa3PuupgJWIvluBxjg+bug4dEffaapuCR7RUlV9ZtdB5c1cTgcnDuexF1GVesalalxAHM+6BwQQpoPRaSq+nDHraaKSNRpqmaIoy78NJ/AKin2XZJXfkFxK6S2NfXGLrA6G65sYrK17SNdbb6i7in09JQ7rpVQqDUmFQq4xajVGrpXSaPz8+RQFBiDy93AOD/folBT8ylnXGZFS3dMqeg5mwUZOin33J8Xq4xM+zin//QfGvr+Fy5tkSXXNj2rJ5Ni06mWm6m9P3JZ7vRNVXLti69dEJAuOXnPiWlwfauJ9jMOPmH5iwdH3y+p02K6Ox/tKSOXYfjm+8nVn522n7yqKo/PWErUU6gTi0DXXyizwc3repUyWEwh5Pznl457EQ26PjaetrLy15Xlmcb2tBSwqP7HakeCs0tXL55V9tLdUJxAEAZT/xcLyo1qYT0UZKIgtgjvtgFUXR3Yuvz3R8S6jxzk1F0V0HKzGTu3ubHYf3Ooc4aq9ftGn1pi2aWnmzLYuDNE3lbN+Y/claLiEZzVSnnU99YzZfa4Zlp77jpZ76rKtldh3e6xzioCmq6neH1uJubnvfjiOGxccPZGx6m+McuPDo3mur/83jcbVqxiN5HNHUVGVsZoqNw0DnEAcAVF/6xe6yxT/sr7b9jmui4lxK+vqlzH2yXtl8/f1Ft3ZstqmbYUVVVuRgTGNtQ93lZS/Y3ZN1GnHUZVzheETIEoNKmbV1dfan6xxxXXn+dOaWlaiOp/7mtfMvTXPSJkN91jX7y968nrpotiOh0jrBOocJyqBvuJURkDiUo72ypKDy15Olp47wsllT/vNxsa9fzF/DalMGfd6+Hfn7d/LbYVhi3xma5oI7JccPlpw87OBh/U4jDgBouJ2JEodBrdI1NarKipSlBarSovqcGw7OJNtSeHiPR1BYxMTppj/rMq9mb3uPx2jlVlHLK1htjBq1pq5GUytXluQrivPqs64pS/g5PkfQNG138j0AiH56vlsX5PN39VlXy8+m2F15K8S+ftLgcJoy0hRlWkI2atR6lcKgUjjjuElbSKFoyOavPLqG3Nr5YfnPP7SDRwAgSJIQigiBgBQICYGAEAhIoQgIgtLrKJ2O0mmd9Njw+BMZjorjfkPiF0DpdBxjh3dqxp/I6Ey3FVegUzwkwRedZraCaX+wODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIsDgwSLA4MEiwODBIXF0cwz7aN2L3yW4TprW9NGL3yZF7TzMEdAsdOWH450eS1+/kklC+FYRAMGDZpvCxj4s878W+jX1xaeLyzf7xA01/Rk2dlbh8c7dxTzDXE//GmvEnMgav3d62fo65FjoQV39WVuIX4BbQVeRhJRmAm38gIRAIJG6osrK+iZ4RPQihsEVeDgD9F68NZQwdn7podkNOuul14KCHgoePDh4+WlGYqyjOB4AuA4dJQyNqb1xqzM0GAL++A7oOHalXKQXnUgCA0mlteNKfIOLfeNcnOjZ3zzanhpZ3EFcXhyP49IwBgJIT39oRwyRs9GQAaC6402P685apQPu9sqLfKyvMf4aPeSx8zGMAcHXVwuq08wAQMGBI0ootZgNSLAEA//6Dxxy5lwHNoFFXnE0JHTkBaJogmfKKdzidSRxdkh4Y9N5nrd6Me2113GurTa81tfKzz44GgJj5i6OmzDS9GTN3UczcRc0Fd66uesWcXK1L4gMx897UqxSpi2abq1L/kUxO7CMLHDQcAMrP/OAXx5LephUESQrcPRjeFLh7RE2dBQC5ez/lPZE9v7ioOHyiY4d9/GeGyt5zXu0959XaG5ccqVNTK4c/4q+Z8mvSRqPVAEChIycSQiFtNFb88qM5FcbwHd95hkdlfrDCFLYxcfnmoAcfLUk5dHPbe5Zla65dtIx3Ev/GmrBHJ9feuJT21nwAiJ65IPqZFwGg4lxK3jc7HPk47YCLisMqjXey7n79Z88xZNOXBEnmH/qi+tK9SIGtomAXHz+Q89n6oAdHDVi2yfTO2O/TTP28CbG37/gTGabXNVd/v7LiJQAQSNy6P/EvANDUVVsGP7379WciT6+GW/fsS04crr1xyaYAS5FTnjEpoyEnPXPLau4FOwoXFYeyrMjU4Set3Cr2kZWkHCo/e1wtr/hLqm2aBoCW8hLzKLI1FEVTlK0RoaKmzrqXmpWmAaDfwretzpVakbV1dempow9+ctBqatmAAUPMKgQAWWzC2GP3sltUX/7t6mob8vq0Jy46mzKqWxpy0hty0im9DgDU8oqGnHTmJOxWcq2RJEGSBNn6M15//83sz9YDgF7Z/MuciUXf7zNf8oqM7vnUC7x8hL8BLtpzoBhzJLXVcM88INUrmnL3fFJ8/ID5UsTE6ebgf5ZoaqoAaACgKaqlstQyG1XU1FmkSNy2SNnp73J2bGJoGKXVAsDFV5+xTBglkLj1nDEvcsozBEkaVMqsj9fIU88BABAEQRCmLs15YSodp3OIIyDpAVm/xLLTRxlsRF4+pm7GEcrPHAsbNUktr2iVQ4PS66MenyWLsR5Zz9Ciuv7eG2Ax6CGEwu6Pzeo+7V8iLx8AUBTl5e7ZRpBk1NRZvr3jZDH9q9N+y0RkTnUdXFQcHkFhIY+M84tLkvh1AQD//oMAoPFO5p3d/419cSml111eOlf/R3KdbuOeiJz8tFGnrTz/lxwlxce+Md0+uFOXcaX05JHmwty+C/5z7y3yXk/gHRUdMGCI1VKW2ZkF7h7dxjwe9fizlhE4vSJ7Jq3calnELy7Jr19i/c3rNjWvnXFRcUjDIi0TgNMU1ZBzozn/Tn3W1V6zFwrdpX5xSaactAKJW/Dw0QBQdeGMoeUvQekjJs2ImDTD/CfHiJpZH73Tbfyfi+JCdykAGPX3Yn1eW/OaPPXcP/b9LJJ6nZw82M0/cOTXP5kuSWT+EZNmREycbl5xBwBKp1VXV2rqarT11Zq6Gk1NlaKkQFmc52ASiPbBRcXRkHODpii9slnoISWFotw92/IP3Fu/Kj11NGrKzKips8t+OqZtqO05Y55EFgAApScOO6MlIqknAJhvWJYdgOUEBABksQk9p881jTlqr6f6D0gmCDJ376cF337ljIa1Ay4qDkOL6sLL05TFBSP2nHQL6ArUn+vfhYf3dBvzuNjbN37RuyUph3o8OQcASk8drb/ZOoZ8ScqhnO0b3QODH95pfy4fodQLAHRNDRAWCQDy1HOqipKIidNJkbjw6F6hu9TczVT9/nP+t19KfPwKjuwRSNyGJQ4FgOiZC3o8NddqzaUnDt/etcXqJRfBRcUBAIqiPKvva2rlt7/6uO+C/3RJeiBgwBAgCHV15a3tVqYStNFA6XXMo1SBWPLHXcD6/ovIyxvuTXAAAMp++l6eei505ASR1Ov2zg/d/AMt70F3vvjI9MI8HxZI3FBbg87L880XrisOBkp+OBA5aYY0NMK0hnHz4zXWU+CY1jkETJ8xadVHpmD7VkMTC9zcpaGRANDyx7YLw23FErGPTK9SNN7KuLKidUJT395xD2z9GgAUhbxl6XISnU8cPr36xs5fIg2NML8TM2+xcdv7bdMWt13nUFdXkiKxZV9SnfabX7/E5sLc/ENftvUli+lPkKRRozbneay+/KuqsrTbuCdIkbjo2D6hu9S0K9uKnO0bc7ZvtJoizi9+IADQFNVcaGfuyHbDRcVBCkUeweFAgOn7pQx6sbdv8MNjQx4eK4tNMA36NLVyvbLZKzLas1v3IRt31Vz9vfzscXnqOaNGjar21xcmm154hISbXhR9v89yhbQV4WOnAkBDTro5I2vpqaPy1HMhD48VSb1ubd/kERxuVRwmzC3xDO9u1GkMSoXEv0vkpBkA0HQ326CyM89tu+Gi4qCBfmDLXqHU0/SnqqKEFEt6zV4oknoBAKXTFhzZk39gF6XXdZ/2XPTT80mRuMvAYQFJQ6+985o5Y5cd6xyWkGJJQNJQACg7/Z1Vg8gpz8TMexM4RMsPHj46euYCy3dKTx6xu2HthquKw2CoTvs1aNgobUNd5fnT1Wm/AU3nfbMj5JHx5T//UPHLCXMO8Pz9O8vP/BA66p9hoyZXXTxjUkbx9/uqzv/E8JsZtVpTx8PQBkqnvbx0buyCpab8vy0VZU13s/VKBQA05GQI3T1qrlwIe3Sytr4m/6CVW5Il8tRzZnHoGutLTx0tPcW02usi/K3yrRAkyX9WHoJwMBnWvWpIkhSKKIO+ffIGOc7fLd+KU753PpQBADRFOSmlkvNw0S17jCuAxYFBgsWBQYLFgUGCxYFBQtA8jcYxfz/+H+COpjav+eiXAAAAAElFTkSuQmCC">
+<title>材料力學 公式題庫</title>
+<style>
+:root{
+  --bg:#efe9dc; --grid:rgba(178,164,140,.16);
+  --panel:#fffdf8; --panel2:#f6f1e7; --line:#e3dbca;
+  --ink:#2f2b24; --dim:#8c8473;
+  --acc:#b5482e; --acc2:#2f7d8a; --teal:#1f8574; --dark:#2c2a26;
+  --star:#d99a1c; --ok:#2f8f5b; --bad:#c0473f;
+  --mao:#a8512f; --oy:#247064;
+  --mono:"Consolas","Roboto Mono","Noto Sans Mono CJK TC",monospace;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    var(--bg);
+  background-size:22px 22px,22px 22px,auto;
+  color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top)) 16px 60px}
+header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+h1{font-size:1.32rem;letter-spacing:.5px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--ink)}
+h1 .tag{font-size:.6rem;background:var(--acc);color:#fff;padding:2px 7px;border-radius:4px;letter-spacing:1px;font-weight:700}
+.sub{color:var(--dim);font-size:.82rem;margin-top:5px}
+.srcline{font-size:.74rem;color:var(--dim);margin-top:6px}
+.srcline b{color:var(--oy)} .srcline i{color:var(--mao);font-style:normal}
+.stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 13px;text-align:center;min-width:60px;box-shadow:0 1px 2px rgba(90,75,50,.05)}
+.stat b{display:block;font-size:1.12rem;color:var(--teal)}
+.stat span{font-size:.64rem;color:var(--dim);letter-spacing:1px}
+.tabs{display:flex;gap:6px;margin:18px 0 14px}
+.tab{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:10px;border-radius:9px;cursor:pointer;font-size:.9rem;font-family:inherit;transition:.15s;box-shadow:0 1px 2px rgba(90,75,50,.04)}
+.tab.on{background:var(--dark);color:#fff;border-color:var(--dark);font-weight:700}
+.tab:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.view{display:none}.view.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+.filterbar{margin-bottom:12px}
+.flbl{font-size:.7rem;color:var(--dim);letter-spacing:1px;margin:8px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:5px 11px;border-radius:20px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:.12s}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:600}
+.chip.s.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.searchbox{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:10px 13px;border-radius:9px;font-size:.9rem;font-family:inherit;margin-top:10px}
+.searchbox::placeholder{color:#b3ab99}
+.searchbox:focus{outline:none;border-color:var(--acc2)}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 15px;margin-bottom:10px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.ftop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.pill{font-size:.62rem;padding:2px 8px;border-radius:5px;letter-spacing:.5px;font-weight:700;white-space:nowrap}
+.pill{color:var(--acc);background:rgba(189,85,48,.09);border:1px solid var(--line)}
+.fname{font-weight:600;font-size:1rem;color:var(--ink)}
+.fname .star{color:var(--star);margin-right:3px}
+.formula{font-family:var(--mono);background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:7px;padding:10px 13px;margin-top:10px;font-size:1.02rem;color:#3c352b;overflow-x:auto;line-height:1.7}
+.dnote{color:var(--dim);font-size:.82rem;margin-top:8px}
+.expander{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:rgba(47,125,138,.09);border:1px solid rgba(47,125,138,.3);color:var(--acc2);padding:5px 11px;border-radius:7px;cursor:pointer;font-size:.78rem;font-family:inherit;user-select:none}
+.expander .ic{font-size:.68rem;background:var(--acc2);color:#fff;padding:1px 5px;border-radius:3px;font-weight:700}
+.expander:hover{background:rgba(47,125,138,.16)}
+.detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
+.detail.on{display:block}
+.vtab{width:100%;border-collapse:collapse;font-size:.82rem}
+.vtab td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.vtab tr:last-child td{border-bottom:none}
+.vtab td:first-child{font-family:var(--mono);color:var(--acc2);white-space:nowrap;width:1%;font-weight:600}
+.vtab td:nth-child(3){color:var(--dim);white-space:nowrap;text-align:right}
+.tip{background:rgba(217,154,28,.1);border:1px solid rgba(217,154,28,.32);border-radius:7px;padding:8px 11px;margin-top:11px;font-size:.82rem;color:#7c5a18}
+.tip b{color:var(--acc)}
+.count{color:var(--dim);font-size:.76rem;margin:4px 2px 10px}
+.qsetup{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.row{margin-bottom:14px}
+.row>label{display:block;font-size:.78rem;color:var(--dim);letter-spacing:1px;margin-bottom:7px}
+.numsel{display:flex;gap:6px;flex-wrap:wrap}
+.numsel button{background:var(--panel2);border:1px solid var(--line);color:var(--dim);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit}
+.numsel button.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:700}
+.btn{background:var(--acc);color:#fff;border:none;padding:12px;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer;width:100%;font-family:inherit}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);font-weight:500}
+.btn:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.qhead{font-size:.7rem;color:var(--dim);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.qtext{font-size:.95rem;margin-bottom:12px;line-height:1.5;color:var(--ink)}
+.opt{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 13px;margin-bottom:8px;cursor:pointer;font-size:.88rem;transition:.12s;color:var(--ink)}
+.opt:hover{border-color:var(--acc2)}
+.opt.sel{border-color:var(--acc2);background:rgba(47,125,138,.1)}
+.opt.right{border-color:var(--ok);background:rgba(47,143,91,.13)}
+.opt.wrong{border-color:var(--bad);background:rgba(192,71,63,.12)}
+.opt .k{font-family:var(--mono);color:var(--acc2);margin-right:9px}
+.exp{display:none;margin-top:10px;font-size:.82rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:9px}
+.exp.on{display:block}.exp b{color:var(--ok)}
+.scorebar{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px;text-align:center;margin-bottom:14px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.scorebar .big{font-size:2.2rem;color:var(--acc);font-weight:800}
+.scorebar .lbl{color:var(--dim);font-size:.8rem}
+.hide{display:none!important}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;cursor:pointer;margin-bottom:14px;box-shadow:0 1px 4px rgba(90,75,50,.07)}
+.fc .side{font-size:.66rem;color:var(--dim);letter-spacing:2px;margin-bottom:14px}
+.fc .q{font-size:1.18rem;font-weight:600;color:var(--ink)}
+.fc .a{font-family:var(--mono);font-size:1.08rem;color:#3c352b;margin-bottom:12px;line-height:1.7}
+.fc .hint{font-size:.78rem;color:var(--acc2)}
+.fcbtns{display:flex;gap:8px}
+.fcbtns button{flex:1}
+.fcprog{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:10px}
+footer{color:var(--dim);font-size:.7rem;text-align:center;margin-top:34px;border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
+@media(max-width:560px){.stat{min-width:52px;padding:6px 9px}.tabs{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>材料力學 公式題庫 <span class="tag">技師備考</span></h1>
+  <div class="sub">口訣・觀念・俗成公式｜每條公式可展開代數意義｜★為高頻考點</div>
+  <div class="srcline">內容參考 <b>歐陽《材料力學論衡》</b></div>
+  <div class="stats">
+    <div class="stat"><b id="sCh">0</b><span>章節</span></div>
+    <div class="stat"><b id="sF">0</b><span>公式</span></div>
+    <div class="stat"><b id="sQ">0</b><span>題目</span></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab on" data-m="read">閱讀模式</button>
+  <button class="tab" data-m="quiz">測驗模式</button>
+  <button class="tab" data-m="flash">單題卡</button>
+</div>
+
+<section class="view on" id="v-read">
+  <div class="filterbar">
+    <div class="flbl">篩選章節</div>
+    <div class="chips" id="readChips"></div>
+    <input class="searchbox" id="search" placeholder="搜尋：撓度、VQ、莫爾圓、PL/AE…">
+  </div>
+  <div class="count" id="readCount"></div>
+  <div id="readList"></div>
+</section>
+
+<section class="view" id="v-quiz">
+  <div class="qsetup" id="quizSetup">
+    <div class="row"><label>選擇章節（可多選）</label><div class="chips" id="quizChips"></div></div>
+    <div class="row"><label>題數</label>
+      <div class="numsel" id="numSel">
+        <button data-n="10" class="on">10</button>
+        <button data-n="20">20</button>
+        <button data-n="40">40</button>
+        <button data-n="0">全部</button>
+      </div>
+    </div>
+    <button class="btn" id="startQuiz">開始測驗</button>
+  </div>
+  <div id="quizRun" class="hide"></div>
+</section>
+
+<section class="view" id="v-flash">
+  <div class="filterbar"><div class="flbl">選擇章節</div><div class="chips" id="flashChips"></div></div>
+  <div class="fcprog" id="fcProg"></div>
+  <div class="fc" id="fcCard"><div class="side">點卡片翻面</div><div class="q">準備中…</div></div>
+  <div class="fcbtns">
+    <button class="btn ghost" id="fcPrev">上一張</button>
+    <button class="btn ghost" id="fcShuf">洗牌</button>
+    <button class="btn" id="fcNext">下一張</button>
+  </div>
+</section>
+
+<footer>
+  kgf-cm 工程制；本工具為記憶輔助，臨場以題目給定條件為主。<br>
+  襄澤專案顧問工作室 ©
+</footer>
+</div>
+
+<script>
+const DATA = {"CH": [{"ch": "mA", "sub": "材力", "name": "應力與應變", "src": "歐陽"}, {"ch": "mB", "sub": "材力", "name": "斷面性質", "src": "歐陽"}, {"ch": "mC", "sub": "材力", "name": "軸力桿件", "src": "歐陽"}, {"ch": "mD", "sub": "材力", "name": "扭力桿件", "src": "歐陽"}, {"ch": "mE", "sub": "材力", "name": "剪力圖與彎矩圖", "src": "歐陽"}, {"ch": "mF", "sub": "材力", "name": "樑內正向應力", "src": "歐陽"}, {"ch": "mG", "sub": "材力", "name": "樑內剪應力", "src": "歐陽"}, {"ch": "mH", "sub": "材力", "name": "應力與應變轉換", "src": "歐陽"}, {"ch": "mI", "sub": "材力", "name": "壓力容器與破壞準則", "src": "歐陽"}, {"ch": "mJ", "sub": "材力", "name": "樑變形分析", "src": "歐陽"}, {"ch": "mK", "sub": "材力", "name": "能量法", "src": "歐陽"}, {"ch": "mL", "sub": "材力", "name": "穩定性與柱挫屈", "src": "歐陽"}], "F": [{"ch": "mA", "n": "正向應力", "f": "σ = P / A", "d": "軸向載重均佈於斷面所得的平均應力。", "v": [["σ", "正向應力（拉為正、壓為負）", "kgf/cm²"], ["P", "軸力", "kgf"], ["A", "斷面積", "cm²"]], "tip": "口訣「軸力除面積」。", "s": 1, "src": "歐陽"}, {"ch": "mA", "n": "正向應變", "f": "ε = δ / L", "d": "變形量對原長的比值，無因次。", "v": [["ε", "正向應變", "—"], ["δ", "變形量", "cm"], ["L", "原長", "cm"]], "tip": "", "s": 0, "src": "歐陽"}, {"ch": "mA", "n": "虎克定律", "f": "σ = E·ε ， τ = G·γ", "d": "線彈性段內應力與應變成正比。", "v": [["E", "彈性（楊氏）模數", "kgf/cm²"], ["G", "剪力模數", "kgf/cm²"], ["γ", "剪應變", "rad"]], "tip": "鋼 E≈2.04×10⁶ kgf/cm²。剪應變γ為兩垂直邊夾角的改變量（弧度）。", "s": 1, "src": "歐陽"}, {"ch": "mA", "n": "蒲松比", "f": "ν = − ε橫 / ε縱", "d": "縱向受力時橫向應變與縱向應變的比值取負。", "v": [["ν", "蒲松比", "—"]], "tip": "觀念：ν 約 0~0.5；鋼≈0.3、混凝土≈0.15~0.2、橡膠→0.5（近不可壓縮）。", "s": 1, "src": "歐陽"}, {"ch": "mA", "n": "彈性常數關係", "f": "G = E / [2(1+ν)]", "d": "等向材料只有兩個獨立彈性常數。", "v": [["E", "彈性模數", "kgf/cm²"], ["G", "剪力模數", "kgf/cm²"], ["ν", "蒲松比", "—"]], "tip": "口訣「E、G、ν 知二求一」。二維／三維時 ν 不可用單軸式，須用廣義虎克定律。", "s": 1, "src": "歐陽"}, {"ch": "mA", "n": "體積模數", "f": "K = E / [3(1−2ν)]", "d": "靜水壓下體積應變的抵抗。", "v": [["K", "體積模數", "kgf/cm²"]], "tip": "ν=0.5 時 K→∞，即不可壓縮。", "s": 0, "src": "歐陽"}, {"ch": "mA", "n": "容許應力", "f": "σa = σy / F.S.", "d": "為涵蓋超載、材料與製作不確定性而保留安全餘裕。", "v": [["σa", "容許應力", "kgf/cm²"], ["σy", "降伏（脆性取極限）應力", "kgf/cm²"], ["F.S.", "安全係數", "—"]], "tip": "歐陽：脆性材料取極限應力、延性材料取降伏應力除以安全係數。", "s": 0, "src": "歐陽"}, {"ch": "mA", "n": "聖維南原理", "f": "距載重點 ≳ 斷面較大邊尺寸處可用材力公式", "d": "集中載重或斷面突變的局部效應隨距離迅速消散。", "v": [["—", "適用「某一距離」≈ 斷面較大邊尺寸", "—"]], "tip": "觀念：超過此距離後可忽略應力集中，用一般材力公式計算。", "s": 0, "src": "歐陽"}, {"ch": "mB", "n": "形心", "f": "x̄ = Qy/A ， ȳ = Qx/A", "d": "由面積一次矩除以總面積定位形心。", "v": [["x̄,ȳ", "形心座標", "cm"], ["Qy,Qx", "面積對 y、x 軸的一次矩", "cm³"], ["A", "斷面積", "cm²"]], "tip": "Qy=∫x dA、Qx=∫y dA。對稱軸上的一次矩為零。", "s": 0, "src": "歐陽"}, {"ch": "mB", "n": "面積二次矩（慣性矩）", "f": "Ix = ∫y²dA ， 矩形 I = bh³/12", "d": "抵抗彎曲的幾何性質。", "v": [["Ix", "對 x 軸慣性矩", "cm⁴"], ["b", "寬", "cm"], ["h", "高", "cm"]], "tip": "矩形 I=bh³/12（對形心軸）；對底邊則 bh³/3。", "s": 1, "src": "歐陽"}, {"ch": "mB", "n": "平行軸定理", "f": "Ix = IxC + A·d²", "d": "由通過形心的慣性矩平移到平行軸。", "v": [["IxC", "通過形心 C 的慣性矩", "cm⁴"], ["A", "面積", "cm²"], ["d", "兩平行軸（其一過形心）間距", "cm"]], "tip": "重點：IxC 必須是過形心的軸，不可隨意取一軸當 IxC。組合斷面求 I 必用。", "s": 1, "src": "歐陽"}, {"ch": "mB", "n": "極慣性矩", "f": "J = ∫r²dA = Ix + Iy", "d": "對形心的轉動慣性，等於兩正交慣性矩之和。", "v": [["J", "極慣性矩", "cm⁴"], ["Ix,Iy", "對 x、y 軸慣性矩", "cm⁴"]], "tip": "圓斷面 J=πd⁴/32。", "s": 0, "src": "歐陽"}, {"ch": "mB", "n": "慣性矩轉換", "f": "Ix' = (Ix+Iy)/2 + (Ix−Iy)/2·cos2θ − Ixy·sin2θ", "d": "與應力莫爾圓同形式，可畫慣性矩莫爾圓。", "v": [["Ix'", "旋轉後慣性矩", "cm⁴"], ["Ixy", "慣性積", "cm⁴"], ["θ", "旋轉角", "deg"]], "tip": "畫慣性矩莫爾圓時 A(Ix, Ixy)、B(Iy, −Ixy)。主軸上慣性積為零。", "s": 0, "src": "歐陽"}, {"ch": "mC", "n": "軸向變形", "f": "δ = PL/(AE)", "d": "由 σ=Eε、ε=δ/L 推得。", "v": [["δ", "伸長量", "cm"], ["P", "軸力", "kgf"], ["L", "長度", "cm"], ["A", "斷面積", "cm²"], ["E", "彈性模數", "kgf/cm²"]], "tip": "口訣「PL 除 AE」，材力第一條必背。多段桿 δ=Σ PᵢLᵢ/(AᵢEᵢ)。", "s": 1, "src": "歐陽"}, {"ch": "mC", "n": "軸向勁度", "f": "k = AE/L", "d": "產生單位伸長所需的軸力。", "v": [["k", "軸向勁度", "kgf/cm"], ["A", "斷面積", "cm²"], ["E", "彈性模數", "kgf/cm²"], ["L", "長度", "cm"]], "tip": "觀念（歐陽）：彈簧並聯 k 相加（n 支同彈簧→k×n）；串聯 1/k 相加（兩支同彈簧→k/2）。靜不定軸力依勁度比分配。", "s": 1, "src": "歐陽"}, {"ch": "mC", "n": "溫度變形與應力", "f": "δT = α·ΔT·L ， 完全束制 σT = E·α·ΔT", "d": "自由伸縮無應力；被束制才生溫度應力。", "v": [["α", "熱膨脹係數", "1/°C"], ["ΔT", "溫差", "°C"], ["L", "長度", "cm"], ["σT", "溫度應力", "kgf/cm²"]], "tip": "口訣「α乘溫差乘長度」。總伸長 = 應力引起 δstress + 溫差引起 δther。", "s": 1, "src": "歐陽"}, {"ch": "mC", "n": "衝擊（動力）位移", "f": "δim = δst + √(δst² + 2h·δst)", "d": "落體衝擊以能量守恆換算等效靜位移。", "v": [["δim", "衝擊動態位移", "cm"], ["δst", "同載重靜置時位移", "cm"], ["h", "落下高度", "cm"]], "tip": "h=0（突加載）時 δim=2δst，即衝擊放大 2 倍。", "s": 0, "src": "歐陽"}, {"ch": "mC", "n": "軸力桿應變能", "f": "U = Σ Nᵢ²Lᵢ/(2AᵢEᵢ) = ∫ N²/(2AE) dx", "d": "由 U=∫½σε dV 對軸力桿件積分。", "v": [["U", "應變能", "kgf·cm"], ["N", "軸力", "kgf"], ["L", "長度", "cm"], ["A", "斷面積", "cm²"], ["E", "彈性模數", "kgf/cm²"]], "tip": "觀念：幾何或材料非線性時不可用重疊原理算應變能。", "s": 0, "src": "歐陽"}, {"ch": "mD", "n": "扭轉剪應力", "f": "τ = T·ρ/J", "d": "平斷面假設下剪應力沿半徑線性分布。", "v": [["τ", "扭轉剪應力", "kgf/cm²"], ["T", "扭矩", "kgf·cm"], ["ρ", "至圓心距離", "cm"], ["J", "極慣性矩", "cm⁴"]], "tip": "口訣：扭轉「Tρ/J」對應彎曲「My/I」。τmax 在最外緣 ρ=r。", "s": 1, "src": "歐陽"}, {"ch": "mD", "n": "實心圓極慣性矩", "f": "J = πd⁴/32 = πr⁴/2", "d": "圓斷面對形心的極慣性矩。", "v": [["J", "極慣性矩", "cm⁴"], ["d", "直徑", "cm"], ["r", "半徑", "cm"]], "tip": "空心圓 J=π(do⁴−di⁴)/32。", "s": 1, "src": "歐陽"}, {"ch": "mD", "n": "扭轉角", "f": "θ = T·L/(G·J)", "d": "沿桿件累積的相對扭轉角。", "v": [["θ", "扭轉角", "rad"], ["T", "扭矩", "kgf·cm"], ["L", "長度", "cm"], ["G", "剪力模數", "kgf/cm²"], ["J", "極慣性矩", "cm⁴"]], "tip": "口訣「TL除GJ」對應軸向 PL/AE。抗扭勁度 k=GJ/L。並聯時扭矩依 GJ/L 比例分配。", "s": 1, "src": "歐陽"}, {"ch": "mD", "n": "薄壁封閉斷面（Bredt）", "f": "τ = T/(2·Am·t) ， J = 4Am²/∮(ds/t)", "d": "剪力流 f=τt 沿封閉中心線為常數。", "v": [["τ", "剪應力", "kgf/cm²"], ["T", "扭矩", "kgf·cm"], ["Am", "薄壁中心線所圍面積", "cm²"], ["t", "壁厚", "cm"]], "tip": "歐陽：τmax 發生在 t 最小處。極薄圓管 J≈2πr³t。", "s": 1, "src": "歐陽"}, {"ch": "mD", "n": "傳動功率", "f": "P = T·ω = 2πN·T/60", "d": "由轉速與扭矩求傳遞功率。", "v": [["P", "功率", "W"], ["T", "扭矩", "N·m"], ["ω", "角速度", "rad/s"], ["N", "轉速", "rpm"]], "tip": "由軸所傳功率反求設計扭矩時用。", "s": 0, "src": "歐陽"}, {"ch": "mE", "n": "微分關係", "f": "dM/dx = V ， dV/dx = −w", "d": "載重、剪力、彎矩三者逐次積分／微分相連。", "v": [["M", "彎矩", "kgf·cm"], ["V", "剪力", "kgf"], ["w", "分布載重（向下為正）", "kgf/cm"], ["x", "位置", "cm"]], "tip": "彎矩圖斜率=剪力；剪力圖斜率=負載重。V=0 處彎矩為極值。", "s": 1, "src": "歐陽"}, {"ch": "mE", "n": "圖形次方關係", "f": "彎矩圖 比 剪力圖 高一次方；剪力圖 比 載重圖 高一次方", "d": "由逐次積分得出曲線階數。", "v": [["—", "均布載重 → 剪力一次、彎矩二次", "—"]], "tip": "歐陽口訣：「彎矩比剪力高一次方，剪力又比載重高一次方」。", "s": 1, "src": "歐陽"}, {"ch": "mE", "n": "剪力／彎矩符號（歐陽）", "f": "順時針轉分離體的剪力為正；使上緣受壓的彎矩為正", "d": "以分離體受力的旋轉與彎曲方向定號。", "v": [["V>0", "繞分離體順時針", "—"], ["M>0", "上緣受壓（下緣受拉）", "—"]], "tip": "口訣「同手同腳原則」：載重向下，剪力圖往下走。", "s": 1, "src": "歐陽"}, {"ch": "mE", "n": "作圖要訣（歐陽）", "f": "集中力→剪力突跳；集中力矩→彎矩突跳", "d": "內鉸接點彎矩恆為零、反曲點處彎矩為零。", "v": [["反曲點", "彎矩 M=0 的點", "—"], ["內鉸", "該點 M=0、V 通常不為 0", "—"]], "tip": "歐陽：集中彎矩處彎矩圖突跳，「順我者昌，逆我者亡」判斷跳的方向。", "s": 0, "src": "歐陽"}, {"ch": "mF", "n": "撓曲公式", "f": "σ = M·y/I", "d": "平斷面假設下正向應力沿高度線性分布。", "v": [["σ", "撓曲正向應力", "kgf/cm²"], ["M", "彎矩", "kgf·cm"], ["y", "至中性軸距離", "cm"], ["I", "慣性矩", "cm⁴"]], "tip": "口訣「My除I」；中性軸通過形心。曲率 κ=M/EI，「曲率是斜率的變化率」。", "s": 1, "src": "歐陽"}, {"ch": "mF", "n": "斷面模數", "f": "S = I/c ， σmax = M/S", "d": "以最外緣距離整併撓曲公式。", "v": [["S", "斷面模數", "cm³"], ["I", "慣性矩", "cm⁴"], ["c", "最外緣至中性軸距離", "cm"]], "tip": "矩形 S=bh²/6。", "s": 1, "src": "歐陽"}, {"ch": "mF", "n": "降伏彎矩與塑性彎矩", "f": "My = S·σy ， Mp = Z·σy", "d": "由首次降伏到全斷面降伏的彎矩。", "v": [["My", "降伏彎矩（首個降伏點）", "kgf·cm"], ["Mp", "塑性彎矩（全斷面降伏）", "kgf·cm"], ["σy", "降伏應力", "kgf/cm²"], ["Z", "塑性斷面模數", "cm³"]], "tip": "拉壓降伏應力相同時，全塑性中性軸 PNA 均分斷面面積為一半。", "s": 1, "src": "歐陽"}, {"ch": "mF", "n": "形狀因子", "f": "f = Mp/My = Z/S", "d": "衡量斷面塑性儲備的能力。", "v": [["f", "形狀因子", "—"], ["Z", "塑性斷面模數", "cm³"], ["S", "彈性斷面模數", "cm³"]], "tip": "矩形斷面 f=1.5。", "s": 0, "src": "歐陽"}, {"ch": "mF", "n": "偏心軸力", "f": "σ = P/A + M·y/I", "d": "軸力與彎矩疊加產生的正向應力。", "v": [["P", "軸力", "kgf"], ["A", "斷面積", "cm²"], ["M", "偏心造成的彎矩", "kgf·cm"], ["y", "至中性軸距離", "cm"], ["I", "慣性矩", "cm⁴"]], "tip": "偏心 e 時 M=P·e。核心（kern）內加壓不產生拉應力。", "s": 0, "src": "歐陽"}, {"ch": "mF", "n": "轉換斷面法", "f": "n = E₂/E₁ ， 材料2 σ = (M·y/Itr)·n", "d": "將兩材料折算成同一材料的等效斷面。", "v": [["n", "模數比", "—"], ["Itr", "轉換斷面慣性矩", "cm⁴"], ["E₁,E₂", "兩材料彈性模數", "kgf/cm²"]], "tip": "材料1 σ=My/Itr；材料2 再乘 n。", "s": 0, "src": "歐陽"}, {"ch": "mG", "n": "撓曲剪應力", "f": "τ = V·Q/(I·b)", "d": "由微段彎矩差造成的水平剪力平衡導出。", "v": [["τ", "剪應力", "kgf/cm²"], ["V", "剪力", "kgf"], ["Q", "計算面外側面積對中性軸的一次矩", "cm³"], ["I", "慣性矩", "cm⁴"], ["b", "該處寬度", "cm"]], "tip": "口訣「VQ除Ib」。Q 在中性軸最大 → τ 最大。", "s": 1, "src": "歐陽"}, {"ch": "mG", "n": "剪應力形狀因子", "f": "矩形 τmax = (3/2)·V/A ； 圓形 τmax = (4/3)·V/A", "d": "最大剪應力相對平均剪應力的倍率。", "v": [["τmax", "最大剪應力（中性軸處）", "kgf/cm²"], ["V", "剪力", "kgf"], ["A", "斷面積", "cm²"]], "tip": "歐陽：3/2、4/3 即矩形與圓形的「剪應力形狀因子」αs。", "s": 1, "src": "歐陽"}, {"ch": "mG", "n": "剪力流", "f": "f = V·Q/I = τ·t", "d": "沿斷面厚度方向的單位長度剪力。", "v": [["f", "剪力流", "kgf/cm"], ["V", "剪力", "kgf"], ["Q", "一階矩", "cm³"], ["I", "慣性矩", "cm⁴"], ["t", "壁厚", "cm"]], "tip": "組合樑（Built-up Beam）釘距／焊縫設計用。", "s": 0, "src": "歐陽"}, {"ch": "mG", "n": "剪力中心", "f": "橫向載重須通過此點才不致扭轉", "d": "斷面內撓曲剪應力合力的作用點。", "v": [["e", "剪力中心至腹板距離", "cm"]], "tip": "觀念：開口薄壁斷面（如槽形）剪力中心在形心外側；雙對稱斷面剪力中心＝形心。", "s": 0, "src": "歐陽"}, {"ch": "mH", "n": "平均應力與半徑", "f": "σavg = (σx+σy)/2 ， R = √[((σx−σy)/2)² + τxy²]", "d": "莫爾圓的圓心與半徑。", "v": [["σavg", "平均正向應力（圓心）", "kgf/cm²"], ["R", "半徑（=τmax）", "kgf/cm²"], ["σx,σy", "正向應力", "kgf/cm²"], ["τxy", "剪應力", "kgf/cm²"]], "tip": "應力轉換純由力平衡得到，與材料無關（鋼鋁木混凝土皆適用）。", "s": 1, "src": "歐陽"}, {"ch": "mH", "n": "主應力與最大剪應力", "f": "σ₁,₂ = σavg ± R ， τmax = R", "d": "主平面上剪應力為零。", "v": [["σ₁,σ₂", "最大／最小主應力", "kgf/cm²"], ["R", "莫爾圓半徑", "kgf/cm²"]], "tip": "口訣「圓心加減半徑＝主應力」。最大剪應力面與主平面相差 45°。", "s": 1, "src": "歐陽"}, {"ch": "mH", "n": "主平面方位", "f": "tan 2θp = 2τxy/(σx−σy)", "d": "莫爾圓上角度為實際面的兩倍。", "v": [["θp", "主平面方位角", "deg"], ["τxy", "剪應力", "kgf/cm²"], ["σx,σy", "正向應力", "kgf/cm²"]], "tip": "θs = θp ± 45°。畫莫爾圓 A(σx, τxy)、B(σy, −τxy)。", "s": 0, "src": "歐陽"}, {"ch": "mH", "n": "絕對最大剪應力", "f": "(τmax)abs = (σ₁ − σ₃)/2", "d": "三維三主應力中最大與最小之差的一半。", "v": [["σ₁", "最大主應力", "kgf/cm²"], ["σ₃", "最小主應力（含 0）", "kgf/cm²"]], "tip": "平面應力時第三主應力為 0，須一併納入比較。", "s": 1, "src": "歐陽"}, {"ch": "mH", "n": "應變轉換", "f": "εθ = (εx+εy)/2 + (εx−εy)/2·cos2θ + (γxy/2)·sin2θ", "d": "與應力轉換同形式（τ 換成 γ/2）。", "v": [["εθ", "旋轉後正向應變", "—"], ["γxy", "工程剪應變", "rad"], ["θ", "旋轉角", "deg"]], "tip": "畫應變莫爾圓時縱座標用 γ/2。", "s": 0, "src": "歐陽"}, {"ch": "mI", "n": "薄壁圓筒應力", "f": "σθ（環向）= p·r/t ， σx（軸向）= p·r/2t", "d": "由半圓與橫斷面力平衡導出。", "v": [["σθ", "環向（hoop）應力", "kgf/cm²"], ["σx", "軸向（longitudinal）應力", "kgf/cm²"], ["p", "內壓", "kgf/cm²"], ["r", "內半徑", "cm"], ["t", "壁厚", "cm"]], "tip": "環向應力為軸向的 2 倍 → 圓筒沿縱向裂開。樟樹沿縱向裂亦因環向應力大。", "s": 1, "src": "歐陽"}, {"ch": "mI", "n": "薄壁球殼應力", "f": "σ = p·r/2t", "d": "球對稱，各方向應力相等。", "v": [["σ", "殼內應力", "kgf/cm²"], ["p", "內壓", "kgf/cm²"], ["r", "內半徑", "cm"], ["t", "壁厚", "cm"]], "tip": "同壓力同尺寸下，球殼應力為圓筒環向的一半，較省材料。", "s": 0, "src": "歐陽"}, {"ch": "mI", "n": "最大正向應力準則", "f": "|σ₁| < σy 且 |σ₂| < σy 為安全", "d": "脆性材料破壞準則。", "v": [["σ₁,σ₂", "主應力", "kgf/cm²"], ["σy", "材料強度", "kgf/cm²"]], "tip": "適用於脆性材料（如鑄鐵）。", "s": 0, "src": "歐陽"}, {"ch": "mI", "n": "最大剪應力準則（Tresca）", "f": "(τmax)abs = (σ₁−σ₃)/2 ≥ σy/2 則破壞", "d": "延性材料以最大剪應力達單軸降伏剪應力為界。", "v": [["σ₁,σ₃", "最大／最小主應力", "kgf/cm²"], ["σy", "降伏應力", "kgf/cm²"]], "tip": "延性材料常用。另有畸變能準則（von Mises）。", "s": 1, "src": "歐陽"}, {"ch": "mJ", "n": "撓度微分方程", "f": "E·I·y'' = M(x)", "d": "由曲率 κ=M/EI 與小變形 y''≈κ 推得。", "v": [["E", "彈性模數", "kgf/cm²"], ["I", "慣性矩", "cm⁴"], ["y''", "撓度二階導", "1/cm"], ["M(x)", "彎矩函數", "kgf·cm"]], "tip": "雙重積分法：積兩次定兩個邊界常數。不連續載重用 Macaulay 函數 ⟨x−a⟩ⁿ。", "s": 1, "src": "歐陽"}, {"ch": "mJ", "n": "懸臂梁標準解", "f": "端點集中 δ=PL³/3EI ； 均布 δ=wL⁴/8EI", "d": "自由端撓度，向下為正。", "v": [["δ", "自由端撓度", "cm"], ["P", "端點集中載重", "kgf"], ["w", "均布載重", "kgf/cm"], ["L", "跨長", "cm"]], "tip": "對應端點轉角 θ=PL²/2EI、wL³/6EI。端點力矩 M₀：δ=M₀L²/2EI、θ=M₀L/EI。", "s": 1, "src": "歐陽"}, {"ch": "mJ", "n": "簡支梁標準解", "f": "中央集中 δ=PL³/48EI ； 均布 δ=5wL⁴/384EI", "d": "跨中最大撓度，向下為正。", "v": [["δ", "跨中撓度", "cm"], ["P", "中央集中載重", "kgf"], ["w", "均布載重", "kgf/cm"], ["L", "跨長", "cm"]], "tip": "口訣分母「48、3、384、8」背熟。對應端轉角 θ=PL²/16EI、wL³/24EI。", "s": 1, "src": "歐陽"}, {"ch": "mJ", "n": "力矩面積定理", "f": "∫(M/EI)dx = θB−θA ； ∫(M/EI)·x̄ dx = t(B/A)", "d": "以彎矩圖面積及其形心矩求轉角差與切線偏移。", "v": [["θA,θB", "兩點轉角", "rad"], ["t(B/A)", "B 相對 A 切線的偏移量", "cm"], ["x̄", "面積形心至 B 的距離", "cm"]], "tip": "第一定理求轉角差、第二定理求切線偏移。共軛梁法為其變形。", "s": 0, "src": "歐陽"}, {"ch": "mJ", "n": "溫差曲率", "f": "κther = α·ΔT/h", "d": "上下緣溫差使樑彎曲的附加曲率。", "v": [["κther", "溫差曲率", "1/cm"], ["α", "熱膨脹係數", "1/°C"], ["ΔT", "上下緣溫差", "°C"], ["h", "樑深", "cm"]], "tip": "真正曲率 = 彎矩貢獻 + 溫差貢獻：κ總 = κM + κther。", "s": 0, "src": "歐陽"}, {"ch": "mK", "n": "單位力法（梁／剛架）", "f": "Δ = ∫ M·m/(EI) dx", "d": "虛力系統內力 m 與實際內力 M 的內積。", "v": [["Δ", "所求位移／轉角", "cm 或 rad"], ["M", "實際載重彎矩", "kgf·cm"], ["m", "單位虛載重彎矩", "cm"], ["EI", "抗彎勁度", "kgf·cm²"]], "tip": "口訣「Mm/EI 積分」。求轉角時虛載重改為單位力矩。", "s": 1, "src": "歐陽"}, {"ch": "mK", "n": "桁架變位", "f": "Δ = Σ n·N·L/(A·E)", "d": "各桿虛軸力 n 與實軸力 N 的功累加。", "v": [["Δ", "節點位移", "cm"], ["N", "實際載重軸力", "kgf"], ["n", "單位虛載軸力", "—"], ["L", "桿長", "cm"], ["A", "斷面積", "cm²"], ["E", "彈性模數", "kgf/cm²"]], "tip": "口訣「nNL/AE 求和」。溫差／製造誤差另加 ΣnαΔTL、Σn·e。", "s": 1, "src": "歐陽"}, {"ch": "mK", "n": "卡氏第二定理", "f": "Δi = ∂U/∂Pi", "d": "應變能對某力偏微分得該力作用點沿其方向的位移。", "v": [["Δi", "位移", "cm"], ["U", "應變能", "kgf·cm"], ["Pi", "對應之力", "kgf"]], "tip": "線彈性才成立。無對應實力時可設虛擬力 Q，微分後令 Q=0。", "s": 1, "src": "歐陽"}, {"ch": "mK", "n": "Maxwell 互換定理", "f": "δij = δji", "d": "柔度係數對稱，柔度矩陣為對稱矩陣。", "v": [["δij", "j 處單位力在 i 處造成的位移", "cm"]], "tip": "觀念：互換功原理。力法的柔度矩陣由此必為對稱。", "s": 1, "src": "歐陽"}, {"ch": "mK", "n": "總應變能", "f": "U = ∫M²/2EI + ∫T²/2GJ + ∫N²/2AE + fs∫V²/2GA", "d": "彎、扭、軸、剪四種內力的應變能總和。", "v": [["M", "彎矩", "kgf·cm"], ["T", "扭矩", "kgf·cm"], ["N", "軸力", "kgf"], ["V", "剪力", "kgf"], ["fs", "剪力形狀因子（矩形 6/5）", "—"]], "tip": "一般細長桿件以彎曲應變能為主，軸力／剪力項常可略。", "s": 0, "src": "歐陽"}, {"ch": "mL", "n": "Euler 臨界載重", "f": "Pcr = π²EI/(KL)²", "d": "由挫屈微分方程的特徵值得出。", "v": [["Pcr", "臨界（挫屈）載重", "kgf"], ["E", "彈性模數", "kgf/cm²"], ["I", "最小慣性矩", "cm⁴"], ["K", "有效長度因子", "—"], ["L", "柱長", "cm"]], "tip": "口訣「π²EI 除 (KL)²」。與材料強度無關，只與 E、I、KL 有關。取最小 I 方向控制。", "s": 1, "src": "歐陽"}, {"ch": "mL", "n": "臨界應力與細長比", "f": "σcr = π²E/(KL/r)² ， r = √(I/A)", "d": "以細長比表示的挫屈應力。", "v": [["σcr", "臨界應力", "kgf/cm²"], ["λ=KL/r", "細長比", "—"], ["r", "迴轉半徑", "cm"], ["A", "斷面積", "cm²"]], "tip": "λ 大 → 細長柱（彈性挫屈）；λ 小 → 短柱（壓壞）。", "s": 1, "src": "歐陽"}, {"ch": "mL", "n": "有效長度因子 K", "f": "鉸鉸 1.0 ｜ 固固 0.5 ｜ 固自 2.0 ｜ 固鉸 0.7", "d": "由兩端束制決定的等效鉸接長度比。", "v": [["K", "有效長度因子（理論值）", "—"]], "tip": "歐陽：決定 K 的關鍵是「微擾後的挫形曲線」而非微擾前的支承。有側移 K≥1、無側移 0.5≤K≤1。", "s": 1, "src": "歐陽"}, {"ch": "mL", "n": "不影響 Pcr 的因素", "f": "初始彎曲、軸力偏心、殘餘應力、橫向載重", "d": "這些只改變挫形發展方向，不改變臨界載重大小。", "v": [["—", "上述四項僅影響變形路徑", "—"]], "tip": "觀念：理想 Euler 載重對缺陷不敏感（就臨界值而言）。", "s": 0, "src": "歐陽"}], "Q": [{"ch": "mA", "q": "鋼的蒲松比 ν 約為？", "o": ["0.1", "0.3", "0.5", "0.7"], "a": 1, "e": "鋼 ν≈0.3；橡膠近 0.5。"}, {"ch": "mA", "q": "等向材料 G 與 E、ν 的關係？", "o": ["G=E/[2(1+ν)]", "G=E(1+ν)", "G=2E/(1+ν)", "G=E/(1−ν)"], "a": 0, "e": "獨立彈性常數只有兩個，知二求一。"}, {"ch": "mA", "q": "P=2000 kgf、A=4 cm²，正向應力為？", "o": ["250", "500", "1000", "2000"], "a": 1, "e": "σ=P/A=500 kgf/cm²。"}, {"ch": "mA", "q": "ν=0.5 代表材料？", "o": ["可壓縮", "不可壓縮", "剛體", "塑性"], "a": 1, "e": "K=E/[3(1−2ν)]，ν=0.5 時 K→∞。"}, {"ch": "mA", "q": "聖維南原理中「某一距離」約等於？", "o": ["斷面較大邊尺寸", "桿件全長", "半個波長", "螺栓直徑"], "a": 0, "e": "超過此距離可用一般材力公式。"}, {"ch": "mB", "q": "矩形對形心軸的慣性矩 I 為？", "o": ["bh³/12", "bh³/3", "bh²/6", "b³h/12"], "a": 0, "e": "對形心 bh³/12；對底邊 bh³/3。"}, {"ch": "mB", "q": "平行軸定理 Ix=IxC+Ad² 中 IxC 必須是？", "o": ["過形心的軸", "任意軸", "最外緣軸", "中性面以外軸"], "a": 0, "e": "IxC 限定通過形心。"}, {"ch": "mB", "q": "極慣性矩 J 與 Ix、Iy 的關係？", "o": ["J=Ix+Iy", "J=Ix−Iy", "J=Ix·Iy", "J=√(IxIy)"], "a": 0, "e": "J=∫r²dA=∫(x²+y²)dA=Ix+Iy。"}, {"ch": "mB", "q": "面積一次矩 Q 對通過形心的軸而言為？", "o": ["0", "最大", "Ad", "I/c"], "a": 0, "e": "形心軸上一次矩為零。"}, {"ch": "mC", "q": "等斷面桿軸向變形公式為？", "o": ["PL/AE", "PL/2AE", "P/AE", "PAE/L"], "a": 0, "e": "δ=PL/AE。"}, {"ch": "mC", "q": "n 支相同彈簧並聯，總勁度為單支的？", "o": ["n 倍", "1/n 倍", "不變", "n² 倍"], "a": 0, "e": "並聯 k 相加。"}, {"ch": "mC", "q": "兩端完全固定桿溫升 ΔT 的溫度應力為？", "o": ["EαΔT", "αΔTL", "αΔT", "EαΔT/L"], "a": 0, "e": "完全束制 ε=αΔT，σ=Eε。"}, {"ch": "mC", "q": "突加載重（h=0）的衝擊位移為靜位移的？", "o": ["2 倍", "1 倍", "0.5 倍", "√2 倍"], "a": 0, "e": "δim=δst+√(δst²)=2δst。"}, {"ch": "mD", "q": "圓軸扭轉剪應力公式為？", "o": ["Tρ/J", "TJ/ρ", "Tr/I", "TL/GJ"], "a": 0, "e": "τ=Tρ/J，對應彎曲 My/I。"}, {"ch": "mD", "q": "實心圓桿極慣性矩 J 為？", "o": ["πd⁴/32", "πd⁴/64", "πd³/16", "πd⁴/16"], "a": 0, "e": "J=πd⁴/32=πr⁴/2。"}, {"ch": "mD", "q": "扭轉角 θ 等於？", "o": ["TL/GJ", "TL/EI", "Tρ/J", "GJ/L"], "a": 0, "e": "θ=TL/GJ。"}, {"ch": "mD", "q": "薄壁封閉斷面（Bredt）扭轉剪應力 τ 等於？", "o": ["T/(2Am·t)", "T/(Am·t)", "Tρ/J", "T/(4Am·t)"], "a": 0, "e": "τ=T/(2Am·t)，τmax 在最薄處。"}, {"ch": "mD", "q": "薄壁封閉斷面剪力流 f=τt 沿中心線為？", "o": ["常數", "線性", "拋物線", "零"], "a": 0, "e": "剪力流封閉不變。"}, {"ch": "mE", "q": "彎矩圖在某點的斜率等於？", "o": ["剪力 V", "負載重 −w", "彎矩 M", "0"], "a": 0, "e": "dM/dx=V。"}, {"ch": "mE", "q": "均布載重區段的彎矩圖為？", "o": ["二次拋物線", "直線", "常數", "三次曲線"], "a": 0, "e": "歐陽口訣：彎矩比剪力高一次方。"}, {"ch": "mE", "q": "集中力作用點，剪力圖會？", "o": ["突跳", "平滑", "不變", "變拋物線"], "a": 0, "e": "集中力使剪力突變。"}, {"ch": "mE", "q": "內鉸接點的彎矩值為？", "o": ["恆為零", "最大", "與剪力相等", "不一定"], "a": 0, "e": "內鉸 M=0、V 通常不為零。"}, {"ch": "mE", "q": "彎矩為零的點稱為？", "o": ["反曲點", "形心", "主點", "駐點"], "a": 0, "e": "反曲點 Inflection Point。"}, {"ch": "mF", "q": "樑撓曲正向應力公式為？", "o": ["My/I", "VQ/Ib", "Tρ/J", "P/A"], "a": 0, "e": "σ=My/I。"}, {"ch": "mF", "q": "矩形斷面模數 S 為？", "o": ["bh²/6", "bh³/12", "bh²/3", "bh³/6"], "a": 0, "e": "S=I/c=bh²/6。"}, {"ch": "mF", "q": "矩形斷面的形狀因子 f=Mp/My 為？", "o": ["1.5", "1.0", "2.0", "1.7"], "a": 0, "e": "矩形 f=1.5。"}, {"ch": "mF", "q": "降伏彎矩 My 與斷面模數 S 的關係？", "o": ["My=S·σy", "My=Z·σy", "My=S/σy", "My=σy/S"], "a": 0, "e": "首次降伏 My=Sσy。"}, {"ch": "mF", "q": "拉壓降伏應力相同時，全塑性中性軸 PNA 位置使？", "o": ["上下面積相等", "通過形心", "在最外緣", "在 1/3 高處"], "a": 0, "e": "PNA 均分面積。"}, {"ch": "mG", "q": "樑內撓曲剪應力公式為？", "o": ["VQ/Ib", "My/I", "Tr/J", "V/A"], "a": 0, "e": "τ=VQ/(Ib)。"}, {"ch": "mG", "q": "矩形斷面最大剪應力為平均的幾倍？", "o": ["1.5", "1.0", "2.0", "4/3"], "a": 0, "e": "τmax=1.5V/A，在中性軸。"}, {"ch": "mG", "q": "圓形斷面最大剪應力為平均的幾倍？", "o": ["4/3", "1.5", "1.0", "2.0"], "a": 0, "e": "圓形係數 4/3。"}, {"ch": "mG", "q": "一階矩 Q 在斷面何處最大？", "o": ["中性軸", "最外緣", "形心上緣", "支承"], "a": 0, "e": "Q 最大 → τ 最大。"}, {"ch": "mG", "q": "雙對稱斷面（如工字梁）的剪力中心位於？", "o": ["形心", "腹板外側", "翼緣端", "形心下方"], "a": 0, "e": "雙對稱斷面剪力中心＝形心。"}, {"ch": "mH", "q": "莫爾圓圓心的橫座標為？", "o": ["(σx+σy)/2", "(σx−σy)/2", "τxy", "√(σxσy)"], "a": 0, "e": "σavg=(σx+σy)/2。"}, {"ch": "mH", "q": "主應力等於？", "o": ["σavg ± R", "σavg ± τxy", "σx ± σy", "R"], "a": 0, "e": "圓心加減半徑。"}, {"ch": "mH", "q": "主平面上的剪應力為？", "o": ["0", "最大", "σavg", "R"], "a": 0, "e": "主平面剪應力為零。"}, {"ch": "mH", "q": "平面應力下，絕對最大剪應力須納入哪個主應力？", "o": ["第三主應力 0", "僅 σ1", "僅 σ2", "平均應力"], "a": 0, "e": "(τmax)abs=(σ₁−σ₃)/2，σ₃ 可能為 0。"}, {"ch": "mH", "q": "應力轉換公式的成立基礎是？", "o": ["力平衡（與材料無關）", "虎克定律", "材料降伏", "小變形假設"], "a": 0, "e": "純由平衡導出，鋼鋁木皆適用。"}, {"ch": "mI", "q": "薄壁圓筒環向應力 σθ 為？", "o": ["pr/t", "pr/2t", "2pr/t", "p/t"], "a": 0, "e": "環向 pr/t，為軸向 2 倍。"}, {"ch": "mI", "q": "薄壁圓筒最易沿哪個方向裂開？", "o": ["縱向", "環向", "45°", "斜向"], "a": 0, "e": "環向應力大→沿縱向裂。"}, {"ch": "mI", "q": "薄壁球殼應力 σ 為？", "o": ["pr/2t", "pr/t", "2pr/t", "p/2t"], "a": 0, "e": "球 σ=pr/2t。"}, {"ch": "mI", "q": "Tresca 最大剪應力準則適用於？", "o": ["延性材料", "脆性材料", "複合材料", "流體"], "a": 0, "e": "延性材料以最大剪應力為界。"}, {"ch": "mJ", "q": "懸臂梁端點集中載重 P，端點撓度為？", "o": ["PL³/3EI", "PL³/48EI", "wL⁴/8EI", "PL³/12EI"], "a": 0, "e": "懸臂分母 3。"}, {"ch": "mJ", "q": "簡支梁中央集中載重 P，最大撓度為？", "o": ["PL³/48EI", "PL³/3EI", "5wL⁴/384EI", "PL³/24EI"], "a": 0, "e": "分母 48。"}, {"ch": "mJ", "q": "簡支梁均布 w，跨中最大撓度為？", "o": ["5wL⁴/384EI", "wL⁴/8EI", "PL³/48EI", "wL⁴/384EI"], "a": 0, "e": "口訣 5/384。"}, {"ch": "mJ", "q": "撓度雙重積分法的基本方程為？", "o": ["EIy''=M(x)", "EIy''=V(x)", "EIy''=w(x)", "EIy'=θ"], "a": 0, "e": "積兩次定兩邊界常數。"}, {"ch": "mJ", "q": "其他不變，撓度與 EI 的關係為？", "o": ["成反比", "成正比", "無關", "平方反比"], "a": 0, "e": "δ∝1/EI。"}, {"ch": "mK", "q": "梁以單位力法求位移的積分式為？", "o": ["∫Mm/EI dx", "ΣnNL/AE", "∂U/∂x", "∫VQ/Ib"], "a": 0, "e": "Mm/EI 積分。"}, {"ch": "mK", "q": "桁架以單位力法求節點位移為？", "o": ["ΣnNL/AE", "∫Mm/EI", "ΣPL/AE", "∫M/EI"], "a": 0, "e": "nNL/AE 求和。"}, {"ch": "mK", "q": "卡氏第二定理求位移為？", "o": ["∂U/∂P", "∂U/∂x", "∫U dx", "U/P"], "a": 0, "e": "應變能對對應力偏微分。"}, {"ch": "mK", "q": "Maxwell 互換定理可寫為？", "o": ["δij=δji", "δij=−δji", "δii=δjj", "fij=0"], "a": 0, "e": "柔度矩陣對稱。"}, {"ch": "mK", "q": "欲求無對應實力處的位移，可用？", "o": ["設虛擬力 Q 微分後令 Q=0", "直接積分載重", "平衡方程式", "莫爾圓"], "a": 0, "e": "卡氏定理的虛擬力技巧。"}, {"ch": "mL", "q": "Euler 柱挫屈臨界載重為？", "o": ["π²EI/(KL)²", "π²EI/L", "πEI/(KL)²", "π²E/(KL)²"], "a": 0, "e": "Pcr=π²EI/(KL)²。"}, {"ch": "mL", "q": "兩端鉸接柱的有效長度因子 K 為？", "o": ["1.0", "0.5", "2.0", "0.7"], "a": 0, "e": "鉸鉸 K=1。"}, {"ch": "mL", "q": "一端固定一端自由柱 K 為？", "o": ["2.0", "1.0", "0.5", "0.7"], "a": 0, "e": "固自 K=2，最易挫屈。"}, {"ch": "mL", "q": "理想 Euler 挫屈載重與下列何者無關？", "o": ["材料降伏強度", "E", "I", "KL"], "a": 0, "e": "只與 E、I、KL 有關。"}, {"ch": "mL", "q": "歐陽指出，決定 K 值的關鍵是？", "o": ["微擾後的挫形曲線", "微擾前支承", "材料強度", "斷面面積"], "a": 0, "e": "挫形曲線決定有效長度。"}, {"ch": "mL", "q": "無側移柱的 K 值範圍為？", "o": ["0.5≤K≤1", "K≥1", "K=2", "K<0.5"], "a": 0, "e": "無側移 0.5≤K≤1；有側移 K≥1。"}]};
+const CH = DATA.CH, F = DATA.F, Q = DATA.Q;
+const chName = c => { const x = CH.find(o=>o.ch===c); return x?x.name:c; };
+const chSub  = c => { const x = CH.find(o=>o.ch===c); return x?x.sub:""; };
+
+document.getElementById('sCh').textContent = CH.length;
+document.getElementById('sF').textContent = F.length;
+document.getElementById('sQ').textContent = Q.length;
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('v-'+t.dataset.m).classList.add('on');
+  });
+});
+
+function buildChips(container,state,onChange){
+  container.innerHTML='';
+  const all=mkChip('全部','__all',state.size===0,false);
+  all.addEventListener('click',()=>{state.clear();buildChips(container,state,onChange);onChange();});
+  container.appendChild(all);
+  const _subs=[...new Set(CH.map(c=>c.sub))];
+  const _multi=_subs.length>1;
+  const _hdr={'核心':'── ★ 核心章 ──','次要':'── 次要章 ──','概覽':'── 概覽章 ──'};
+  let lastSub='';
+  CH.forEach(c=>{
+    if(_multi&&c.sub!==lastSub){lastSub=c.sub;
+      const lab=document.createElement('span');
+      lab.className='flbl';lab.style.width='100%';lab.style.margin='8px 0 2px';
+      lab.textContent=_hdr[c.sub]||('── '+c.sub+' ──');
+      container.appendChild(lab);
+    }
+    const chip=mkChip(c.name,c.ch,state.has(c.ch),false);
+    chip.addEventListener('click',()=>{
+      if(state.has(c.ch))state.delete(c.ch);else state.add(c.ch);
+      buildChips(container,state,onChange);onChange();
+    });
+    container.appendChild(chip);
+  });
+}
+function mkChip(text,key,on,isMat){
+  const b=document.createElement('button');
+  b.className='chip'+(isMat?' s':'')+(on?' on':'');
+  b.textContent=text;b.dataset.k=key;return b;
+}
+
+/* READ */
+const readState=new Set();
+const readChips=document.getElementById('readChips');
+const readList=document.getElementById('readList');
+const searchEl=document.getElementById('search');
+buildChips(readChips,readState,renderRead);
+searchEl.addEventListener('input',renderRead);
+function renderRead(){
+  const kw=searchEl.value.trim().toLowerCase();
+  let list=F.filter(f=>readState.size===0||readState.has(f.ch));
+  if(kw)list=list.filter(f=>(f.n+f.f+f.d+f.tip+chName(f.ch)).toLowerCase().includes(kw));
+  document.getElementById('readCount').textContent='顯示 '+list.length+' / '+F.length+' 條公式';
+  readList.innerHTML='';
+  list.forEach((f,i)=>readList.appendChild(buildFCard(f,'r'+i)));
+}
+function buildFCard(f,id){
+  const card=document.createElement('div');card.className='fcard';
+  const top=document.createElement('div');top.className='ftop';
+  const pill=document.createElement('span');
+  pill.className='pill';
+  pill.textContent=chName(f.ch);
+  const nm=document.createElement('span');nm.className='fname';
+  if(f.s){const s=document.createElement('span');s.className='star';s.textContent='★';nm.appendChild(s);}
+  nm.appendChild(document.createTextNode(f.n));
+  top.appendChild(pill);top.appendChild(nm);
+  const fo=document.createElement('div');fo.className='formula';fo.textContent=f.f;
+  card.appendChild(top);card.appendChild(fo);
+  if(f.d){const dn=document.createElement('div');dn.className='dnote';dn.textContent=f.d;card.appendChild(dn);}
+  const exp=document.createElement('div');exp.className='expander';
+  const ic=document.createElement('span');ic.className='ic';ic.textContent='代';
+  exp.appendChild(ic);
+  const lab=document.createElement('span');lab.textContent='展開代數意義';exp.appendChild(lab);
+  const det=document.createElement('div');det.className='detail';
+  if(f.v&&f.v.length){
+    const tb=document.createElement('table');tb.className='vtab';
+    f.v.forEach(r=>{const tr=document.createElement('tr');
+      r.forEach(cell=>{const td=document.createElement('td');td.textContent=cell;tr.appendChild(td);});
+      tb.appendChild(tr);});
+    det.appendChild(tb);
+  }
+  if(f.tip){const tp=document.createElement('div');tp.className='tip';
+    const b=document.createElement('b');b.textContent='口訣／觀念：';tp.appendChild(b);
+    tp.appendChild(document.createTextNode(f.tip));det.appendChild(tp);}
+  exp.addEventListener('click',()=>{
+    det.classList.toggle('on');
+    lab.textContent=det.classList.contains('on')?'收合代數意義':'展開代數意義';
+  });
+  card.appendChild(exp);card.appendChild(det);
+  return card;
+}
+renderRead();
+
+/* QUIZ */
+const quizState=new Set();
+let qNum=10;
+buildChips(document.getElementById('quizChips'),quizState,()=>{});
+document.querySelectorAll('#numSel button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#numSel button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');qNum=parseInt(b.dataset.n);
+  });
+});
+document.getElementById('startQuiz').addEventListener('click',startQuiz);
+let curQuiz=[];
+function startQuiz(){
+  let pool=Q.filter(q=>quizState.size===0||quizState.has(q.ch));
+  pool=shuffle(pool.slice());
+  if(qNum>0)pool=pool.slice(0,qNum);
+  if(pool.length===0){alert('此章節暫無題目，請改選其他章節。');return;}
+  curQuiz=pool.map(q=>({...q,pick:null}));
+  document.getElementById('quizSetup').classList.add('hide');
+  const run=document.getElementById('quizRun');run.classList.remove('hide');run.innerHTML='';
+  curQuiz.forEach((q,i)=>{
+    const card=document.createElement('div');card.className='qcard';card.dataset.i=i;
+    const head=document.createElement('div');head.className='qhead';
+    const s1=document.createElement('span');s1.textContent='第 '+(i+1)+' / '+curQuiz.length+' 題';
+    const s2=document.createElement('span');s2.textContent=chSub(q.ch)+'｜'+chName(q.ch);
+    head.appendChild(s1);head.appendChild(s2);
+    const qt=document.createElement('div');qt.className='qtext';qt.textContent=q.q;
+    card.appendChild(head);card.appendChild(qt);
+    q.o.forEach((opt,oi)=>{
+      const el=document.createElement('div');el.className='opt';
+      const k=document.createElement('span');k.className='k';k.textContent='ABCD'[oi];
+      el.appendChild(k);el.appendChild(document.createTextNode(opt));
+      el.addEventListener('click',()=>{
+        if(card.dataset.done)return;
+        card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+        el.classList.add('sel');q.pick=oi;
+      });
+      card.appendChild(el);
+    });
+    const exp=document.createElement('div');exp.className='exp';card.appendChild(exp);
+    run.appendChild(card);
+  });
+  const sub=document.createElement('button');sub.className='btn';sub.textContent='交卷看分數';
+  sub.addEventListener('click',gradeQuiz);run.appendChild(sub);
+  const back=document.createElement('button');back.className='btn ghost';back.style.marginTop='8px';
+  back.textContent='重設章節 / 題數';back.addEventListener('click',resetQuiz);run.appendChild(back);
+  window.scrollTo(0,0);
+}
+function gradeQuiz(){
+  let correct=0;
+  curQuiz.forEach((q,i)=>{
+    const card=document.querySelector('.qcard[data-i="'+i+'"]');
+    card.dataset.done='1';
+    card.querySelectorAll('.opt').forEach((o,oi)=>{
+      o.style.cursor='default';
+      if(oi===q.a)o.classList.add('right');
+      if(q.pick===oi&&oi!==q.a)o.classList.add('wrong');
+    });
+    if(q.pick===q.a)correct++;
+    const exp=card.querySelector('.exp');exp.classList.add('on');
+    exp.innerHTML='<b>正解：'+'ABCD'[q.a]+'</b>　'+escapeHtml(q.e);
+  });
+  const run=document.getElementById('quizRun');
+  const bar=document.createElement('div');bar.className='scorebar';
+  const pct=Math.round(correct/curQuiz.length*100);
+  bar.innerHTML='<div class="big">'+correct+' / '+curQuiz.length+'</div>'+
+    '<div class="lbl">答對率 '+pct+'%　'+(pct>=80?'穩了 👍':pct>=60?'再衝一點':'錯題回頭看公式')+'</div>';
+  run.insertBefore(bar,run.firstChild);
+  document.querySelector('#quizRun .btn').classList.add('hide');
+  window.scrollTo(0,0);
+}
+function resetQuiz(){
+  document.getElementById('quizRun').classList.add('hide');
+  document.getElementById('quizSetup').classList.remove('hide');
+  window.scrollTo(0,0);
+}
+
+/* FLASH */
+const flashState=new Set();
+let cards=[],ci=0,flipped=false;
+buildChips(document.getElementById('flashChips'),flashState,rebuildCards);
+function rebuildCards(){
+  cards=F.filter(f=>flashState.size===0||flashState.has(f.ch));
+  cards=shuffle(cards.slice());ci=0;flipped=false;renderCard();
+}
+function renderCard(){
+  const c=cards[ci];const el=document.getElementById('fcCard');
+  document.getElementById('fcProg').textContent=cards.length?('第 '+(ci+1)+' / '+cards.length+' 張'):'';
+  el.innerHTML='';
+  if(!c){el.innerHTML='<div class="q">此範圍無公式</div>';return;}
+  const side=document.createElement('div');side.className='side';
+  side.textContent=flipped?'公式 ＋ 口訣':'默寫這條公式';el.appendChild(side);
+  if(!flipped){
+    const q=document.createElement('div');q.className='q';
+    q.textContent=(c.s?'★ ':'')+c.n;el.appendChild(q);
+    const sub=document.createElement('div');sub.className='hint';sub.style.marginTop='8px';
+    sub.textContent=chSub(c.ch)+'｜'+chName(c.ch);el.appendChild(sub);
+    const h=document.createElement('div');h.className='hint';h.style.marginTop='12px';h.style.color='var(--dim)';
+    h.textContent='點一下看答案';el.appendChild(h);
+  }else{
+    const a=document.createElement('div');a.className='a';a.textContent=c.f;el.appendChild(a);
+    if(c.tip){const t=document.createElement('div');t.className='hint';t.textContent=c.tip;el.appendChild(t);}
+  }
+}
+document.getElementById('fcCard').addEventListener('click',()=>{flipped=!flipped;renderCard();});
+document.getElementById('fcNext').addEventListener('click',()=>{if(!cards.length)return;ci=(ci+1)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcPrev').addEventListener('click',()=>{if(!cards.length)return;ci=(ci-1+cards.length)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcShuf').addEventListener('click',()=>{cards=shuffle(cards);ci=0;flipped=false;renderCard();});
+rebuildCards();
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script>
+</body>
+</html>
