@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="結構">
+<meta name="theme-color" content="#efe9dc">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>結構學 公式題庫</title>
+<style>
+:root{
+  --bg:#efe9dc; --grid:rgba(178,164,140,.16);
+  --panel:#fffdf8; --panel2:#f6f1e7; --line:#e3dbca;
+  --ink:#2f2b24; --dim:#8c8473;
+  --acc:#9a5a30; --acc2:#2f7d8a; --teal:#1f8574; --dark:#2c2a26;
+  --star:#d99a1c; --ok:#2f8f5b; --bad:#c0473f;
+  --mao:#a8512f; --oy:#247064;
+  --mono:"Consolas","Roboto Mono","Noto Sans Mono CJK TC",monospace;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    var(--bg);
+  background-size:22px 22px,22px 22px,auto;
+  color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top)) 16px 60px}
+header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+h1{font-size:1.32rem;letter-spacing:.5px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--ink)}
+h1 .tag{font-size:.6rem;background:var(--acc);color:#fff;padding:2px 7px;border-radius:4px;letter-spacing:1px;font-weight:700}
+.sub{color:var(--dim);font-size:.82rem;margin-top:5px}
+.srcline{font-size:.74rem;color:var(--dim);margin-top:6px}
+.srcline b{color:var(--oy)} .srcline i{color:var(--mao);font-style:normal}
+.stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 13px;text-align:center;min-width:60px;box-shadow:0 1px 2px rgba(90,75,50,.05)}
+.stat b{display:block;font-size:1.12rem;color:var(--teal)}
+.stat span{font-size:.64rem;color:var(--dim);letter-spacing:1px}
+.tabs{display:flex;gap:6px;margin:18px 0 14px}
+.tab{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:10px;border-radius:9px;cursor:pointer;font-size:.9rem;font-family:inherit;transition:.15s;box-shadow:0 1px 2px rgba(90,75,50,.04)}
+.tab.on{background:var(--dark);color:#fff;border-color:var(--dark);font-weight:700}
+.tab:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.view{display:none}.view.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+.filterbar{margin-bottom:12px}
+.flbl{font-size:.7rem;color:var(--dim);letter-spacing:1px;margin:8px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:5px 11px;border-radius:20px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:.12s}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:600}
+.chip.s.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.searchbox{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:10px 13px;border-radius:9px;font-size:.9rem;font-family:inherit;margin-top:10px}
+.searchbox::placeholder{color:#b3ab99}
+.searchbox:focus{outline:none;border-color:var(--acc2)}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 15px;margin-bottom:10px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.ftop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.pill{font-size:.62rem;padding:2px 8px;border-radius:5px;letter-spacing:.5px;font-weight:700;white-space:nowrap}
+.pill{color:var(--acc);background:rgba(189,85,48,.09);border:1px solid var(--line)}
+.fname{font-weight:600;font-size:1rem;color:var(--ink)}
+.fname .star{color:var(--star);margin-right:3px}
+.formula{font-family:var(--mono);background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:7px;padding:10px 13px;margin-top:10px;font-size:1.02rem;color:#3c352b;overflow-x:auto;line-height:1.7}
+.dnote{color:var(--dim);font-size:.82rem;margin-top:8px}
+.expander{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:rgba(47,125,138,.09);border:1px solid rgba(47,125,138,.3);color:var(--acc2);padding:5px 11px;border-radius:7px;cursor:pointer;font-size:.78rem;font-family:inherit;user-select:none}
+.expander .ic{font-size:.68rem;background:var(--acc2);color:#fff;padding:1px 5px;border-radius:3px;font-weight:700}
+.expander:hover{background:rgba(47,125,138,.16)}
+.detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
+.detail.on{display:block}
+.vtab{width:100%;border-collapse:collapse;font-size:.82rem}
+.vtab td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.vtab tr:last-child td{border-bottom:none}
+.vtab td:first-child{font-family:var(--mono);color:var(--acc2);white-space:nowrap;width:1%;font-weight:600}
+.vtab td:nth-child(3){color:var(--dim);white-space:nowrap;text-align:right}
+.tip{background:rgba(217,154,28,.1);border:1px solid rgba(217,154,28,.32);border-radius:7px;padding:8px 11px;margin-top:11px;font-size:.82rem;color:#7c5a18}
+.tip b{color:var(--acc)}
+.count{color:var(--dim);font-size:.76rem;margin:4px 2px 10px}
+.qsetup{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.row{margin-bottom:14px}
+.row>label{display:block;font-size:.78rem;color:var(--dim);letter-spacing:1px;margin-bottom:7px}
+.numsel{display:flex;gap:6px;flex-wrap:wrap}
+.numsel button{background:var(--panel2);border:1px solid var(--line);color:var(--dim);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit}
+.numsel button.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:700}
+.btn{background:var(--acc);color:#fff;border:none;padding:12px;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer;width:100%;font-family:inherit}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);font-weight:500}
+.btn:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.qhead{font-size:.7rem;color:var(--dim);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.qtext{font-size:.95rem;margin-bottom:12px;line-height:1.5;color:var(--ink)}
+.opt{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 13px;margin-bottom:8px;cursor:pointer;font-size:.88rem;transition:.12s;color:var(--ink)}
+.opt:hover{border-color:var(--acc2)}
+.opt.sel{border-color:var(--acc2);background:rgba(47,125,138,.1)}
+.opt.right{border-color:var(--ok);background:rgba(47,143,91,.13)}
+.opt.wrong{border-color:var(--bad);background:rgba(192,71,63,.12)}
+.opt .k{font-family:var(--mono);color:var(--acc2);margin-right:9px}
+.exp{display:none;margin-top:10px;font-size:.82rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:9px}
+.exp.on{display:block}.exp b{color:var(--ok)}
+.scorebar{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px;text-align:center;margin-bottom:14px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.scorebar .big{font-size:2.2rem;color:var(--acc);font-weight:800}
+.scorebar .lbl{color:var(--dim);font-size:.8rem}
+.hide{display:none!important}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;cursor:pointer;margin-bottom:14px;box-shadow:0 1px 4px rgba(90,75,50,.07)}
+.fc .side{font-size:.66rem;color:var(--dim);letter-spacing:2px;margin-bottom:14px}
+.fc .q{font-size:1.18rem;font-weight:600;color:var(--ink)}
+.fc .a{font-family:var(--mono);font-size:1.08rem;color:#3c352b;margin-bottom:12px;line-height:1.7}
+.fc .hint{font-size:.78rem;color:var(--acc2)}
+.fcbtns{display:flex;gap:8px}
+.fcbtns button{flex:1}
+.fcprog{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:10px}
+footer{color:var(--dim);font-size:.7rem;text-align:center;margin-top:34px;border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
+@media(max-width:560px){.stat{min-width:52px;padding:6px 9px}.tabs{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>結構學 公式題庫 <span class="tag">技師備考</span></h1>
+  <div class="sub">口訣・觀念・俗成公式｜每條公式可展開代數意義｜★為高頻考點</div>
+  <div class="srcline">內容參考 <b>毛昭綱《結構力學》</b></div>
+  <div class="stats">
+    <div class="stat"><b id="sCh">0</b><span>章節</span></div>
+    <div class="stat"><b id="sF">0</b><span>公式</span></div>
+    <div class="stat"><b id="sQ">0</b><span>題目</span></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab on" data-m="read">閱讀模式</button>
+  <button class="tab" data-m="quiz">測驗模式</button>
+  <button class="tab" data-m="flash">單題卡</button>
+</div>
+
+<section class="view on" id="v-read">
+  <div class="filterbar">
+    <div class="flbl">篩選章節</div>
+    <div class="chips" id="readChips"></div>
+    <input class="searchbox" id="search" placeholder="搜尋：固端彎矩、傾角變位、b+r−2j…">
+  </div>
+  <div class="count" id="readCount"></div>
+  <div id="readList"></div>
+</section>
+
+<section class="view" id="v-quiz">
+  <div class="qsetup" id="quizSetup">
+    <div class="row"><label>選擇章節（可多選）</label><div class="chips" id="quizChips"></div></div>
+    <div class="row"><label>題數</label>
+      <div class="numsel" id="numSel">
+        <button data-n="10" class="on">10</button>
+        <button data-n="20">20</button>
+        <button data-n="40">40</button>
+        <button data-n="0">全部</button>
+      </div>
+    </div>
+    <button class="btn" id="startQuiz">開始測驗</button>
+  </div>
+  <div id="quizRun" class="hide"></div>
+</section>
+
+<section class="view" id="v-flash">
+  <div class="filterbar"><div class="flbl">選擇章節</div><div class="chips" id="flashChips"></div></div>
+  <div class="fcprog" id="fcProg"></div>
+  <div class="fc" id="fcCard"><div class="side">點卡片翻面</div><div class="q">準備中…</div></div>
+  <div class="fcbtns">
+    <button class="btn ghost" id="fcPrev">上一張</button>
+    <button class="btn ghost" id="fcShuf">洗牌</button>
+    <button class="btn" id="fcNext">下一張</button>
+  </div>
+</section>
+
+<footer>
+  靜不定度等符號採毛昭綱寫法；本工具為記憶輔助。<br>
+  襄澤專案顧問工作室 ©
+</footer>
+</div>
+
+<script>
+const DATA = {"CH": [{"ch": "sA", "sub": "結構", "name": "靜定與穩定判別", "src": "毛昭綱"}, {"ch": "sB", "sub": "結構", "name": "靜定桁架", "src": "毛昭綱"}, {"ch": "sC", "sub": "結構", "name": "靜定剛架", "src": "毛昭綱"}, {"ch": "sD", "sub": "結構", "name": "能量原理", "src": "毛昭綱"}, {"ch": "sE", "sub": "結構", "name": "力法（諧和變位）", "src": "毛昭綱"}, {"ch": "sF", "sub": "結構", "name": "傾角變位法", "src": "毛昭綱"}, {"ch": "sG", "sub": "結構", "name": "彎矩分配法", "src": "毛昭綱"}, {"ch": "sH", "sub": "結構", "name": "影響線", "src": "毛昭綱"}], "F": [{"ch": "sA", "n": "平面平衡方程式", "f": "ΣFx = 0 ， ΣFy = 0 ， ΣM = 0", "d": "剛體在平面內三個獨立平衡條件。", "v": [["ΣFx,ΣFy", "水平、垂直合力為零", "—"], ["ΣM", "對任一點合力矩為零", "—"]], "tip": "三方程式可解三個未知反力。", "s": 1, "src": "毛昭綱"}, {"ch": "sA", "n": "連續梁靜不定度", "f": "N = R − C − 3", "d": "毛昭綱(1.10)：反力與條件方程式扣掉三個平衡方程式。", "v": [["N", "靜不定度", "—"], ["R", "反力數", "—"], ["C", "條件方程式數", "—"]], "tip": "毛昭綱：條件方程式 c — 內連接(內鉸) c=1；內滾支、內連桿 c=2。", "s": 1, "src": "毛昭綱"}, {"ch": "sA", "n": "桁架靜不定度", "f": "N = b + r − 2j", "d": "毛昭綱(1.11)：每結點提供兩條平衡方程式，故乘 2。", "v": [["N", "靜不定度", "—"], ["b", "桿件數", "—"], ["r", "反力數", "—"], ["j", "結點數", "—"]], "tip": "毛昭綱用 b（桿件）、j（結點）、N（靜不定度）。桁架為二力桿，只有一個內力變數。N<0 不穩、N=0 靜定、N>0 靜不定。", "s": 1, "src": "毛昭綱"}, {"ch": "sA", "n": "剛架靜不定度（剖面法）", "f": "N = 3C", "d": "毛昭綱(1.12)：將剛架剖開成靜定懸臂，每一剖面釋放 3 個斷面內力 (N、V、M)。", "v": [["N", "靜不定度", "—"], ["C", "剖面數（使結構變靜定所需切開的封閉迴路數）", "—"]], "tip": "毛昭綱剛架以剖面法計。另法（計數）：N = 3m + r − 3n − c（m 桿件、r 反力、n 節點含支承、c 條件方程式）。", "s": 1, "src": "毛昭綱"}, {"ch": "sA", "n": "纜索基本式", "f": "d²y/dx² = w(x)/T₀", "d": "水平分力 T₀ 為常數，垂度由載重決定。", "v": [["y", "纜索垂度形狀", "cm"], ["w(x)", "分布載重", "kgf/cm"], ["T₀", "水平張力（常數）", "kgf"]], "tip": "毛昭綱：Tcosθ=T₀=常數；纜索切線方向與合力方向重合。", "s": 0, "src": "毛昭綱"}, {"ch": "sA", "n": "穩定性觀察法", "f": "幾何不變且反力足夠且非並行／共點", "d": "毛昭綱以觀察判斷穩定與靜定。", "v": [["—", "反力不可全平行或交於一點", "—"]], "tip": "觀念：反力數夠也可能不穩定（瞬時機構），須檢查幾何配置。", "s": 1, "src": "毛昭綱"}, {"ch": "sB", "n": "節點法", "f": "每節點 ΣFx=0、ΣFy=0", "d": "逐一節點解兩個平衡方程式。", "v": [["—", "每節點 2 個方程式", "—"]], "tip": "適合求出全部桿件內力。先找零桿可大幅簡化。", "s": 1, "src": "毛昭綱"}, {"ch": "sB", "n": "截面法", "f": "切斷三桿、取一側用 ΣFx、ΣFy、ΣM", "d": "一刀切過欲求桿件直接求內力。", "v": [["—", "一次最多解 3 根未知桿力", "—"]], "tip": "口訣「截面法切三桿、取一邊」，取力臂方便的點取矩。", "s": 1, "src": "毛昭綱"}, {"ch": "sB", "n": "零桿判別", "f": "無載重 L 形→兩桿皆零；T 形→非共線桿為零", "d": "由節點平衡快速辨識零桿。", "v": [["—", "兩桿非共線無載重節點 → 兩桿皆零桿", "—"], ["—", "三桿其中兩共線 → 第三桿零桿", "—"]], "tip": "零桿在某載重下不受力，但換載重後可能受力，不可拆除。", "s": 1, "src": "毛昭綱"}, {"ch": "sC", "n": "剛架反力", "f": "ΣFx、ΣFy、ΣM（含條件方程式）", "d": "以整體與內鉸條件求支承反力。", "v": [["—", "三鉸剛架另有內鉸 ΣM=0", "—"]], "tip": "虛功法亦可求單一反力或內力，免解全部聯立。", "s": 0, "src": "毛昭綱"}, {"ch": "sC", "n": "內力圖關係", "f": "軸力 N、剪力 V、彎矩 M 圖逐段繪製", "d": "剛架各桿沿桿軸建立局部座標作圖。", "v": [["N", "軸力", "kgf"], ["V", "剪力", "kgf"], ["M", "彎矩", "kgf·cm"]], "tip": "剛性節點處彎矩須平衡（ΣM節點=0），畫圖以受拉側標註。", "s": 1, "src": "毛昭綱"}, {"ch": "sC", "n": "三鉸剛架", "f": "內鉸處 M=0 提供額外方程式", "d": "三個鉸使四個反力可解。", "v": [["—", "內鉸 M=0", "—"]], "tip": "靜定。內鉸兩側彎矩皆為零。", "s": 0, "src": "毛昭綱"}, {"ch": "sD", "n": "虛功原理", "f": "外力虛功 δW = 內力虛應變能 δU", "d": "已平衡系統導入諧和虛位移時的功能等式。", "v": [["δW", "外力虛功", "kgf·cm"], ["δU", "內力虛應變能", "kgf·cm"]], "tip": "位法的基礎（導入虛位移）；力法則用虛補功（導入虛力）。", "s": 1, "src": "毛昭綱"}, {"ch": "sD", "n": "卡氏第一定理", "f": "Pi = ∂U/∂Δi", "d": "應變能對位移偏微分得對應力。", "v": [["Pi", "對應之力", "kgf"], ["U", "應變能", "kgf·cm"], ["Δi", "位移", "cm"]], "tip": "位法系統定理。最小總勢能法：Π 對廣義座標一次導為零。", "s": 0, "src": "毛昭綱"}, {"ch": "sD", "n": "卡氏第二定理", "f": "Δi = ∂U/∂Pi", "d": "應變能對力偏微分得對應位移。", "v": [["Δi", "位移", "cm"], ["U", "應變能", "kgf·cm"], ["Pi", "對應之力", "kgf"]], "tip": "毛昭綱以「廣義卡氏第二定理」列靜不定結構柔度矩陣。", "s": 1, "src": "毛昭綱"}, {"ch": "sD", "n": "單位力法", "f": "Δ = ∫Mm/EI dx ＋ ΣnNL/AE", "d": "虛力法的工程形式，剛架／桁架通用。", "v": [["M,N", "實際內力", "—"], ["m,n", "單位虛載內力", "—"]], "tip": "求位移最常用。圖乘法為其快速計算法（一圖為直線時）。", "s": 1, "src": "毛昭綱"}, {"ch": "sE", "n": "諧和方程式", "f": "Σδ = 0（贅力處）", "d": "贅力作用處的實際位移須相容（=0 或已知沉陷）。", "v": [["δ", "贅力處位移", "cm"]], "tip": "口訣「選贅餘力→主結構→寫諧和條件→解柔度方程」。", "s": 1, "src": "毛昭綱"}, {"ch": "sE", "n": "一次靜不定解", "f": "f₁₁·X₁ + Δ₁Q = 0 → X₁ = −Δ₁Q/f₁₁", "d": "以柔度係數與外載變位求贅力。", "v": [["X₁", "贅力", "kgf 或 kgf·cm"], ["f₁₁", "單位贅力在贅力處的位移", "—"], ["Δ₁Q", "外載在贅力處的位移", "cm"]], "tip": "f₁₁、Δ₁Q 皆以單位力法（∫mm/EI、∫Mm/EI）求得。", "s": 1, "src": "毛昭綱"}, {"ch": "sE", "n": "柔度矩陣式", "f": "[f]{X} = −{ΔQ}", "d": "多次靜不定的諧和方程矩陣形式。", "v": [["[f]", "柔度矩陣（對稱）", "—"], ["{X}", "贅力向量", "—"], ["{ΔQ}", "外載變位向量", "—"]], "tip": "毛昭綱：以廣義卡氏第二定理建立 [f]，由 Maxwell 互換 [f] 必對稱。", "s": 1, "src": "毛昭綱"}, {"ch": "sF", "n": "傾角變位式", "f": "M_AB = (2EI/L)(2θA + θB − 3R) + FEM_AB", "d": "以節點轉角與構材角表桿端彎矩。", "v": [["M_AB", "A 端桿端彎矩", "kgf·cm"], ["θA,θB", "近端、遠端節點轉角", "rad"], ["R", "構材角（弦轉角）= Δ/L", "rad"], ["FEM", "固端彎矩", "kgf·cm"]], "tip": "毛昭綱以 R 表構材角（即 ψ）。近端轉角係數 2、遠端 1、側移 −3R。無側移時 R=0。", "s": 1, "src": "毛昭綱"}, {"ch": "sF", "n": "桿端勁度", "f": "近端 4EI/L ， 遠端（傳遞）2EI/L", "d": "近端單位轉角所需彎矩與其傳遞值。", "v": [["4EI/L", "近端旋轉單位角所需彎矩", "kgf·cm"], ["2EI/L", "遠端產生之彎矩", "kgf·cm"]], "tip": "毛昭綱：由此得傳遞係數 = (2EI/L)/(4EI/L) = 1/2。", "s": 1, "src": "毛昭綱"}, {"ch": "sF", "n": "支承沉陷效應", "f": "R = Δ/L ， 沉陷產生 M = −6EI·Δ/L²", "d": "桿端相對位移 Δ 造成的附加固端彎矩。", "v": [["Δ", "桿端相對位移（沉陷）", "cm"], ["L", "桿長", "cm"]], "tip": "毛昭綱：桿端相對位移與桿端彎矩差一負號；θA=θB=−Δ/L 與相對位移一單位同義。", "s": 0, "src": "毛昭綱"}, {"ch": "sG", "n": "分配係數", "f": "DF = k/Σk ， k = I/L（或 4EI/L）", "d": "節點各桿依勁度比分配不平衡彎矩。", "v": [["DF", "分配係數", "—"], ["k", "桿件勁度", "—"], ["Σk", "節點各桿勁度和", "—"]], "tip": "口訣「自己勁度除節點總勁度」，同節點各桿 DF 和為 1。", "s": 1, "src": "毛昭綱"}, {"ch": "sG", "n": "傳遞係數", "f": "COF = 1/2（遠端固定）", "d": "近端分配後傳遞到遠端的比例。", "v": [["COF", "傳遞係數", "—"]], "tip": "遠端鉸接則不傳遞，且該桿用修正勁度 3EI/L（=¾·4EI/L）。", "s": 1, "src": "毛昭綱"}, {"ch": "sG", "n": "固端彎矩 FEM", "f": "均布 wL²/12 ； 中央集中 PL/8 ； 任意 Pab²/L²、Pa²b/L²", "d": "兩端固定梁在載重下的端彎矩。", "v": [["w", "均布載重", "kgf/cm"], ["P", "集中載重", "kgf"], ["L", "跨長", "cm"], ["a,b", "集中載重至兩端距離", "cm"]], "tip": "口訣「均布 L²/12、中央集中 PL/8」。近端取 Pab²/L²。", "s": 1, "src": "毛昭綱"}, {"ch": "sG", "n": "分配流程", "f": "固端 → 分配 → 傳遞（反覆至收斂）", "d": "Hardy Cross 疊代，不必解聯立方程。", "v": [["—", "重複至不平衡彎矩趨近 0", "—"]], "tip": "觀念：適合節點多、側移少的連續梁／無側移剛架。", "s": 0, "src": "毛昭綱"}, {"ch": "sH", "n": "Müller-Breslau 原理", "f": "釋放對應束制 → 給單位變位 → 變形圖即影響線", "d": "以變形圖直接得到反力／內力的影響線。", "v": [["—", "反力：移除支承給單位位移", "—"], ["—", "彎矩：置內鉸給單位相對轉角", "—"], ["—", "剪力：切斷給單位相對剪位移", "—"]], "tip": "口訣「解束制、給單位變位、看變形」。", "s": 1, "src": "毛昭綱"}, {"ch": "sH", "n": "佈載原則", "f": "活載置於影響線同號區求最大效應", "d": "可動載重下求某斷面最大內力。", "v": [["—", "求最大正彎矩 → 活載放正號區", "—"]], "tip": "觀念：靜定結構影響線為折線（直線段）；靜不定結構影響線為曲線。", "s": 1, "src": "毛昭綱"}], "Q": [{"ch": "sA", "q": "平面結構獨立平衡方程式有幾條？", "o": ["3", "2", "6", "4"], "a": 0, "e": "ΣFx、ΣFy、ΣM。"}, {"ch": "sA", "q": "毛昭綱課本中，平面桁架靜不定度公式為？", "o": ["N=b+r−2j", "N=m+r−3", "N=3b+r−3j", "N=b−2j"], "a": 0, "e": "毛昭綱(1.11)：b 桿件數、r 反力數、j 結點數。"}, {"ch": "sA", "q": "毛昭綱以剖面法計剛架靜不定度，公式為？", "o": ["N=3C（C 為剖面數）", "N=b+r−2j", "N=R−C−3", "N=2C"], "a": 0, "e": "每剖面釋放 N、V、M 共 3 個內力。"}, {"ch": "sA", "q": "靜不定度 i<0 代表？", "o": ["不穩定（機構）", "靜定", "靜不定", "必穩定"], "a": 0, "e": "束制不足。"}, {"ch": "sA", "q": "反力數足夠但全部平行或交於一點，結構為？", "o": ["不穩定", "靜定", "靜不定", "超穩定"], "a": 0, "e": "幾何配置不當仍不穩定。"}, {"ch": "sA", "q": "纜索中保持為常數的是？", "o": ["水平張力 T₀", "總張力 T", "垂度 y", "斜率"], "a": 0, "e": "Tcosθ=T₀=常數。"}, {"ch": "sB", "q": "截面法一次最多解幾根未知桿力？", "o": ["3", "2", "4", "1"], "a": 0, "e": "三個平衡方程式。"}, {"ch": "sB", "q": "無載重節點僅連兩非共線桿，則？", "o": ["兩桿皆零桿", "一桿零桿", "皆受力", "無法判別"], "a": 0, "e": "L 形零桿。"}, {"ch": "sB", "q": "三桿節點其中兩桿共線且無載重，第三桿為？", "o": ["零桿", "受拉", "受壓", "無法判別"], "a": 0, "e": "非共線桿為零桿。"}, {"ch": "sB", "q": "零桿在更換載重後？", "o": ["可能受力，不可拆除", "永遠為零", "必受拉", "必受壓"], "a": 0, "e": "零桿隨載重而定。"}, {"ch": "sC", "q": "三鉸剛架的內鉸提供的條件為？", "o": ["該處 M=0", "該處 V=0", "該處 N=0", "該處位移=0"], "a": 0, "e": "內鉸彎矩為零。"}, {"ch": "sC", "q": "剛性節點處各桿端彎矩須滿足？", "o": ["ΣM節點=0", "ΣF=0 即可", "彎矩相等", "彎矩為零"], "a": 0, "e": "節點彎矩平衡。"}, {"ch": "sC", "q": "求剛架單一反力最省力的方法是？", "o": ["虛功法", "解全部聯立", "節點法", "莫爾圓"], "a": 0, "e": "虛功法可直接求單一量。"}, {"ch": "sD", "q": "虛功原理的等式為？", "o": ["δW=δU", "δW=0", "W=U²", "δU=0"], "a": 0, "e": "外虛功=內虛應變能。"}, {"ch": "sD", "q": "卡氏第二定理為？", "o": ["Δ=∂U/∂P", "P=∂U/∂Δ", "U=∂Δ/∂P", "Δ=∫U"], "a": 0, "e": "應變能對力偏微分。"}, {"ch": "sD", "q": "毛昭綱建立靜不定柔度矩陣所用的是？", "o": ["廣義卡氏第二定理", "節點法", "莫爾圓", "彎矩分配"], "a": 0, "e": "以廣義卡氏第二定理列柔度式。"}, {"ch": "sD", "q": "單位力法求剛架位移的式子為？", "o": ["∫Mm/EI dx", "ΣnNL/AE", "∂U/∂x", "VQ/Ib"], "a": 0, "e": "剛架以 Mm/EI 積分。"}, {"ch": "sE", "q": "一次靜不定的諧和方程式為？", "o": ["f₁₁X₁+Δ₁Q=0", "2EI/L(...)=0", "m+r−2j", "DF=k/Σk"], "a": 0, "e": "贅力處相容。"}, {"ch": "sE", "q": "柔度係數 f₁₁ 的意義為？", "o": ["單位贅力在贅力處的位移", "桿件勁度", "固端彎矩", "分配係數"], "a": 0, "e": "柔度=單位力造成的位移。"}, {"ch": "sE", "q": "力法的柔度矩陣 [f] 必為？", "o": ["對稱", "反對稱", "僅對角", "非方陣"], "a": 0, "e": "由 Maxwell 互換對稱。"}, {"ch": "sE", "q": "X₁=−Δ₁Q/f₁₁ 中 Δ₁Q 代表？", "o": ["外載在贅力處的位移", "贅力", "勁度", "固端彎矩"], "a": 0, "e": "外載引致的位移。"}, {"ch": "sF", "q": "傾角變位式中構材角 R（弦轉角）等於？", "o": ["Δ/L", "θ/L", "Δ·L", "θ·L"], "a": 0, "e": "R=Δ/L。"}, {"ch": "sF", "q": "傾角變位式中近端轉角 θA 前的係數為？", "o": ["2", "1", "3", "4"], "a": 0, "e": "(2θA+θB−3R)。"}, {"ch": "sF", "q": "近端旋轉單位角所需的桿端彎矩（勁度）為？", "o": ["4EI/L", "2EI/L", "6EI/L", "3EI/L"], "a": 0, "e": "近端勁度 4EI/L。"}, {"ch": "sF", "q": "傳遞係數（遠端固定）= 2EI/L ÷ 4EI/L =？", "o": ["1/2", "1/3", "1", "1/4"], "a": 0, "e": "COF=1/2。"}, {"ch": "sF", "q": "支承沉陷 Δ 在桿端產生的固端彎矩為？", "o": ["−6EIΔ/L²", "−3EIΔ/L²", "−EIΔ/L", "−2EIΔ/L²"], "a": 0, "e": "M=−6EIΔ/L²。"}, {"ch": "sG", "q": "彎矩分配法的分配係數 DF 為？", "o": ["k/Σk", "Σk/k", "I/L", "1/2"], "a": 0, "e": "自身勁度除節點總勁度。"}, {"ch": "sG", "q": "遠端固定時的傳遞係數為？", "o": ["1/2", "1/3", "1", "1/4"], "a": 0, "e": "COF=1/2。"}, {"ch": "sG", "q": "等跨均布載重 w 的固端彎矩大小為？", "o": ["wL²/12", "wL²/8", "PL/8", "wL²/24"], "a": 0, "e": "FEM=wL²/12。"}, {"ch": "sG", "q": "跨中集中載重 P 的固端彎矩大小為？", "o": ["PL/8", "wL²/12", "PL/4", "PL/12"], "a": 0, "e": "FEM=PL/8。"}, {"ch": "sG", "q": "遠端鉸接時桿件修正勁度為 4EI/L 的幾倍？", "o": ["3/4", "1/2", "1", "4/3"], "a": 0, "e": "簡支端用 3/4 勁度且不傳遞。"}, {"ch": "sH", "q": "繪製影響線常用的原理是？", "o": ["Müller-Breslau", "卡氏定理", "虎克定律", "莫爾圓"], "a": 0, "e": "釋束制給單位變位。"}, {"ch": "sH", "q": "靜定結構的影響線形狀為？", "o": ["折線（直線段）", "拋物線", "圓弧", "曲線"], "a": 0, "e": "靜定為直線段。"}, {"ch": "sH", "q": "求某斷面彎矩影響線，應於該處？", "o": ["置內鉸給單位相對轉角", "切斷給剪位移", "移除支承", "施加載重"], "a": 0, "e": "彎矩對應轉角釋放。"}, {"ch": "sH", "q": "求最大正彎矩，活載應佈於影響線的？", "o": ["正號區", "負號區", "全跨", "支承處"], "a": 0, "e": "同號區疊加最大。"}, {"ch": "sH", "q": "靜不定連續梁的影響線一般為？", "o": ["曲線", "直線", "常數", "不存在"], "a": 0, "e": "靜不定為曲線。"}]};
+const CH = DATA.CH, F = DATA.F, Q = DATA.Q;
+const chName = c => { const x = CH.find(o=>o.ch===c); return x?x.name:c; };
+const chSub  = c => { const x = CH.find(o=>o.ch===c); return x?x.sub:""; };
+
+document.getElementById('sCh').textContent = CH.length;
+document.getElementById('sF').textContent = F.length;
+document.getElementById('sQ').textContent = Q.length;
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('v-'+t.dataset.m).classList.add('on');
+  });
+});
+
+function buildChips(container,state,onChange){
+  container.innerHTML='';
+  const all=mkChip('全部','__all',state.size===0,false);
+  all.addEventListener('click',()=>{state.clear();buildChips(container,state,onChange);onChange();});
+  container.appendChild(all);
+  const _subs=[...new Set(CH.map(c=>c.sub))];
+  const _multi=_subs.length>1;
+  const _hdr={'核心':'── ★ 核心章 ──','次要':'── 次要章 ──','概覽':'── 概覽章 ──'};
+  let lastSub='';
+  CH.forEach(c=>{
+    if(_multi&&c.sub!==lastSub){lastSub=c.sub;
+      const lab=document.createElement('span');
+      lab.className='flbl';lab.style.width='100%';lab.style.margin='8px 0 2px';
+      lab.textContent=_hdr[c.sub]||('── '+c.sub+' ──');
+      container.appendChild(lab);
+    }
+    const chip=mkChip(c.name,c.ch,state.has(c.ch),false);
+    chip.addEventListener('click',()=>{
+      if(state.has(c.ch))state.delete(c.ch);else state.add(c.ch);
+      buildChips(container,state,onChange);onChange();
+    });
+    container.appendChild(chip);
+  });
+}
+function mkChip(text,key,on,isMat){
+  const b=document.createElement('button');
+  b.className='chip'+(isMat?' s':'')+(on?' on':'');
+  b.textContent=text;b.dataset.k=key;return b;
+}
+
+/* READ */
+const readState=new Set();
+const readChips=document.getElementById('readChips');
+const readList=document.getElementById('readList');
+const searchEl=document.getElementById('search');
+buildChips(readChips,readState,renderRead);
+searchEl.addEventListener('input',renderRead);
+function renderRead(){
+  const kw=searchEl.value.trim().toLowerCase();
+  let list=F.filter(f=>readState.size===0||readState.has(f.ch));
+  if(kw)list=list.filter(f=>(f.n+f.f+f.d+f.tip+chName(f.ch)).toLowerCase().includes(kw));
+  document.getElementById('readCount').textContent='顯示 '+list.length+' / '+F.length+' 條公式';
+  readList.innerHTML='';
+  list.forEach((f,i)=>readList.appendChild(buildFCard(f,'r'+i)));
+}
+function buildFCard(f,id){
+  const card=document.createElement('div');card.className='fcard';
+  const top=document.createElement('div');top.className='ftop';
+  const pill=document.createElement('span');
+  pill.className='pill';
+  pill.textContent=chName(f.ch);
+  const nm=document.createElement('span');nm.className='fname';
+  if(f.s){const s=document.createElement('span');s.className='star';s.textContent='★';nm.appendChild(s);}
+  nm.appendChild(document.createTextNode(f.n));
+  top.appendChild(pill);top.appendChild(nm);
+  const fo=document.createElement('div');fo.className='formula';fo.textContent=f.f;
+  card.appendChild(top);card.appendChild(fo);
+  if(f.d){const dn=document.createElement('div');dn.className='dnote';dn.textContent=f.d;card.appendChild(dn);}
+  const exp=document.createElement('div');exp.className='expander';
+  const ic=document.createElement('span');ic.className='ic';ic.textContent='代';
+  exp.appendChild(ic);
+  const lab=document.createElement('span');lab.textContent='展開代數意義';exp.appendChild(lab);
+  const det=document.createElement('div');det.className='detail';
+  if(f.v&&f.v.length){
+    const tb=document.createElement('table');tb.className='vtab';
+    f.v.forEach(r=>{const tr=document.createElement('tr');
+      r.forEach(cell=>{const td=document.createElement('td');td.textContent=cell;tr.appendChild(td);});
+      tb.appendChild(tr);});
+    det.appendChild(tb);
+  }
+  if(f.tip){const tp=document.createElement('div');tp.className='tip';
+    const b=document.createElement('b');b.textContent='口訣／觀念：';tp.appendChild(b);
+    tp.appendChild(document.createTextNode(f.tip));det.appendChild(tp);}
+  exp.addEventListener('click',()=>{
+    det.classList.toggle('on');
+    lab.textContent=det.classList.contains('on')?'收合代數意義':'展開代數意義';
+  });
+  card.appendChild(exp);card.appendChild(det);
+  return card;
+}
+renderRead();
+
+/* QUIZ */
+const quizState=new Set();
+let qNum=10;
+buildChips(document.getElementById('quizChips'),quizState,()=>{});
+document.querySelectorAll('#numSel button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#numSel button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');qNum=parseInt(b.dataset.n);
+  });
+});
+document.getElementById('startQuiz').addEventListener('click',startQuiz);
+let curQuiz=[];
+function startQuiz(){
+  let pool=Q.filter(q=>quizState.size===0||quizState.has(q.ch));
+  pool=shuffle(pool.slice());
+  if(qNum>0)pool=pool.slice(0,qNum);
+  if(pool.length===0){alert('此章節暫無題目，請改選其他章節。');return;}
+  curQuiz=pool.map(q=>({...q,pick:null}));
+  document.getElementById('quizSetup').classList.add('hide');
+  const run=document.getElementById('quizRun');run.classList.remove('hide');run.innerHTML='';
+  curQuiz.forEach((q,i)=>{
+    const card=document.createElement('div');card.className='qcard';card.dataset.i=i;
+    const head=document.createElement('div');head.className='qhead';
+    const s1=document.createElement('span');s1.textContent='第 '+(i+1)+' / '+curQuiz.length+' 題';
+    const s2=document.createElement('span');s2.textContent=chSub(q.ch)+'｜'+chName(q.ch);
+    head.appendChild(s1);head.appendChild(s2);
+    const qt=document.createElement('div');qt.className='qtext';qt.textContent=q.q;
+    card.appendChild(head);card.appendChild(qt);
+    q.o.forEach((opt,oi)=>{
+      const el=document.createElement('div');el.className='opt';
+      const k=document.createElement('span');k.className='k';k.textContent='ABCD'[oi];
+      el.appendChild(k);el.appendChild(document.createTextNode(opt));
+      el.addEventListener('click',()=>{
+        if(card.dataset.done)return;
+        card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+        el.classList.add('sel');q.pick=oi;
+      });
+      card.appendChild(el);
+    });
+    const exp=document.createElement('div');exp.className='exp';card.appendChild(exp);
+    run.appendChild(card);
+  });
+  const sub=document.createElement('button');sub.className='btn';sub.textContent='交卷看分數';
+  sub.addEventListener('click',gradeQuiz);run.appendChild(sub);
+  const back=document.createElement('button');back.className='btn ghost';back.style.marginTop='8px';
+  back.textContent='重設章節 / 題數';back.addEventListener('click',resetQuiz);run.appendChild(back);
+  window.scrollTo(0,0);
+}
+function gradeQuiz(){
+  let correct=0;
+  curQuiz.forEach((q,i)=>{
+    const card=document.querySelector('.qcard[data-i="'+i+'"]');
+    card.dataset.done='1';
+    card.querySelectorAll('.opt').forEach((o,oi)=>{
+      o.style.cursor='default';
+      if(oi===q.a)o.classList.add('right');
+      if(q.pick===oi&&oi!==q.a)o.classList.add('wrong');
+    });
+    if(q.pick===q.a)correct++;
+    const exp=card.querySelector('.exp');exp.classList.add('on');
+    exp.innerHTML='<b>正解：'+'ABCD'[q.a]+'</b>　'+escapeHtml(q.e);
+  });
+  const run=document.getElementById('quizRun');
+  const bar=document.createElement('div');bar.className='scorebar';
+  const pct=Math.round(correct/curQuiz.length*100);
+  bar.innerHTML='<div class="big">'+correct+' / '+curQuiz.length+'</div>'+
+    '<div class="lbl">答對率 '+pct+'%　'+(pct>=80?'穩了 👍':pct>=60?'再衝一點':'錯題回頭看公式')+'</div>';
+  run.insertBefore(bar,run.firstChild);
+  document.querySelector('#quizRun .btn').classList.add('hide');
+  window.scrollTo(0,0);
+}
+function resetQuiz(){
+  document.getElementById('quizRun').classList.add('hide');
+  document.getElementById('quizSetup').classList.remove('hide');
+  window.scrollTo(0,0);
+}
+
+/* FLASH */
+const flashState=new Set();
+let cards=[],ci=0,flipped=false;
+buildChips(document.getElementById('flashChips'),flashState,rebuildCards);
+function rebuildCards(){
+  cards=F.filter(f=>flashState.size===0||flashState.has(f.ch));
+  cards=shuffle(cards.slice());ci=0;flipped=false;renderCard();
+}
+function renderCard(){
+  const c=cards[ci];const el=document.getElementById('fcCard');
+  document.getElementById('fcProg').textContent=cards.length?('第 '+(ci+1)+' / '+cards.length+' 張'):'';
+  el.innerHTML='';
+  if(!c){el.innerHTML='<div class="q">此範圍無公式</div>';return;}
+  const side=document.createElement('div');side.className='side';
+  side.textContent=flipped?'公式 ＋ 口訣':'默寫這條公式';el.appendChild(side);
+  if(!flipped){
+    const q=document.createElement('div');q.className='q';
+    q.textContent=(c.s?'★ ':'')+c.n;el.appendChild(q);
+    const sub=document.createElement('div');sub.className='hint';sub.style.marginTop='8px';
+    sub.textContent=chSub(c.ch)+'｜'+chName(c.ch);el.appendChild(sub);
+    const h=document.createElement('div');h.className='hint';h.style.marginTop='12px';h.style.color='var(--dim)';
+    h.textContent='點一下看答案';el.appendChild(h);
+  }else{
+    const a=document.createElement('div');a.className='a';a.textContent=c.f;el.appendChild(a);
+    if(c.tip){const t=document.createElement('div');t.className='hint';t.textContent=c.tip;el.appendChild(t);}
+  }
+}
+document.getElementById('fcCard').addEventListener('click',()=>{flipped=!flipped;renderCard();});
+document.getElementById('fcNext').addEventListener('click',()=>{if(!cards.length)return;ci=(ci+1)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcPrev').addEventListener('click',()=>{if(!cards.length)return;ci=(ci-1+cards.length)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcShuf').addEventListener('click',()=>{cards=shuffle(cards);ci=0;flipped=false;renderCard();});
+rebuildCards();
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script>
+</body>
+</html>
