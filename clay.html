@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="土力">
+<meta name="theme-color" content="#efe9dc">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>土壤力學 公式題庫</title>
+<style>
+:root{
+  --bg:#efe9dc; --grid:rgba(178,164,140,.16);
+  --panel:#fffdf8; --panel2:#f6f1e7; --line:#e3dbca;
+  --ink:#2f2b24; --dim:#8c8473;
+  --acc:#b5482e; --acc2:#2f7d8a; --teal:#1f8574; --dark:#2c2a26;
+  --star:#d99a1c; --ok:#2f8f5b; --bad:#c0473f;
+  --mao:#a8512f; --oy:#247064;
+  --mono:"Consolas","Roboto Mono","Noto Sans Mono CJK TC",monospace;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+    var(--bg);
+  background-size:22px 22px,22px 22px,auto;
+  color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top)) 16px 60px}
+header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+h1{font-size:1.32rem;letter-spacing:.5px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--ink)}
+h1 .tag{font-size:.6rem;background:var(--acc);color:#fff;padding:2px 7px;border-radius:4px;letter-spacing:1px;font-weight:700}
+.sub{color:var(--dim);font-size:.82rem;margin-top:5px}
+.srcline{font-size:.74rem;color:var(--dim);margin-top:6px}
+.srcline b{color:var(--oy)} .srcline i{color:var(--mao);font-style:normal}
+.stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 13px;text-align:center;min-width:60px;box-shadow:0 1px 2px rgba(90,75,50,.05)}
+.stat b{display:block;font-size:1.12rem;color:var(--teal)}
+.stat span{font-size:.64rem;color:var(--dim);letter-spacing:1px}
+.tabs{display:flex;gap:6px;margin:18px 0 14px}
+.tab{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:10px;border-radius:9px;cursor:pointer;font-size:.9rem;font-family:inherit;transition:.15s;box-shadow:0 1px 2px rgba(90,75,50,.04)}
+.tab.on{background:var(--dark);color:#fff;border-color:var(--dark);font-weight:700}
+.tab:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.view{display:none}.view.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+.filterbar{margin-bottom:12px}
+.flbl{font-size:.7rem;color:var(--dim);letter-spacing:1px;margin:8px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:5px 11px;border-radius:20px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:.12s}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:600}
+.chip.s.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.searchbox{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:10px 13px;border-radius:9px;font-size:.9rem;font-family:inherit;margin-top:10px}
+.searchbox::placeholder{color:#b3ab99}
+.searchbox:focus{outline:none;border-color:var(--acc2)}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 15px;margin-bottom:10px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.ftop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.pill{font-size:.62rem;padding:2px 8px;border-radius:5px;letter-spacing:.5px;font-weight:700;white-space:nowrap}
+.pill{color:var(--acc);background:rgba(189,85,48,.09);border:1px solid var(--line)}
+.fname{font-weight:600;font-size:1rem;color:var(--ink)}
+.fname .star{color:var(--star);margin-right:3px}
+.formula{font-family:var(--mono);background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:7px;padding:10px 13px;margin-top:10px;font-size:1.02rem;color:#3c352b;overflow-x:auto;line-height:1.7}
+.dnote{color:var(--dim);font-size:.82rem;margin-top:8px}
+.expander{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:rgba(47,125,138,.09);border:1px solid rgba(47,125,138,.3);color:var(--acc2);padding:5px 11px;border-radius:7px;cursor:pointer;font-size:.78rem;font-family:inherit;user-select:none}
+.expander .ic{font-size:.68rem;background:var(--acc2);color:#fff;padding:1px 5px;border-radius:3px;font-weight:700}
+.expander:hover{background:rgba(47,125,138,.16)}
+.detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
+.detail.on{display:block}
+.vtab{width:100%;border-collapse:collapse;font-size:.82rem}
+.vtab td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.vtab tr:last-child td{border-bottom:none}
+.vtab td:first-child{font-family:var(--mono);color:var(--acc2);white-space:nowrap;width:1%;font-weight:600}
+.vtab td:nth-child(3){color:var(--dim);white-space:nowrap;text-align:right}
+.tip{background:rgba(217,154,28,.1);border:1px solid rgba(217,154,28,.32);border-radius:7px;padding:8px 11px;margin-top:11px;font-size:.82rem;color:#7c5a18}
+.tip b{color:var(--acc)}
+.count{color:var(--dim);font-size:.76rem;margin:4px 2px 10px}
+.qsetup{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.row{margin-bottom:14px}
+.row>label{display:block;font-size:.78rem;color:var(--dim);letter-spacing:1px;margin-bottom:7px}
+.numsel{display:flex;gap:6px;flex-wrap:wrap}
+.numsel button{background:var(--panel2);border:1px solid var(--line);color:var(--dim);padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit}
+.numsel button.on{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:700}
+.btn{background:var(--acc);color:#fff;border:none;padding:12px;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer;width:100%;font-family:inherit}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);font-weight:500}
+.btn:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.qhead{font-size:.7rem;color:var(--dim);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.qtext{font-size:.95rem;margin-bottom:12px;line-height:1.5;color:var(--ink)}
+.opt{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 13px;margin-bottom:8px;cursor:pointer;font-size:.88rem;transition:.12s;color:var(--ink)}
+.opt:hover{border-color:var(--acc2)}
+.opt.sel{border-color:var(--acc2);background:rgba(47,125,138,.1)}
+.opt.right{border-color:var(--ok);background:rgba(47,143,91,.13)}
+.opt.wrong{border-color:var(--bad);background:rgba(192,71,63,.12)}
+.opt .k{font-family:var(--mono);color:var(--acc2);margin-right:9px}
+.exp{display:none;margin-top:10px;font-size:.82rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:9px}
+.exp.on{display:block}.exp b{color:var(--ok)}
+.scorebar{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px;text-align:center;margin-bottom:14px;box-shadow:0 1px 3px rgba(90,75,50,.06)}
+.scorebar .big{font-size:2.2rem;color:var(--acc);font-weight:800}
+.scorebar .lbl{color:var(--dim);font-size:.8rem}
+.hide{display:none!important}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:14px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;cursor:pointer;margin-bottom:14px;box-shadow:0 1px 4px rgba(90,75,50,.07)}
+.fc .side{font-size:.66rem;color:var(--dim);letter-spacing:2px;margin-bottom:14px}
+.fc .q{font-size:1.18rem;font-weight:600;color:var(--ink)}
+.fc .a{font-family:var(--mono);font-size:1.08rem;color:#3c352b;margin-bottom:12px;line-height:1.7}
+.fc .hint{font-size:.78rem;color:var(--acc2)}
+.fcbtns{display:flex;gap:8px}
+.fcbtns button{flex:1}
+.fcprog{text-align:center;color:var(--dim);font-size:.78rem;margin-bottom:10px}
+footer{color:var(--dim);font-size:.7rem;text-align:center;margin-top:34px;border-top:1px solid var(--line);padding-top:14px;line-height:1.7}
+@media(max-width:560px){.stat{min-width:52px;padding:6px 9px}.tabs{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>土壤力學 公式題庫 <span class="tag">技師備考</span></h1>
+  <div class="sub">口訣・觀念・俗成公式｜每條公式可展開代數意義｜★為高頻考點</div>
+  <div class="srcline">依個人課堂筆記整理 <b>土壤力學</b></div>
+  <div class="stats">
+    <div class="stat"><b id="sCh">0</b><span>章節</span></div>
+    <div class="stat"><b id="sF">0</b><span>公式</span></div>
+    <div class="stat"><b id="sQ">0</b><span>題目</span></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab on" data-m="read">閱讀模式</button>
+  <button class="tab" data-m="quiz">測驗模式</button>
+  <button class="tab" data-m="flash">單題卡</button>
+</div>
+
+<section class="view on" id="v-read">
+  <div class="filterbar">
+    <div class="flbl">篩選章節</div>
+    <div class="chips" id="readChips"></div>
+    <input class="searchbox" id="search" placeholder="搜尋：有效應力、達西、莫爾圓、OCR、ic…">
+  </div>
+  <div class="count" id="readCount"></div>
+  <div id="readList"></div>
+</section>
+
+<section class="view" id="v-quiz">
+  <div class="qsetup" id="quizSetup">
+    <div class="row"><label>選擇章節（可多選）</label><div class="chips" id="quizChips"></div></div>
+    <div class="row"><label>題數</label>
+      <div class="numsel" id="numSel">
+        <button data-n="10" class="on">10</button>
+        <button data-n="20">20</button>
+        <button data-n="40">40</button>
+        <button data-n="0">全部</button>
+      </div>
+    </div>
+    <button class="btn" id="startQuiz">開始測驗</button>
+  </div>
+  <div id="quizRun" class="hide"></div>
+</section>
+
+<section class="view" id="v-flash">
+  <div class="filterbar"><div class="flbl">選擇章節</div><div class="chips" id="flashChips"></div></div>
+  <div class="fcprog" id="fcProg"></div>
+  <div class="fc" id="fcCard"><div class="side">點卡片翻面</div><div class="q">準備中…</div></div>
+  <div class="fcbtns">
+    <button class="btn ghost" id="fcPrev">上一張</button>
+    <button class="btn ghost" id="fcShuf">洗牌</button>
+    <button class="btn" id="fcNext">下一張</button>
+  </div>
+</section>
+
+<footer>
+  SI 制（kN、kPa、m）、滲透 cm/s；本工具為記憶輔助，臨場以題目給定條件為主。<br>
+  襄澤專案顧問工作室 ©
+</footer>
+</div>
+
+<script>
+const DATA = {"CH": [{"ch": "s1", "sub": "土力", "name": "三大性質與試驗", "src": "筆記"}, {"ch": "s2", "sub": "土力", "name": "重量體積關係", "src": "筆記"}, {"ch": "s3", "sub": "土力", "name": "粒徑分析與級配", "src": "筆記"}, {"ch": "s4", "sub": "土力", "name": "統一土壤分類法", "src": "筆記"}, {"ch": "s5", "sub": "土力", "name": "阿太堡限度", "src": "筆記"}, {"ch": "s6", "sub": "土力", "name": "土壤結構與相對密度", "src": "筆記"}, {"ch": "s7", "sub": "土力", "name": "覆土壓力與有效應力", "src": "筆記"}, {"ch": "s8", "sub": "土力", "name": "應力擴散", "src": "筆記"}, {"ch": "s9", "sub": "土力", "name": "孔隙壓力參數", "src": "筆記"}, {"ch": "s10", "sub": "土力", "name": "莫爾圓", "src": "筆記"}, {"ch": "s11", "sub": "土力", "name": "滲透性與達西定律", "src": "筆記"}, {"ch": "s12", "sub": "土力", "name": "層狀土壤滲透性", "src": "筆記"}, {"ch": "s13", "sub": "土力", "name": "水頭、滲流與流砂", "src": "筆記"}, {"ch": "s14", "sub": "土力", "name": "壓密基本觀念", "src": "筆記"}, {"ch": "s15", "sub": "土力", "name": "Terzaghi 一維壓密", "src": "筆記"}, {"ch": "s16", "sub": "土力", "name": "莫爾庫倫破壞準則", "src": "筆記"}], "F": [{"ch": "s1", "n": "三大工程性質", "f": "① 透水性 k　② 壓縮性 mv, Cc　③ 剪力強度 c, φ", "d": "土壤力學三大核心性質，分別對應滲流、沉陷與承載。", "v": [["k", "滲透係數", "cm/s"], ["mv", "體積壓縮係數", "cm²/kgf"], ["c, φ", "凝聚力、內摩擦角", "kPa, °"]], "tip": "分別由滲透試驗、壓密試驗、剪力試驗量得。", "s": 1, "src": "筆記"}, {"ch": "s1", "n": "排水條件與三軸試驗", "f": "UU 快、不排水 ｜ CU 壓密、不排水 ｜ CD 慢、可排水", "d": "依是否容許壓密與排水區分三軸試驗類型。", "v": [["UU", "不壓密不排水", "—"], ["CU", "壓密不排水", "—"], ["CD", "壓密排水", "—"]], "tip": "UU＝快剪；CD＝慢剪，孔隙水壓完全消散。", "s": 1, "src": "筆記"}, {"ch": "s1", "n": "壓縮性試驗", "f": "單向度壓密試驗（Oedometer）、速率壓密試驗", "d": "量測 e–log σ′ 曲線、壓縮指數與壓密係數。", "v": [["Cc", "壓縮指數", "—"], ["Cv", "壓密係數", "cm²/s"]], "tip": "", "s": 0, "src": "筆記"}, {"ch": "s1", "n": "滲透試驗選擇", "f": "砂 → 定水頭 ｜ 黏土 → 變水頭 ｜ 不同圍壓 → 三軸透水", "d": "依土壤透水性高低選擇試驗法。", "v": [["—", "定水頭適合高透水土", "—"]], "tip": "三軸透水可模擬不同應力狀態下的 k。", "s": 0, "src": "筆記"}, {"ch": "s2", "n": "基本恆等式", "f": "S · e = w · Gs", "d": "飽和度、孔隙比、含水量、土粒比重的核心關係。", "v": [["S", "飽和度", "—"], ["e", "孔隙比", "—"], ["w", "含水量", "—"], ["Gs", "土粒比重", "—"]], "tip": "飽和時 S=1 → e = w·Gs。必背。", "s": 1, "src": "筆記"}, {"ch": "s2", "n": "孔隙比與孔隙率", "f": "e = Vv/Vs　；　n = Vv/V = e/(1+e)", "d": "孔隙體積相對土粒或總體積之比。", "v": [["e", "孔隙比", "—"], ["n", "孔隙率", "—"], ["Vv", "孔隙體積", "cm³"]], "tip": "反算 e = n/(1−n)。", "s": 1, "src": "筆記"}, {"ch": "s2", "n": "乾單位重", "f": "γd = Gs·γw / (1+e)", "d": "單位總體積中土粒的重量。", "v": [["γd", "乾單位重", "kN/m³"], ["Gs", "土粒比重", "—"], ["e", "孔隙比", "—"], ["γw", "水單位重 9.81", "kN/m³"]], "tip": "亦可 γd = γt/(1+w)。", "s": 1, "src": "筆記"}, {"ch": "s2", "n": "飽和與浮單位重", "f": "γsat = (Gs+e)γw/(1+e)　；　γ′ = γsat − γw = (Gs−1)γw/(1+e)", "d": "飽和與水下有效（浮）單位重。", "v": [["γsat", "飽和單位重", "kN/m³"], ["γ′", "有效(浮)單位重", "kN/m³"]], "tip": "有效應力計算用 γ′。", "s": 1, "src": "筆記"}, {"ch": "s2", "n": "統體單位重", "f": "γt = γd (1 + w)", "d": "含水後的總（濕）單位重。", "v": [["γt", "統體單位重", "kN/m³"], ["w", "含水量", "—"]], "tip": "", "s": 0, "src": "筆記"}, {"ch": "s3", "n": "篩號對應粒徑", "f": "#4 = 4.76 mm（礫／砂界）　；　#200 = 0.075 mm（粗／細界）", "d": "粒徑分析重要分界。", "v": [["#4", "礫石與砂分界", "mm"], ["#200", "粗、細粒料分界", "mm"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s3", "n": "均勻係數", "f": "Cu = D60 / D10", "d": "級配分佈寬窄；越大越不均勻。", "v": [["Cu", "均勻係數", "—"], ["D60,D10", "對應通過百分比之粒徑", "mm"]], "tip": "Cu 小 → 級配均勻(不良)。", "s": 1, "src": "筆記"}, {"ch": "s3", "n": "曲率係數", "f": "Cc = (D30)² / (D10 · D60)", "d": "判斷是否為殘缺（間斷）級配。", "v": [["Cc", "曲率(級配)係數", "—"], ["D30", "30% 通過粒徑", "mm"]], "tip": "良好級配 Cc = 1 ~ 3。", "s": 1, "src": "筆記"}, {"ch": "s3", "n": "優良級配判準", "f": "礫石：Cu ≥ 4 且 Cc = 1~3　；　砂：Cu ≥ 6 且 Cc = 1~3", "d": "同時滿足才屬優良級配(GW/SW)。", "v": [["—", "否則為不良級配 GP/SP", "—"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s3", "n": "有效粒徑 D10", "f": "用以推估粗粒土滲透性與毛細現象", "d": "D10 為 10% 通過之粒徑。", "v": [["D10", "有效粒徑", "mm"]], "tip": "Hazen：k = C·D10²。", "s": 0, "src": "筆記"}, {"ch": "s4", "n": "粗細粒分界", "f": "通過 #200 ＞ 50% → 細粒(M/C/O)；否則粗粒(G/S)", "d": "USCS 第一步分類。", "v": [["—", "以 #200 通過率 50% 為界", "—"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s4", "n": "細料含量與符號", "f": "細料 <5% 單符號 ｜ 5~12% 雙重符號 ｜ >12% 單符號", "d": "粗粒土依細料含量決定符號表示。", "v": [["—", "5~12% 例：SW-SM", "—"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s4", "n": "符號意義", "f": "G礫 S砂 M粉土 C黏土 O有機 ｜ W優良 P不良 H高塑性 L低塑性", "d": "USCS 兩字母代號。", "v": [["第一字母", "主要粒組", "—"], ["第二字母", "級配/塑性", "—"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s4", "n": "A-line 方程式", "f": "PI = 0.73 (LL − 20)", "d": "塑性圖上區分黏土(C)與粉土(M)。", "v": [["PI", "塑性指數", "%"], ["LL", "液性限度", "%"]], "tip": "PI 在 A-line 上方為 C，下方為 M。", "s": 1, "src": "筆記"}, {"ch": "s5", "n": "塑性指數", "f": "PI = LL − PL", "d": "土壤呈塑性狀態的含水量範圍。", "v": [["PI", "塑性指數", "%"], ["LL", "液性限度", "%"], ["PL", "塑性限度", "%"]], "tip": "PI 大 → 黏土多、塑性高、滲透性小、不排水強度大。", "s": 1, "src": "筆記"}, {"ch": "s5", "n": "液性指數", "f": "LI = (wn − PL) / PI", "d": "反映天然含水量在塑性範圍中的位置。", "v": [["LI", "液性指數", "—"], ["wn", "天然含水量", "%"]], "tip": "LI>1 近液態、LI<0 近固態。", "s": 1, "src": "筆記"}, {"ch": "s5", "n": "縮性與稠度指數", "f": "SI = PL − SL　；　Ic = (LL − wn) / PI", "d": "縮性指數與稠度指數。", "v": [["SI", "縮性指數", "%"], ["SL", "縮性限度", "%"], ["Ic", "稠度指數", "—"]], "tip": "LI + Ic = 1。", "s": 0, "src": "筆記"}, {"ch": "s5", "n": "活性 (Skempton)", "f": "Ac = PI / (小於 2μm 黏粒百分比)", "d": "衡量黏土礦物的活躍程度。", "v": [["Ac", "活性", "—"]], "tip": "蒙脫石活性高、高嶺石低。", "s": 1, "src": "筆記"}, {"ch": "s6", "n": "相對密度（孔隙比）", "f": "Dr = (emax − e)/(emax − emin)", "d": "粗粒土鬆密程度指標。", "v": [["Dr", "相對(密度)指數", "—"], ["emax", "最鬆孔隙比", "—"], ["emin", "最密孔隙比", "—"]], "tip": "e=emax→Dr=0(最鬆)；e=emin→Dr=1(最密)。", "s": 1, "src": "筆記"}, {"ch": "s6", "n": "相對密度（乾單位重）", "f": "Dr = [γd,max (γd − γd,min)] / [γd (γd,max − γd,min)]", "d": "以乾單位重表示，注意非線性。", "v": [["γd,max", "最密乾單位重", "kN/m³"], ["γd,min", "最鬆乾單位重", "kN/m³"]], "tip": "不可用 γd 直接線性代入。", "s": 1, "src": "筆記"}, {"ch": "s6", "n": "密實狀態判別", "f": "Dr 0~15 很鬆 ｜ 35~65 中等 ｜ 85~100 很密", "d": "依 Dr 分級。", "v": [["Dr", "相對密度", "%"]], "tip": "", "s": 0, "src": "筆記"}, {"ch": "s7", "n": "有效應力原理", "f": "σ′ = σ − u", "d": "總應力由土骨架與孔隙水壓共同承擔。", "v": [["σ′", "有效應力", "kPa"], ["σ", "總應力", "kPa"], ["u", "孔隙水壓", "kPa"]], "tip": "Terzaghi 有效應力，土力最核心觀念。", "s": 1, "src": "筆記"}, {"ch": "s7", "n": "覆土與靜水壓力", "f": "σv0 = Σ γ·z　；　uss = γw·zw", "d": "總覆土壓力與靜水壓力。", "v": [["σv0", "總垂直覆土壓力", "kPa"], ["uss", "靜水壓力", "kPa"], ["zw", "地下水位以下深度", "m"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s7", "n": "有效垂直應力", "f": "σ′v = γ′·z （水位以下）", "d": "以浮單位重計算的有效垂直應力。", "v": [["σ′v", "有效垂直應力", "kPa"], ["γ′", "浮單位重", "kN/m³"]], "tip": "= σ − u；水位以上用全單位重。", "s": 1, "src": "筆記"}, {"ch": "s7", "n": "靜止土壓力係數", "f": "K0 = 1 − sinφ′　；　σ′h = K0·σ′v", "d": "正常壓密土的 Jaky 公式。", "v": [["K0", "靜止土壓力係數", "—"], ["σ′h", "水平有效應力", "kPa"]], "tip": "φ′=30° → K0=0.5。水平「有效」應力才乘 K0。", "s": 1, "src": "筆記"}, {"ch": "s8", "n": "2:1 擴散法（矩形）", "f": "Δσ = q·B·L / [(B+z)(L+z)]", "d": "載重以 1(水平):2(垂直) 擴散。", "v": [["Δσ", "深 z 處增量應力", "kPa"], ["q", "淨基底壓力", "kPa"], ["B,L", "基礎寬、長", "m"], ["z", "深度", "m"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s8", "n": "2:1 擴散法（方形）", "f": "Δσ = q·B² / (B+z)²", "d": "方形基礎特例。", "v": [["B", "邊長", "m"], ["z", "深度", "m"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s8", "n": "30° 擴散法", "f": "新影響邊長 = B + 2z·tan30°", "d": "另一種擴散假設。", "v": [["—", "每側各增 z·tan30°", "—"]], "tip": "2:1 法約等效 26.6°。", "s": 0, "src": "筆記"}, {"ch": "s8", "n": "淨基礎載重", "f": "q_net = q − γ·Df", "d": "扣除開挖移除土重後的淨增量。", "v": [["q_net", "淨載重", "kPa"], ["Df", "基礎埋置深度", "m"]], "tip": "沉陷與應力增量以淨載重為準。", "s": 1, "src": "筆記"}, {"ch": "s9", "n": "孔隙壓力方程式", "f": "Δu = B [ Δσ3 + A(Δσ1 − Δσ3) ]", "d": "Skempton 孔隙水壓參數式。", "v": [["Δu", "超額孔隙水壓", "kPa"], ["A", "剪脹/縮參數", "—"], ["B", "飽和度參數", "—"], ["Δσ1,Δσ3", "主應力增量", "kPa"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s9", "n": "B 參數", "f": "飽和土 B ≈ 1　；　乾土 B ≈ 0", "d": "反映試體飽和程度。", "v": [["B", "孔隙壓力參數", "—"]], "tip": "常用來檢核試體是否飽和。", "s": 1, "src": "筆記"}, {"ch": "s9", "n": "加載初期（不排水）", "f": "飽和土 ue 大、σ′ 先不變；排水後 ue → 0、σ′ 增加", "d": "飽和黏土加載的孔隙水壓演變。", "v": [["ue", "超額孔隙水壓", "kPa"]], "tip": "水無法即時排出 → 初期由孔隙水承擔。", "s": 1, "src": "筆記"}, {"ch": "s10", "n": "圓心與半徑", "f": "圓心 σavg = (σx+σy)/2　；　R = √[ ((σx−σy)/2)² + τxy² ]", "d": "莫爾圓的中心與半徑。", "v": [["σavg", "平均正應力(圓心)", "kPa"], ["R", "半徑(=τmax)", "kPa"], ["τxy", "剪應力", "kPa"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s10", "n": "主應力", "f": "σ1, σ3 = σavg ± R", "d": "主平面上剪應力為零。", "v": [["σ1", "大主應力", "kPa"], ["σ3", "小主應力", "kPa"]], "tip": "圓心加減半徑。", "s": 1, "src": "筆記"}, {"ch": "s10", "n": "有效應力圓", "f": "σ′ = σ − u：沿 σ 軸左移 u，半徑不變", "d": "有效與總應力莫爾圓的關係。", "v": [["u", "孔隙水壓", "kPa"]], "tip": "剪應力不受孔隙水壓影響，故半徑相同。", "s": 1, "src": "筆記"}, {"ch": "s10", "n": "極點法 (Op)", "f": "過極點 Op 作某方向平行線，交圓之點即該面應力", "d": "求任意方向面上的應力。", "v": [["Op", "極點(原點)", "—"]], "tip": "每一點代表一個平面方向的 (σ,τ)。", "s": 0, "src": "筆記"}, {"ch": "s11", "n": "達西定律", "f": "q = k·i·A　；　v = k·i　；　i = Δh/L", "d": "層流下滲流量與水力坡降成正比。", "v": [["q", "滲流量", "cm³/s"], ["k", "滲透係數", "cm/s"], ["i", "水力坡降", "—"], ["A", "流斷面積", "cm²"]], "tip": "砂與低流速卵礫石適用。", "s": 1, "src": "筆記"}, {"ch": "s11", "n": "定水頭試驗", "f": "k = Q·L / (A·h·t)", "d": "適用透水性高的砂土。", "v": [["Q", "總滲流量", "cm³"], ["h", "定水頭差", "cm"], ["t", "時間", "s"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s11", "n": "變（落）水頭試驗", "f": "k = (a·L)/(A·Δt) · ln(h1/h2)", "d": "適用透水性低的細粒土。", "v": [["a", "測管斷面積", "cm²"], ["h1,h2", "起訖水頭", "cm"]], "tip": "= 2.303 aL/(AΔt)·log(h1/h2)。", "s": 1, "src": "筆記"}, {"ch": "s11", "n": "實際滲流速度", "f": "vs = v / n ＞ v", "d": "水僅流經孔隙，實際速度較大。", "v": [["vs", "實際滲流速度", "cm/s"], ["v", "表觀流速", "cm/s"], ["n", "孔隙率", "—"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s11", "n": "Hazen 經驗式", "f": "k = C · D10²　(cm/s)", "d": "估算潔淨均勻砂的滲透係數。", "v": [["C", "形狀係數 100~150", "—"], ["D10", "有效粒徑", "cm"]], "tip": "", "s": 0, "src": "筆記"}, {"ch": "s12", "n": "水平（平行）等值滲透", "f": "kx = Σ(ki·Hi) / H　（加權平均）", "d": "滲流方向平行層面。", "v": [["kx", "水平等值滲透係數", "cm/s"], ["Hi", "各層厚度", "cm"]], "tip": "各層水力坡降相等、流量相加。", "s": 1, "src": "筆記"}, {"ch": "s12", "n": "垂直（串聯）等值滲透", "f": "kz = H / Σ(Hi/ki)　（調和平均）", "d": "滲流方向垂直層面。", "v": [["kz", "垂直等值滲透係數", "cm/s"]], "tip": "各層流量相等、水頭損失相加。", "s": 1, "src": "筆記"}, {"ch": "s12", "n": "大小關係", "f": "kx ≥ kz", "d": "算術平均恆 ≥ 調和平均。", "v": [["—", "層狀土多為水平較易透水", "—"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s13", "n": "總水頭", "f": "hT = he + hp　（流速水頭可略）", "d": "位置水頭加壓力水頭。", "v": [["hT", "總水頭", "m"], ["he", "位置水頭", "m"], ["hp", "壓力水頭", "m"]], "tip": "同一水層無阻擋時總水頭損失呈線性。", "s": 1, "src": "筆記"}, {"ch": "s13", "n": "孔隙水壓", "f": "u = γw · hp = γw (hT − he)", "d": "由壓力水頭換算孔隙水壓。", "v": [["u", "孔隙水壓", "kPa"], ["hp", "壓力水頭", "m"]], "tip": "", "s": 0, "src": "筆記"}, {"ch": "s13", "n": "臨界水力坡降", "f": "ic = (Gs − 1)/(1 + e) = γ′/γw", "d": "向上滲流使有效應力為零的坡降。", "v": [["ic", "臨界水力坡降", "—"], ["Gs", "比重", "—"], ["e", "孔隙比", "—"]], "tip": "多數土約 1.0。", "s": 1, "src": "筆記"}, {"ch": "s13", "n": "流砂條件", "f": "i ≥ ic 時 σ′ = 0（quicksand / 砂湧）", "d": "向上滲流的破壞條件。", "v": [["i", "實際水力坡降", "—"]], "tip": "無凝聚性土、向上滲流、σ=0、φ=0。", "s": 1, "src": "筆記"}, {"ch": "s13", "n": "防砂湧措施", "f": "延長滲流路徑、下游加壓重、設置反濾層、灌水減少水頭差", "d": "降低出口水力坡降。", "v": [["—", "擋土壁貫入不透水層", "—"]], "tip": "", "s": 0, "src": "筆記"}, {"ch": "s14", "n": "過壓密比", "f": "OCR = σ′c / σ′0", "d": "衡量過壓密程度。", "v": [["OCR", "過壓密比", "—"], ["σ′c", "預壓密壓力", "kPa"], ["σ′0", "現有有效覆土壓力", "kPa"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s14", "n": "壓密狀態", "f": "NC：OCR = 1 ｜ OC：OCR > 1 ｜ 未完成壓密：OCR < 1", "d": "依 OCR 判別。", "v": [["NC", "正常壓密", "—"], ["OC", "過壓密", "—"]], "tip": "OC 土滲透性小、壓縮性小、強度高。", "s": 1, "src": "筆記"}, {"ch": "s14", "n": "預壓密壓力", "f": "σ′c = 歷史上曾受之最大有效應力", "d": "由 Casagrande 作圖法(e–log σ′)求得。", "v": [["σ′c", "預壓密壓力", "kPa"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s14", "n": "正常壓密沉陷", "f": "Sc = [Cc·H/(1+e0)] · log(σ′f / σ′0)", "d": "NC 黏土主壓密沉陷量。", "v": [["Sc", "壓密沉陷", "cm"], ["Cc", "壓縮指數", "—"], ["H", "黏土層厚", "cm"], ["e0", "初始孔隙比", "—"]], "tip": "OC 段用再壓縮指數 Cr。", "s": 1, "src": "筆記"}, {"ch": "s15", "n": "時間因數", "f": "Tv = Cv · t / Hdr²", "d": "一維壓密的無因次時間。", "v": [["Tv", "時間因數", "—"], ["Cv", "壓密係數", "cm²/s"], ["Hdr", "最長排水路徑", "cm"], ["t", "時間", "s"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s15", "n": "U–Tv 關係", "f": "U ≤ 60%：Tv = (π/4)U²　；U=50%→0.197　；U=90%→0.848", "d": "壓密度與時間因數對照。", "v": [["U", "平均壓密度", "%"]], "tip": "U>60%：Tv = 1.781 − 0.933·log(100−U)。", "s": 1, "src": "筆記"}, {"ch": "s15", "n": "壓密係數", "f": "Cv = k / (mv · γw)", "d": "連結滲透與壓縮性。", "v": [["Cv", "壓密係數", "cm²/s"], ["mv", "體積壓縮係數", "cm²/kgf"], ["k", "滲透係數", "cm/s"]], "tip": "k = Cv·mv·γw。", "s": 1, "src": "筆記"}, {"ch": "s15", "n": "壓密度定義", "f": "U = (u0 − ue)/u0 = 超額孔隙水壓消散比", "d": "= 該時刻沉陷 / 最終沉陷。", "v": [["u0", "初始超額孔隙水壓", "kPa"], ["ue", "殘餘超額孔隙水壓", "kPa"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s15", "n": "排水路徑", "f": "雙面排水 Hdr = H/2　；　單面排水 Hdr = H", "d": "決定壓密速率的關鍵幾何。", "v": [["Hdr", "最長排水路徑", "cm"], ["H", "土層厚", "cm"]], "tip": "t ∝ Hdr²，雙面排水快 4 倍。", "s": 1, "src": "筆記"}, {"ch": "s16", "n": "莫爾庫倫破壞準則", "f": "τf = c + σ·tanφ　（有效：c′ + σ′·tanφ′）", "d": "剪力強度包絡線。", "v": [["τf", "破壞面剪力強度", "kPa"], ["c", "凝聚力", "kPa"], ["φ", "內摩擦角", "°"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s16", "n": "破壞面角度", "f": "αf = 45° + φ/2", "d": "破壞面與大主應力面的夾角。", "v": [["αf", "破壞面傾角", "°"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s16", "n": "主應力關係", "f": "σ1 = σ3·tan²(45+φ/2) + 2c·tan(45+φ/2)", "d": "破壞時大小主應力關係。", "v": [["σ1", "大主應力", "kPa"], ["σ3", "小主應力", "kPa"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s16", "n": "無凝聚土摩擦角", "f": "sinφ = (σ1 − σ3)/(σ1 + σ3)", "d": "c=0 時的破壞條件。", "v": [["φ", "內摩擦角", "°"]], "tip": "", "s": 1, "src": "筆記"}, {"ch": "s16", "n": "莫爾圓與包絡線", "f": "圓在線下＝穩定；相切＝破壞(極限平衡)；穿越＝不存在", "d": "以圓與包絡線關係判斷破壞。", "v": [["—", "相切點即破壞面應力", "—"]], "tip": "", "s": 0, "src": "筆記"}], "Q": [{"ch": "s1", "q": "依排水狀態，不壓密不排水對應哪種試驗？", "o": ["快剪(UU,不排水)", "慢剪(CD,排水)", "壓密排水三軸", "滲透試驗"], "a": 0, "e": "UU＝快、不排水；CD＝慢、可排水；CU＝壓密後不排水。"}, {"ch": "s1", "q": "土壤三大工程性質為？", "o": ["透水性、壓縮性、剪力強度", "塑性、含水量、比重", "顏色、味道、粒徑", "模數、波松比、密度"], "a": 0, "e": "三大性質：透水性、壓縮性、剪力強度。"}, {"ch": "s1", "q": "欲量測黏土在不同圍壓下的滲透係數，最適合？", "o": ["三軸透水試驗", "定水頭試驗", "阿太堡試驗", "篩分析"], "a": 0, "e": "三軸透水可施加圍壓、飽和壓密後定水頭量測。"}, {"ch": "s2", "q": "飽和度、含水量、比重、孔隙比的基本關係為？", "o": ["S·e = w·Gs", "e = w·S", "Gs = w·e", "S = w·Gs·e"], "a": 0, "e": "S·e = w·Gs；飽和時 e = w·Gs。"}, {"ch": "s2", "q": "飽和土 w=20%、Gs=2.70，孔隙比 e 約為？", "o": ["0.54", "0.27", "0.74", "1.35"], "a": 0, "e": "飽和 S=1：e = w·Gs = 0.2×2.7 = 0.54。"}, {"ch": "s2", "q": "承上，e=0.54、Gs=2.70、γw=9.81，乾單位重約為？", "o": ["17.2 kN/m³", "20.6 kN/m³", "26.5 kN/m³", "13.1 kN/m³"], "a": 0, "e": "γd = Gs·γw/(1+e) = 2.7×9.81/1.54 ≈ 17.2。"}, {"ch": "s2", "q": "孔隙率 n 與孔隙比 e 的換算為？", "o": ["n = e/(1+e)", "n = e/(1−e)", "n = (1+e)/e", "n = e(1+e)"], "a": 0, "e": "n = e/(1+e)；e = n/(1−n)。"}, {"ch": "s2", "q": "飽和單位重 γsat 的正確式為？", "o": ["(Gs+e)γw/(1+e)", "Gs·γw/(1+e)", "(Gs−1)γw/(1+e)", "(Gs+e)γw"], "a": 0, "e": "γsat=(Gs+e)γw/(1+e)；γ′=γsat−γw。"}, {"ch": "s3", "q": "篩號 #200 對應的粒徑約為？", "o": ["0.075 mm", "4.76 mm", "2.0 mm", "0.005 mm"], "a": 0, "e": "#200=0.075mm(粗細界)；#4=4.76mm(礫砂界)。"}, {"ch": "s3", "q": "均勻係數 Cu 的定義為？", "o": ["D60/D10", "D30/D10", "D10/D60", "D60×D10"], "a": 0, "e": "Cu=D60/D10，越大越不均勻。"}, {"ch": "s3", "q": "曲率係數 Cc 的定義為？", "o": ["(D30)²/(D10·D60)", "D60/D10", "D30/D60", "D10·D60/(D30)²"], "a": 0, "e": "Cc=(D30)²/(D10·D60)，良好級配 1~3。"}, {"ch": "s3", "q": "砂 D10=0.1, D30=0.4, D60=0.9 mm，屬於？", "o": ["Cu=9、Cc≈1.78，優良級配", "Cu=9、Cc≈1.78，不良級配", "Cu=0.11，優良級配", "Cu=9、Cc=5，殘缺級配"], "a": 0, "e": "Cu=9≥6；Cc=0.16/0.09≈1.78 落 1~3，砂為優良級配。"}, {"ch": "s3", "q": "有效粒徑 D10 主要用途為？", "o": ["推估滲透性與毛細現象", "判斷塑性", "決定飽和度", "計算單位重"], "a": 0, "e": "D10 用於估滲透性(Hazen)與毛細高度。"}, {"ch": "s4", "q": "USCS 中粗、細粒土的分界為？", "o": ["50% 通過 #200", "5% 通過 #200", "12% 通過 #200", "50% 通過 #4"], "a": 0, "e": ">50% 通過 #200 為細粒土。"}, {"ch": "s4", "q": "粗粒土細料含量 5~12% 時應如何表示？", "o": ["雙重符號(如 SW-SC)", "單一符號", "歸為細粒土", "不需分類"], "a": 0, "e": "5~12% 需雙重符號；<5% 或 >12% 用單一符號。"}, {"ch": "s4", "q": "符號 SW 代表？", "o": ["優良級配砂", "不良級配砂", "高塑性黏土", "低塑性粉土"], "a": 0, "e": "S=砂、W=優良級配。SP=不良級配砂。"}, {"ch": "s4", "q": "塑性圖 A-line 方程式為？", "o": ["PI = 0.73(LL−20)", "PI = 0.73(LL+20)", "PI = LL−20", "PI = 0.5LL"], "a": 0, "e": "A-line：PI=0.73(LL−20)，上方為黏土 C。"}, {"ch": "s5", "q": "塑性指數 PI 的定義為？", "o": ["PI = LL − PL", "PI = PL − SL", "PI = LL − SL", "PI = wn − PL"], "a": 0, "e": "PI = LL − PL。"}, {"ch": "s5", "q": "下列敘述何者正確？", "o": ["PI 大 → 黏土多、塑性高、滲透性小、強度大", "PI 大 → 塑性低", "PI 大 → 滲透性大", "PI 與黏土含量無關"], "a": 0, "e": "PI 大代表黏土礦物多。"}, {"ch": "s5", "q": "液性指數 LI 的定義為？", "o": ["(wn−PL)/PI", "(LL−wn)/PI", "(wn−SL)/PI", "LL−PL"], "a": 0, "e": "LI=(wn−PL)/PI；>1 近液態。"}, {"ch": "s5", "q": "LL=45%、PL=20%，PI 及 A-line 判別為？", "o": ["PI=25；0.73(45−20)=18.25，在上方→黏土", "PI=25；為粉土 M", "PI=65；黏土", "PI=20；砂"], "a": 0, "e": "PI=25>18.25 → A-line 上方為黏土。"}, {"ch": "s5", "q": "活性 Ac 的定義為？", "o": ["PI /（小於 2μm 黏粒 %）", "PI×LL", "LL/PL", "PI/LL"], "a": 0, "e": "Ac=PI/(<2μm 黏粒%)；蒙脫石高、高嶺石低。"}, {"ch": "s6", "q": "相對密度 Dr（孔隙比）的定義為？", "o": ["(emax−e)/(emax−emin)", "(e−emin)/(emax−emin)", "(emax−emin)/(emax−e)", "e/emax"], "a": 0, "e": "Dr=(emax−e)/(emax−emin)。"}, {"ch": "s6", "q": "emax=0.9、emin=0.4、e=0.6，Dr 為？", "o": ["60%", "40%", "33%", "75%"], "a": 0, "e": "Dr=(0.9−0.6)/(0.9−0.4)=0.6。"}, {"ch": "s6", "q": "以乾單位重表示 Dr，正確式為？", "o": ["γd,max(γd−γd,min)/[γd(γd,max−γd,min)]", "(γd−γd,min)/(γd,max−γd,min)", "(γd,max−γd)/(γd,max−γd,min)", "γd/γd,max"], "a": 0, "e": "因 e 與 γd 非線性，不可直接線性代入。"}, {"ch": "s7", "q": "有效應力原理為？", "o": ["σ′ = σ − u", "σ′ = σ + u", "σ′ = u − σ", "σ′ = σ·u"], "a": 0, "e": "σ′=σ−u。"}, {"ch": "s7", "q": "水位在地表、γsat=20、深 5m 的有效垂直應力約？(γw=9.81)", "o": ["≈51 kPa", "≈100 kPa", "≈49 kPa", "≈149 kPa"], "a": 0, "e": "σ=100、u=49 → σ′≈51；或 γ′·z=(20−9.81)×5≈51。"}, {"ch": "s7", "q": "正常壓密土的 K0（Jaky）約為？", "o": ["1 − sinφ′", "1 + sinφ′", "tanφ′", "sinφ′ − 1"], "a": 0, "e": "K0=1−sinφ′；φ′=30°→0.5。"}, {"ch": "s7", "q": "靜止狀態水平有效應力與垂直有效應力的關係為？", "o": ["σ′h = K0·σ′v", "σ′h = σ′v", "σ′h = K0/σ′v", "σ′h = σ′v − u"], "a": 0, "e": "σ′h=K0·σ′v，再加孔隙水壓得總水平應力。"}, {"ch": "s8", "q": "2:1 擴散法，矩形基礎深 z 處增量應力為？", "o": ["qBL/[(B+z)(L+z)]", "q/[(B+z)(L+z)]", "qBL(B+z)(L+z)", "q/(BL)·z²"], "a": 0, "e": "Δσ=qBL/[(B+z)(L+z)]。"}, {"ch": "s8", "q": "方形 B=2m、q=100kPa，用 2:1 法在 z=2m 的增量應力為？", "o": ["25 kPa", "50 kPa", "100 kPa", "12.5 kPa"], "a": 0, "e": "Δσ=100×4/(2+2)²=400/16=25。"}, {"ch": "s8", "q": "以 30° 擴散，方形深 z 處邊長增量為？", "o": ["B + 2z·tan30°", "B + z·tan30°", "B + z", "B + 2z"], "a": 0, "e": "每側增 z·tan30°，新邊長 B+2z·tan30°。"}, {"ch": "s8", "q": "淨基礎載重 q_net 的意義為？", "o": ["扣除移除土重後的淨增量", "基礎自重", "土壤總覆土壓力", "孔隙水壓"], "a": 0, "e": "q_net=q−γDf；沉陷計算用淨載重。"}, {"ch": "s9", "q": "Skempton 孔隙壓力方程式為？", "o": ["Δu = B[Δσ3 + A(Δσ1−Δσ3)]", "Δu = AΔσ3 + BΔσ1", "Δu = Δσ1−Δσ3", "Δu = BΔσ1"], "a": 0, "e": "Δu=B[Δσ3+A(Δσ1−Δσ3)]。"}, {"ch": "s9", "q": "完全飽和土的 B 值約為？", "o": ["B ≈ 1", "B ≈ 0", "B ≈ 0.5", "B < 0"], "a": 0, "e": "飽和 B≈1；乾土 B≈0。"}, {"ch": "s9", "q": "飽和黏土不排水加載初期，超額孔隙水壓 ue 如何？", "o": ["ue 大，幾乎全由孔隙水承擔", "ue = 0", "立即消散為零", "由土骨架承擔"], "a": 0, "e": "水無法即時排出，ue 大，σ′ 先不變。"}, {"ch": "s10", "q": "莫爾圓的圓心與半徑分別為？", "o": ["圓心((σx+σy)/2,0)、R=√[((σx−σy)/2)²+τxy²]", "圓心(σx,τxy)、R=σy", "圓心(0,0)、R=σx", "圓心(σx−σy,0)、R=τxy"], "a": 0, "e": "圓心在 σ 軸上=平均正應力；R 如式。"}, {"ch": "s10", "q": "最大與最小主應力在莫爾圓上的位置為？", "o": ["圓心橫座標 ± 半徑", "圓心 ± 直徑", "圓最高與最低點", "與 τ 軸交點"], "a": 0, "e": "σ1=圓心+R、σ3=圓心−R。"}, {"ch": "s10", "q": "有效應力莫爾圓相對總應力圓為？", "o": ["沿 σ 軸左移 u，半徑不變", "半徑變 u 倍", "右移 u", "完全相同"], "a": 0, "e": "各點正應力同減 u，剪應力不變 → 左移 u。"}, {"ch": "s10", "q": "莫爾圓上任一點代表？", "o": ["某平面上的 (σ, τ)", "某一主應力", "土壤強度", "孔隙水壓"], "a": 0, "e": "每點對應一個平面方向的應力。"}, {"ch": "s11", "q": "達西定律的流量式為？", "o": ["q = k·i·A", "q = k/(iA)", "q = iA/k", "q = kA/i"], "a": 0, "e": "q=kiA；v=ki。"}, {"ch": "s11", "q": "定水頭試驗 k 的計算式為？", "o": ["k = QL/(A·h·t)", "k = Aht/(QL)", "k = (aL/At)ln(h1/h2)", "k = QAh"], "a": 0, "e": "定水頭：k=QL/(Aht)。"}, {"ch": "s11", "q": "變（落）水頭試驗的 k 為？", "o": ["k = aL/[A(t2−t1)]·ln(h1/h2)", "k = QL/(Aht)", "k = A/(aL)·ln(h2/h1)", "k = aLth"], "a": 0, "e": "變水頭：k=aL/(AΔt)·ln(h1/h2)。"}, {"ch": "s11", "q": "實際滲流速度 vs 與表觀流速 v 的關係？", "o": ["vs = v/n > v", "vs = v·n < v", "vs = v", "vs = v/A"], "a": 0, "e": "水僅流經孔隙，vs=v/n>v。"}, {"ch": "s11", "q": "Hazen 經驗式估算砂土滲透係數為？", "o": ["k = C·D10²", "k = C·D60²", "k = C/D10", "k = C·Cu"], "a": 0, "e": "Hazen：k=C·D10²(cm/s)。"}, {"ch": "s12", "q": "滲流方向與層面平行（水平流），等值水平滲透係數為？", "o": ["kx = Σ(ki·Hi)/H", "kz = H/Σ(Hi/ki)", "k = √(k1k2)", "k = Σki"], "a": 0, "e": "平行流加權平均。"}, {"ch": "s12", "q": "滲流方向與層面垂直（垂直流），等值垂直滲透係數為？", "o": ["kz = H/Σ(Hi/ki)", "kz = Σ(kiHi)/H", "kz = Σki", "kz = k1+k2"], "a": 0, "e": "垂直流調和平均。"}, {"ch": "s12", "q": "同一層狀土，kx 與 kz 的一般關係為？", "o": ["kx ≥ kz", "kx = kz", "kx ≤ kz", "無法比較"], "a": 0, "e": "算術平均 ≥ 調和平均。"}, {"ch": "s13", "q": "總水頭 hT 由哪些分量組成？", "o": ["位置水頭 + 壓力水頭", "僅壓力水頭", "僅位置水頭", "位置水頭 + 流速水頭"], "a": 0, "e": "土中流速水頭可略，hT≈he+hp。"}, {"ch": "s13", "q": "向上滲流造成流砂的臨界水力坡降 ic 為？", "o": ["(Gs−1)/(1+e) = γ′/γw", "(Gs+1)/(1+e)", "γw/γ′", "Gs−1"], "a": 0, "e": "σ′=0：ic=γ′/γw=(Gs−1)/(1+e)。"}, {"ch": "s13", "q": "砂 Gs=2.65、e=0.65，臨界水力坡降 ic 約為？", "o": ["1.0", "1.65", "0.65", "2.0"], "a": 0, "e": "ic=(2.65−1)/(1+0.65)=1.65/1.65=1.0。"}, {"ch": "s13", "q": "下列何者可防止砂湧（管湧）？", "o": ["延長滲流路徑", "增加上游水頭", "移除下游反濾層", "減少土層厚度"], "a": 0, "e": "延長滲流路徑可降低出口坡降。"}, {"ch": "s13", "q": "向上滲流時土中有效應力會如何？", "o": ["減小(可能達 0 而流砂)", "增大", "不變", "變負但穩定"], "a": 0, "e": "滲流力向上抵減土重，σ′ 減小。"}, {"ch": "s14", "q": "過壓密比 OCR 的定義為？", "o": ["σ′c/σ′0", "σ′0/σ′c", "σ′c−σ′0", "σ′0·σ′c"], "a": 0, "e": "OCR=σ′c/σ′0。"}, {"ch": "s14", "q": "正常壓密黏土(NC)的 OCR 為？", "o": ["OCR = 1", "OCR > 1", "OCR < 1", "OCR = 0"], "a": 0, "e": "NC：σ′c=σ′0，OCR=1。"}, {"ch": "s14", "q": "預壓密壓力 σ′c 的物理意義為？", "o": ["歷史上曾受的最大有效壓力", "目前覆土壓力", "破壞應力", "靜水壓力"], "a": 0, "e": "σ′c 為過去最大有效壓密應力。"}, {"ch": "s14", "q": "相較 NC 土，過壓密土(OC)通常有何特性？", "o": ["滲透性小、壓縮性小、強度高", "壓縮性大、強度低", "滲透性大、易沉陷", "與 NC 無差異"], "a": 0, "e": "OC 曾受較大應力，孔隙比小。"}, {"ch": "s15", "q": "時間因數 Tv 的定義為？", "o": ["Cv·t/Hdr²", "Hdr²/(Cv·t)", "Cv·H·t", "t/Cv"], "a": 0, "e": "Tv=Cv·t/Hdr²。"}, {"ch": "s15", "q": "壓密度 U=50% 與 90% 分別對應 Tv？", "o": ["≈0.197 與 0.848", "0.5 與 0.9", "0.848 與 0.197", "0.1 與 1.0"], "a": 0, "e": "U≤60%: Tv=(π/4)U²；50%→0.197、90%→0.848。"}, {"ch": "s15", "q": "4m 厚黏土雙面排水、Cv=2 m²/yr，達 U=50% 約需？", "o": ["≈0.39 年", "≈1.6 年", "≈0.20 年", "≈4 年"], "a": 0, "e": "Hdr=2m；t=0.197×2²/2=0.394 年。"}, {"ch": "s15", "q": "壓密係數 Cv 與滲透係數 k 的關係為？", "o": ["Cv = k/(mv·γw)", "Cv = k·mv·γw", "Cv = mv·γw/k", "Cv = k·γw"], "a": 0, "e": "Cv=k/(mv·γw)；k=Cv·mv·γw。"}, {"ch": "s15", "q": "壓密度 U（以孔隙水壓）定義為？", "o": ["已消散超額孔隙水壓 / 初始超額孔隙水壓", "殘餘孔隙水壓 / 初始", "ue/σ′", "Tv"], "a": 0, "e": "U=(u0−ue)/u0＝沉陷比。"}, {"ch": "s16", "q": "莫爾庫倫破壞準則的剪力強度式為？", "o": ["τf = c + σ·tanφ", "τf = c − σ·tanφ", "τf = σ − c·tanφ", "τf = c·σ·tanφ"], "a": 0, "e": "τf=c+σtanφ（有效：c′+σ′tanφ′）。"}, {"ch": "s16", "q": "破壞面與大主應力面的夾角 αf 為？", "o": ["45° + φ/2", "45° − φ/2", "φ", "90° − φ"], "a": 0, "e": "αf=45°+φ/2。"}, {"ch": "s16", "q": "無凝聚土(c=0)主應力比與摩擦角的關係為？", "o": ["sinφ = (σ1−σ3)/(σ1+σ3)", "tanφ = (σ1−σ3)/(σ1+σ3)", "sinφ = (σ1+σ3)/(σ1−σ3)", "cosφ = σ1/σ3"], "a": 0, "e": "c=0 時 sinφ=(σ1−σ3)/(σ1+σ3)。"}, {"ch": "s16", "q": "砂 φ=30°、σ3=100kPa(c=0)，破壞時 σ1 約為？", "o": ["300 kPa", "200 kPa", "173 kPa", "400 kPa"], "a": 0, "e": "σ1=σ3·tan²(45+15)=100×tan²60°=100×3=300。"}, {"ch": "s16", "q": "莫爾圓與破壞包絡線的關係(A穩定/B極限/C破壞)為？", "o": ["A 在線下、B 相切、C 穿越(不存在)", "A 相切、B 在下、C 在上", "三者皆相切", "與包絡線無關"], "a": 0, "e": "圓在線下=穩定；相切=破壞臨界；穿越=不可能存在。"}]};
+const CH = DATA.CH, F = DATA.F, Q = DATA.Q;
+const chName = c => { const x = CH.find(o=>o.ch===c); return x?x.name:c; };
+const chSub  = c => { const x = CH.find(o=>o.ch===c); return x?x.sub:""; };
+
+document.getElementById('sCh').textContent = CH.length;
+document.getElementById('sF').textContent = F.length;
+document.getElementById('sQ').textContent = Q.length;
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('v-'+t.dataset.m).classList.add('on');
+  });
+});
+
+function buildChips(container,state,onChange){
+  container.innerHTML='';
+  const all=mkChip('全部','__all',state.size===0,false);
+  all.addEventListener('click',()=>{state.clear();buildChips(container,state,onChange);onChange();});
+  container.appendChild(all);
+  const _subs=[...new Set(CH.map(c=>c.sub))];
+  const _multi=_subs.length>1;
+  const _hdr={'核心':'── ★ 核心章 ──','次要':'── 次要章 ──','概覽':'── 概覽章 ──'};
+  let lastSub='';
+  CH.forEach(c=>{
+    if(_multi&&c.sub!==lastSub){lastSub=c.sub;
+      const lab=document.createElement('span');
+      lab.className='flbl';lab.style.width='100%';lab.style.margin='8px 0 2px';
+      lab.textContent=_hdr[c.sub]||('── '+c.sub+' ──');
+      container.appendChild(lab);
+    }
+    const chip=mkChip(c.name,c.ch,state.has(c.ch),false);
+    chip.addEventListener('click',()=>{
+      if(state.has(c.ch))state.delete(c.ch);else state.add(c.ch);
+      buildChips(container,state,onChange);onChange();
+    });
+    container.appendChild(chip);
+  });
+}
+function mkChip(text,key,on,isMat){
+  const b=document.createElement('button');
+  b.className='chip'+(isMat?' s':'')+(on?' on':'');
+  b.textContent=text;b.dataset.k=key;return b;
+}
+
+/* READ */
+const readState=new Set();
+const readChips=document.getElementById('readChips');
+const readList=document.getElementById('readList');
+const searchEl=document.getElementById('search');
+buildChips(readChips,readState,renderRead);
+searchEl.addEventListener('input',renderRead);
+function renderRead(){
+  const kw=searchEl.value.trim().toLowerCase();
+  let list=F.filter(f=>readState.size===0||readState.has(f.ch));
+  if(kw)list=list.filter(f=>(f.n+f.f+f.d+f.tip+chName(f.ch)).toLowerCase().includes(kw));
+  document.getElementById('readCount').textContent='顯示 '+list.length+' / '+F.length+' 條公式';
+  readList.innerHTML='';
+  list.forEach((f,i)=>readList.appendChild(buildFCard(f,'r'+i)));
+}
+function buildFCard(f,id){
+  const card=document.createElement('div');card.className='fcard';
+  const top=document.createElement('div');top.className='ftop';
+  const pill=document.createElement('span');
+  pill.className='pill';
+  pill.textContent=chName(f.ch);
+  const nm=document.createElement('span');nm.className='fname';
+  if(f.s){const s=document.createElement('span');s.className='star';s.textContent='★';nm.appendChild(s);}
+  nm.appendChild(document.createTextNode(f.n));
+  top.appendChild(pill);top.appendChild(nm);
+  const fo=document.createElement('div');fo.className='formula';fo.textContent=f.f;
+  card.appendChild(top);card.appendChild(fo);
+  if(f.d){const dn=document.createElement('div');dn.className='dnote';dn.textContent=f.d;card.appendChild(dn);}
+  const exp=document.createElement('div');exp.className='expander';
+  const ic=document.createElement('span');ic.className='ic';ic.textContent='代';
+  exp.appendChild(ic);
+  const lab=document.createElement('span');lab.textContent='展開代數意義';exp.appendChild(lab);
+  const det=document.createElement('div');det.className='detail';
+  if(f.v&&f.v.length){
+    const tb=document.createElement('table');tb.className='vtab';
+    f.v.forEach(r=>{const tr=document.createElement('tr');
+      r.forEach(cell=>{const td=document.createElement('td');td.textContent=cell;tr.appendChild(td);});
+      tb.appendChild(tr);});
+    det.appendChild(tb);
+  }
+  if(f.tip){const tp=document.createElement('div');tp.className='tip';
+    const b=document.createElement('b');b.textContent='口訣／觀念：';tp.appendChild(b);
+    tp.appendChild(document.createTextNode(f.tip));det.appendChild(tp);}
+  exp.addEventListener('click',()=>{
+    det.classList.toggle('on');
+    lab.textContent=det.classList.contains('on')?'收合代數意義':'展開代數意義';
+  });
+  card.appendChild(exp);card.appendChild(det);
+  return card;
+}
+renderRead();
+
+/* QUIZ */
+const quizState=new Set();
+let qNum=10;
+buildChips(document.getElementById('quizChips'),quizState,()=>{});
+document.querySelectorAll('#numSel button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#numSel button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');qNum=parseInt(b.dataset.n);
+  });
+});
+document.getElementById('startQuiz').addEventListener('click',startQuiz);
+let curQuiz=[];
+function startQuiz(){
+  let pool=Q.filter(q=>quizState.size===0||quizState.has(q.ch));
+  pool=shuffle(pool.slice());
+  if(qNum>0)pool=pool.slice(0,qNum);
+  if(pool.length===0){alert('此章節暫無題目，請改選其他章節。');return;}
+  curQuiz=pool.map(q=>({...q,pick:null}));
+  document.getElementById('quizSetup').classList.add('hide');
+  const run=document.getElementById('quizRun');run.classList.remove('hide');run.innerHTML='';
+  curQuiz.forEach((q,i)=>{
+    const card=document.createElement('div');card.className='qcard';card.dataset.i=i;
+    const head=document.createElement('div');head.className='qhead';
+    const s1=document.createElement('span');s1.textContent='第 '+(i+1)+' / '+curQuiz.length+' 題';
+    const s2=document.createElement('span');s2.textContent=chSub(q.ch)+'｜'+chName(q.ch);
+    head.appendChild(s1);head.appendChild(s2);
+    const qt=document.createElement('div');qt.className='qtext';qt.textContent=q.q;
+    card.appendChild(head);card.appendChild(qt);
+    q.o.forEach((opt,oi)=>{
+      const el=document.createElement('div');el.className='opt';
+      const k=document.createElement('span');k.className='k';k.textContent='ABCD'[oi];
+      el.appendChild(k);el.appendChild(document.createTextNode(opt));
+      el.addEventListener('click',()=>{
+        if(card.dataset.done)return;
+        card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+        el.classList.add('sel');q.pick=oi;
+      });
+      card.appendChild(el);
+    });
+    const exp=document.createElement('div');exp.className='exp';card.appendChild(exp);
+    run.appendChild(card);
+  });
+  const sub=document.createElement('button');sub.className='btn';sub.textContent='交卷看分數';
+  sub.addEventListener('click',gradeQuiz);run.appendChild(sub);
+  const back=document.createElement('button');back.className='btn ghost';back.style.marginTop='8px';
+  back.textContent='重設章節 / 題數';back.addEventListener('click',resetQuiz);run.appendChild(back);
+  window.scrollTo(0,0);
+}
+function gradeQuiz(){
+  let correct=0;
+  curQuiz.forEach((q,i)=>{
+    const card=document.querySelector('.qcard[data-i="'+i+'"]');
+    card.dataset.done='1';
+    card.querySelectorAll('.opt').forEach((o,oi)=>{
+      o.style.cursor='default';
+      if(oi===q.a)o.classList.add('right');
+      if(q.pick===oi&&oi!==q.a)o.classList.add('wrong');
+    });
+    if(q.pick===q.a)correct++;
+    const exp=card.querySelector('.exp');exp.classList.add('on');
+    exp.innerHTML='<b>正解：'+'ABCD'[q.a]+'</b>　'+escapeHtml(q.e);
+  });
+  const run=document.getElementById('quizRun');
+  const bar=document.createElement('div');bar.className='scorebar';
+  const pct=Math.round(correct/curQuiz.length*100);
+  bar.innerHTML='<div class="big">'+correct+' / '+curQuiz.length+'</div>'+
+    '<div class="lbl">答對率 '+pct+'%　'+(pct>=80?'穩了 👍':pct>=60?'再衝一點':'錯題回頭看公式')+'</div>';
+  run.insertBefore(bar,run.firstChild);
+  document.querySelector('#quizRun .btn').classList.add('hide');
+  window.scrollTo(0,0);
+}
+function resetQuiz(){
+  document.getElementById('quizRun').classList.add('hide');
+  document.getElementById('quizSetup').classList.remove('hide');
+  window.scrollTo(0,0);
+}
+
+/* FLASH */
+const flashState=new Set();
+let cards=[],ci=0,flipped=false;
+buildChips(document.getElementById('flashChips'),flashState,rebuildCards);
+function rebuildCards(){
+  cards=F.filter(f=>flashState.size===0||flashState.has(f.ch));
+  cards=shuffle(cards.slice());ci=0;flipped=false;renderCard();
+}
+function renderCard(){
+  const c=cards[ci];const el=document.getElementById('fcCard');
+  document.getElementById('fcProg').textContent=cards.length?('第 '+(ci+1)+' / '+cards.length+' 張'):'';
+  el.innerHTML='';
+  if(!c){el.innerHTML='<div class="q">此範圍無公式</div>';return;}
+  const side=document.createElement('div');side.className='side';
+  side.textContent=flipped?'公式 ＋ 口訣':'默寫這條公式';el.appendChild(side);
+  if(!flipped){
+    const q=document.createElement('div');q.className='q';
+    q.textContent=(c.s?'★ ':'')+c.n;el.appendChild(q);
+    const sub=document.createElement('div');sub.className='hint';sub.style.marginTop='8px';
+    sub.textContent=chSub(c.ch)+'｜'+chName(c.ch);el.appendChild(sub);
+    const h=document.createElement('div');h.className='hint';h.style.marginTop='12px';h.style.color='var(--dim)';
+    h.textContent='點一下看答案';el.appendChild(h);
+  }else{
+    const a=document.createElement('div');a.className='a';a.textContent=c.f;el.appendChild(a);
+    if(c.tip){const t=document.createElement('div');t.className='hint';t.textContent=c.tip;el.appendChild(t);}
+  }
+}
+document.getElementById('fcCard').addEventListener('click',()=>{flipped=!flipped;renderCard();});
+document.getElementById('fcNext').addEventListener('click',()=>{if(!cards.length)return;ci=(ci+1)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcPrev').addEventListener('click',()=>{if(!cards.length)return;ci=(ci-1+cards.length)%cards.length;flipped=false;renderCard();});
+document.getElementById('fcShuf').addEventListener('click',()=>{cards=shuffle(cards);ci=0;flipped=false;renderCard();});
+rebuildCards();
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script>
+</body>
+</html>
